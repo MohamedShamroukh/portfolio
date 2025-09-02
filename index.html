@@ -5,9 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <title>Mohamed Shamroukh | Geospatial Intelligence & Urban Planning Researcher</title>
-    <!-- All other meta tags remain the same -->
     <meta name="description" content="Personal portfolio of Mohamed Shamroukh, a doctoral researcher at Loughborough University specializing in Geospatial Intelligence, GIS, GeoAI, and data-driven urban planning for sustainable cities.">
-    <meta name="keywords" content="Mohamed Shamroukh, Geospatial Intelligence, GIS, GeoAI, Remote Sensing, Urban Planning, Loughborough University, PhD Researcher, Data Science, Python, Sustainable Cities, Publications">
+    <meta name="keywords" content="Mohamed Shamroukh, Geospatial Intelligence, GIS, GeoAI, Remote Sensing, Urban Planning, Loughborough University, PhD Researcher, Data Science, Python, Sustainable Cities, Publications, ORCID">
     <meta name="author" content="Mohamed Shamroukh">
     <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22> MS </text></svg>">
     
@@ -35,7 +34,6 @@
             --shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.07), 0 4px 6px -2px rgba(0, 0, 0, 0.04);
             --shadow-lg: 0 25px 50px -12px rgba(0, 0, 0, 0.15);
         }
-        /* ... [All other CSS from the previous step remains unchanged] ... */
         html { scroll-behavior: smooth; } * { margin: 0; padding: 0; box-sizing: border-box; }
         body { font-family: 'Inter', sans-serif; background: var(--surface); color: var(--text-primary); line-height: 1.7; overflow-x: hidden; transition: background 0.3s ease, color 0.3s ease; }
         body::before { content: ''; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: radial-gradient(circle at 20% 20%, rgba(59, 130, 246, 0.08) 0%, transparent 40%), radial-gradient(circle at 80% 80%, rgba(139, 92, 246, 0.08) 0%, transparent 40%); z-index: -1; animation: backgroundFlow 30s ease-in-out infinite; transition: opacity 0.3s ease; } .light-theme body::before { opacity: 0.5; }
@@ -80,8 +78,6 @@
         .skill-tags { display: flex; flex-wrap: wrap; gap: 0.75rem; }
         .skill-tag { background: var(--surface-lighter); color: var(--text-secondary); padding: 0.5rem 1rem; border-radius: 2rem; font-size: 0.9rem; border: 1px solid var(--border); transition: all 0.3s ease; }
         .skill-tag:hover { background: var(--accent); color: white; transform: translateY(-2px); border-color: var(--accent); }
-        
-        /* Publications Section Styling */
         #publications-list { display: flex; flex-direction: column; gap: 1.5rem; }
         .publication-item { background: var(--surface-light); border: 1px solid var(--border); border-left: 4px solid var(--accent); padding: 1.5rem; border-radius: 0.5rem; transition: all 0.3s ease; }
         .publication-item:hover { transform: translateX(10px); box-shadow: var(--shadow); border-color: var(--accent); }
@@ -90,10 +86,7 @@
         .publication-title a:hover { color: var(--accent); }
         .publication-authors { font-style: italic; color: var(--text-secondary); margin-bottom: 0.5rem; }
         .publication-venue { font-size: 0.9rem; color: var(--text-muted); }
-        .publication-cited { font-size: 0.9rem; color: var(--text-muted); margin-top: 0.5rem; font-weight: 500; }
-        .publication-cited a { color: var(--accent); text-decoration: none; }
         .loader, .error-message { text-align: center; color: var(--text-secondary); font-size: 1.1rem; padding: 2rem; }
-
         .contact-grid { display: grid; grid-template-columns: 1fr 1.5fr; gap: 3rem; align-items: center; }
         .linkedin-badge-container { min-height: 300px; } .dark-linkedin-badge, .light-linkedin-badge { transition: opacity 0.3s ease; }
         body:not(.light-theme) .light-linkedin-badge, .light-theme .dark-linkedin-badge { display: none; }
@@ -117,7 +110,6 @@
     </style>
 </head>
 <body>
-    <!-- Navigation -->
     <nav id="navbar">
         <div class="nav-container">
             <a href="#" class="logo">MS</a>
@@ -126,7 +118,7 @@
                     <li><a href="#about" class="active">About</a></li>
                     <li><a href="#research">Research</a></li>
                     <li><a href="#skills">Skills</a></li>
-                    <li><a href="#publications">Publications</a></li> <!-- New Nav Link -->
+                    <li><a href="#publications">Publications</a></li>
                     <li><a href="#contact">Contact</a></li>
                 </ul>
                 <button id="theme-toggle" title="Toggle theme">
@@ -136,7 +128,6 @@
         </div>
     </nav>
 
-    <!-- Hero Section -->
     <section class="hero" id="home">
         <div class="hero-content">
             <h1>Mohamed Shamroukh</h1>
@@ -148,7 +139,6 @@
         </div>
     </section>
 
-    <!-- About Section -->
     <section class="section" id="about">
         <div class="container">
             <div class="about-grid">
@@ -166,7 +156,6 @@
         </div>
     </section>
 
-    <!-- Research Section -->
     <section class="section" id="research">
         <div class="container">
             <div class="section-title"><h2 class="fade-in">Research Focus</h2><p class="fade-in">My research employs data-driven methods to build more sustainable, equitable, and pedestrian-friendly cities.</p></div>
@@ -181,7 +170,6 @@
         </div>
     </section>
 
-    <!-- Skills Section -->
     <section class="section" id="skills">
         <div class="container">
             <div class="section-title"><h2 class="fade-in">Technical Expertise</h2><p class="fade-in">A comprehensive toolkit for geospatial analysis, data science, and urban research.</p></div>
@@ -193,12 +181,11 @@
         </div>
     </section>
 
-    <!-- ================== NEW PUBLICATIONS SECTION ================== -->
     <section class="section" id="publications">
         <div class="container">
             <div class="section-title">
                 <h2 class="fade-in">Recent Publications</h2>
-                <p class="fade-in">A live feed of my publications, automatically updated from Google Scholar.</p>
+                <p class="fade-in">A live feed of my publications from my ORCID profile.</p>
             </div>
             <div id="publications-list" class="fade-in">
                 <div class="loader">
@@ -208,7 +195,6 @@
         </div>
     </section>
 
-    <!-- Contact Section -->
     <section class="section" id="contact">
         <div class="container">
             <div class="section-title"><h2 class="fade-in">Let's Connect</h2><p class="fade-in">I am always open to discussing research collaborations, sharing ideas, or exploring new opportunities.</p></div>
@@ -226,20 +212,17 @@
         </div>
     </section>
 
-    <!-- Footer -->
     <footer class="footer">
         <div class="container footer-content"><p>&copy; 2024 Mohamed Shamroukh. All rights reserved.</p><p>Built with passion and a touch of geospatial magic.</p></div>
     </footer>
 
-    <!-- Back to Top Button -->
     <button id="back-to-top" title="Back to Top"><i class="fas fa-arrow-up"></i></button>
 
-    <!-- LinkedIn Badge Script -->
     <script src="https://platform.linkedin.com/badges/js/profile.js" async defer type="text/javascript"></script>
     
     <script>
         document.addEventListener('DOMContentLoaded', function() {
-            // ... [All other JS from the previous step remains unchanged] ...
+            // --- THEME & UI SCRIPT (No changes) ---
             const navbar = document.getElementById('navbar'); const navLinks = document.querySelectorAll('.nav-links a'); const sections = document.querySelectorAll('section'); const backToTopButton = document.getElementById('back-to-top'); const themeToggleBtn = document.getElementById('theme-toggle'); const body = document.body; const THEME_KEY = 'user-theme';
             const applyTheme = (theme) => { if (theme === 'light') { body.classList.add('light-theme'); } else { body.classList.remove('light-theme'); } };
             const toggleTheme = () => { const currentTheme = body.classList.contains('light-theme') ? 'light' : 'dark'; const newTheme = currentTheme === 'light' ? 'dark' : 'light'; applyTheme(newTheme); localStorage.setItem(THEME_KEY, newTheme); };
@@ -257,56 +240,83 @@
             const observer = new IntersectionObserver((entries) => { entries.forEach(entry => { if (entry.isIntersecting) { entry.target.classList.add('visible'); observer.unobserve(entry.target); } }); }, { threshold: 0.1 });
             fadeInElements.forEach(el => { observer.observe(el); });
 
-            // ================== NEW PUBLICATIONS FETCHING LOGIC ==================
-            async function fetchPublications() {
+            // --- NEW ORCID PUBLICATIONS FETCHING SCRIPT ---
+            async function fetchOrcidPublications() {
                 const publicationsList = document.getElementById('publications-list');
-                
-                // --- CONFIGURATION ---
-                // IMPORTANT: Replace with your actual SerpApi key.
-                // To keep this key secure, it's best to use a serverless function, but for a simple portfolio, this is okay.
-                const apiKey = "44ba081eb02e9a0ac784c55035a687c7dea7dcf11c6ff0175b6b37f0e3646eab"; // <--- PASTE YOUR API KEY HERE
-                const authorId = "BUM-R3QAAAAJ"; // Your Google Scholar User ID from the URL
-                const apiURL = `https://serpapi.com/search.json?engine=google_scholar_author&author_id=${authorId}&api_key=${apiKey}&sort=pubdate`;
+                const orcidId = "0000-0002-1005-2600"; // Your ORCID ID
+                const apiUrl = `https://pub.orcid.org/v3.0/${orcidId}/works`;
 
                 try {
-                    const response = await fetch(apiURL);
-                    if (!response.ok) {
-                        throw new Error(`HTTP error! status: ${response.status}`);
+                    // Step 1: Get the list of work summaries to find their "put-codes"
+                    const initialResponse = await fetch(apiUrl, { headers: { 'Accept': 'application/json' } });
+                    if (!initialResponse.ok) throw new Error(`ORCID API Error: ${initialResponse.status}`);
+                    const summaryData = await initialResponse.json();
+                    
+                    const putCodes = summaryData.group.map(work => work['work-summary'][0]['put-code']).join(',');
+
+                    if (!putCodes) {
+                        publicationsList.innerHTML = '<div class="error-message">No publications found on this ORCID profile.</div>';
+                        return;
                     }
-                    const data = await response.json();
+                    
+                    // Step 2: Get the full details for all works using their put-codes
+                    const detailResponse = await fetch(`${apiUrl}/${putCodes}`, { headers: { 'Accept': 'application/json' } });
+                    if (!detailResponse.ok) throw new Error(`ORCID API Error: ${detailResponse.status}`);
+                    const detailData = await detailResponse.json();
 
-                    // Clear the loading message
-                    publicationsList.innerHTML = ''; 
+                    publicationsList.innerHTML = ''; // Clear loader
 
-                    if (data.articles && data.articles.length > 0) {
-                        data.articles.forEach(article => {
-                            const authors = article.authors || 'N/A';
-                            const venue = article.publication || 'N/A';
-                            const year = article.year || '';
-                            const citedByCount = article.cited_by?.value || 0;
-                            const citedByLink = article.cited_by?.link || '#';
+                    // Sort publications by year, descending
+                    const works = detailData.bulk.sort((a, b) => {
+                        const yearA = a.work['publication-date']?.year?.value || 0;
+                        const yearB = b.work['publication-date']?.year?.value || 0;
+                        return yearB - yearA;
+                    });
 
-                            const item = document.createElement('div');
-                            item.className = 'publication-item';
-                            item.innerHTML = `
-                                <h3 class="publication-title"><a href="${article.link}" target="_blank" rel="noopener noreferrer">${article.title}</a></h3>
-                                <p class="publication-authors">${authors}</p>
-                                <p class="publication-venue">${venue}, ${year}</p>
-                                ${citedByCount > 0 ? `<p class="publication-cited">Cited by <a href="https://scholar.google.com${citedByLink}" target="_blank">${citedByCount}</a></p>` : ''}
-                            `;
-                            publicationsList.appendChild(item);
-                        });
-                    } else {
-                        publicationsList.innerHTML = '<div class="error-message">Could not find any publications.</div>';
-                    }
+                    works.forEach(item => {
+                        const work = item.work;
+                        const title = work.title?.title?.value || 'No title provided';
+                        const journal = work['journal-title']?.value || '';
+                        
+                        const year = work['publication-date']?.year?.value || '';
+                        const month = work['publication-date']?.month?.value || '';
+                        const day = work['publication-date']?.day?.value || '';
+                        const date = [year, month, day].filter(Boolean).join('-');
+                        
+                        const link = work.url?.value;
+
+                        let authors = 'N/A';
+                        if (work.contributors?.contributor) {
+                            authors = work.contributors.contributor.map(c => c['credit-name']?.value).join(', ');
+                        }
+
+                        const publicationDiv = document.createElement('div');
+                        publicationDiv.className = 'publication-item';
+                        
+                        let venueHTML = '';
+                        if (journal || date) {
+                            venueHTML = `<p class="publication-venue">${[journal, date].filter(Boolean).join(', ')}</p>`;
+                        }
+                        
+                        let titleHTML = link 
+                            ? `<h3 class="publication-title"><a href="${link}" target="_blank" rel="noopener noreferrer">${title}</a></h3>`
+                            : `<h3 class="publication-title">${title}</h3>`;
+
+                        publicationDiv.innerHTML = `
+                            ${titleHTML}
+                            <p class="publication-authors">${authors}</p>
+                            ${venueHTML}
+                        `;
+                        publicationsList.appendChild(publicationDiv);
+                    });
+
                 } catch (error) {
-                    console.error("Error fetching publications:", error);
-                    publicationsList.innerHTML = `<div class="error-message">Failed to load publications. Please try again later.</div>`;
+                    console.error("Failed to fetch ORCID publications:", error);
+                    publicationsList.innerHTML = `<div class="error-message">Could not load publications from ORCID. Please try again later.</div>`;
                 }
             }
-            
-            // Call the function to fetch publications when the page loads
-            fetchPublications();
+
+            fetchOrcidPublications();
         });
     </script>
 </body>

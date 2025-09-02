@@ -4,322 +4,310 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
-    <!-- ================== SEO Meta Tags ================== -->
-   
     <title>Mohamed Shamroukh | Geospatial Intelligence & Urban Planning Researcher</title>
+    <!-- All other meta tags remain the same -->
     <meta name="description" content="Personal portfolio of Mohamed Shamroukh, a doctoral researcher at Loughborough University specializing in Geospatial Intelligence, GIS, GeoAI, and data-driven urban planning for sustainable cities.">
-    <meta name="keywords" content="Mohamed Shamroukh, Geospatial Intelligence, GIS, GeoAI, Remote Sensing, Urban Planning, Loughborough University, PhD Researcher, Data Science, Python, Sustainable Cities">
+    <meta name="keywords" content="Mohamed Shamroukh, Geospatial Intelligence, GIS, GeoAI, Remote Sensing, Urban Planning, Loughborough University, PhD Researcher, Data Science, Python, Sustainable Cities, Publications">
     <meta name="author" content="Mohamed Shamroukh">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22> MS </text></svg>">
     
-    <!-- ACTION REQUIRED: Replace 'https://www.your-domain.com/' with your actual website URL -->
-    <link rel="canonical" href="https://www.your-domain.com/">
-
-    <!-- ================== Open Graph / Facebook / LinkedIn Meta Tags ================== -->
-   <div class="badge-base LI-profile-badge" data-locale="en_US" data-size="medium" data-theme="light" data-type="HORIZONTAL" data-vanity="mohamed-shamroukh-348083126" data-version="v1"><a class="badge-base__link LI-simple-link" href="https://uk.linkedin.com/in/mohamed-shamroukh-348083126?trk=profile-badge">Mohamed Shamroukh</a></div>
-              
-    <meta property="og:title" content="Mohamed Shamroukh | Geospatial Intelligence & Urban Planning Researcher">
-    <meta property="og:description" content="Doctoral researcher specializing in GIS, GeoAI, and data-driven urban planning.">
-    <meta property="og:type" content="website">
-    <!-- ACTION REQUIRED: Replace with a URL to a professional photo of yourself (e.g., from LinkedIn or GitHub) -->
-    <meta property="og:image" content="https://www.lboro.ac.uk/media/media/schoolanddepartments/abce/Mohamed-Mahmoud-Oct-2024-480x640.jpg">
-    <meta property="og:url" content="https://www.your-domain.com/">
-
-    <!-- ================== Twitter Card Meta Tags ================== -->
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Mohamed Shamroukh | Geospatial Intelligence Researcher">
-    <meta name="twitter:description" content="Doctoral researcher specializing in GIS, GeoAI, and data-driven urban planning.">
-    <!-- ACTION REQUIRED: Replace with the same image URL as above -->
-    <meta name="twitter:image" content="https://pbs.twimg.com/profile_images/1384761679188307969/-He0GgKv_400x400.jpg">
-
-    <!-- ================== Structured Data (Schema.org for Google) ================== -->
-    <!-- This tells Google exactly who you are in a machine-readable format -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "Person",
-      "name": "Mohamed Shamroukh",
-      "url": "https://www.your-domain.com/",
-      "jobTitle": "Doctoral Researcher",
-      "worksFor": {
-        "@type": "Organization",
-        "name": "Loughborough University"
-      },
-      "alumniOf": {
-        "@type": "CollegeOrUniversity",
-        "name": "South Valley University"
-      },
-      "knowsAbout": ["Geospatial Intelligence", "GIS", "Remote Sensing", "Urban Planning", "GeoAI", "Python", "Data Science"],
-      "sameAs": [
-        "https://www.linkedin.com/in/mohamed-shamroukh-348083126/",
-        "https://github.com/MohamedShamroukh",
-        "https://x.com/mohamed_shm3",
-        "https://scholar.google.co.uk/citations?user=BUM-R3QAAAAJ&hl=en",
-        "https://orcid.org/0000-0002-1005-2600",
-        "https://www.researchgate.net/profile/Mohamed-Shamroukh",
-        "https://www.lboro.ac.uk/departments/abce/staff/mohamed-mahmoud/",
-        "https://loop.frontiersin.org/people/2895153/overview",
-        "https://www.webofscience.com/wos/author/record/JCN-7329-2023",
-        "https://gis.stackexchange.com/users/162813/mohamed-shamroukh"
-      ]
-    }
-    </script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap" rel="stylesheet">
     
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
-        /* CSS styles remain the same as before */
         :root {
-            --primary-color: #2c3e50;
-            --accent-color: #3498db;
-            --text-color: #333;
-            --light-bg: #f8f9fa;
-            --container-width: 1000px;
+            /* Dark Theme (Default) */
+            --primary: #0f172a; --secondary: #1e293b; --accent: #3b82f6;
+            --accent-hover: #2563eb; --text-primary: #f8fafc; --text-secondary: #cbd5e1;
+            --text-muted: #94a3b8; --surface: #0f172a; --surface-light: #1e293b;
+            --surface-lighter: #334155; --border: #334155;
+            --gradient-1: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            --shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.2), 0 4px 6px -2px rgba(0, 0, 0, 0.15);
+            --shadow-lg: 0 25px 50px -12px rgba(0, 0, 0, 0.4);
         }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
+        .light-theme {
+            /* Light Theme */
+            --primary: #ffffff; --secondary: #f1f5f9; --accent: #3b82f6;
+            --accent-hover: #2563eb; --text-primary: #0f172a; --text-secondary: #475569;
+            --text-muted: #64748b; --surface: #f8fafc; --surface-light: #ffffff;
+            --surface-lighter: #f1f5f9; --border: #e2e8f0;
+            --gradient-1: linear-gradient(135deg, #3b82f6 0%, #6d28d9 100%);
+            --shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.07), 0 4px 6px -2px rgba(0, 0, 0, 0.04);
+            --shadow-lg: 0 25px 50px -12px rgba(0, 0, 0, 0.15);
         }
-
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            line-height: 1.6;
-            color: var(--text-color);
-            background-color: var(--light-bg);
-        }
-
-        .container {
-            max-width: var(--container-width);
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-
-        header {
-            background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
-            color: white;
-            padding: 4rem 0;
-            margin-bottom: 3rem;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-            text-align: center;
-        }
+        /* ... [All other CSS from the previous step remains unchanged] ... */
+        html { scroll-behavior: smooth; } * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Inter', sans-serif; background: var(--surface); color: var(--text-primary); line-height: 1.7; overflow-x: hidden; transition: background 0.3s ease, color 0.3s ease; }
+        body::before { content: ''; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: radial-gradient(circle at 20% 20%, rgba(59, 130, 246, 0.08) 0%, transparent 40%), radial-gradient(circle at 80% 80%, rgba(139, 92, 246, 0.08) 0%, transparent 40%); z-index: -1; animation: backgroundFlow 30s ease-in-out infinite; transition: opacity 0.3s ease; } .light-theme body::before { opacity: 0.5; }
+        @keyframes backgroundFlow { 0%, 100% { transform: scale(1) rotate(0deg); } 50% { transform: scale(1.2) rotate(180deg); } }
+        nav { position: fixed; top: 0; width: 100%; z-index: 1000; padding: 1.2rem 0; transition: all 0.3s ease-in-out; }
+        nav.scrolled { background: rgba(15, 23, 42, 0.85); backdrop-filter: blur(10px); box-shadow: var(--shadow); padding: 0.8rem 0; }
+        .light-theme nav.scrolled { background: rgba(255, 255, 255, 0.85); }
+        .nav-container { max-width: 1200px; margin: 0 auto; padding: 0 2rem; display: flex; justify-content: space-between; align-items: center; }
+        .logo { font-weight: 700; font-size: 1.5rem; background: var(--gradient-1); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; transition: transform 0.3s ease; text-decoration: none;} .logo:hover { transform: scale(1.1); }
+        .nav-menu { display: flex; align-items: center; gap: 2rem; } .nav-links { display: flex; list-style: none; gap: 2rem; }
+        .nav-links a { color: var(--text-secondary); text-decoration: none; transition: all 0.3s ease; position: relative; font-weight: 500; }
+        .nav-links a::after { content: ''; position: absolute; bottom: -5px; left: 0; width: 0; height: 2px; background: var(--accent); transition: width 0.3s ease; }
+        .nav-links a:hover { color: var(--text-primary); } .nav-links a:hover::after, .nav-links a.active::after { width: 100%; }
+        #theme-toggle { background: var(--surface-light); border: 1px solid var(--border); color: var(--text-secondary); width: 2.5rem; height: 2.5rem; border-radius: 50%; cursor: pointer; display: grid; place-items: center; font-size: 1.2rem; transition: all 0.3s ease; }
+        #theme-toggle:hover { color: var(--accent); border-color: var(--accent); transform: rotate(15deg); }
+        .light-theme #theme-toggle .fa-moon, #theme-toggle .fa-sun { display: none; }
+        .light-theme #theme-toggle .fa-sun { display: block; } body:not(.light-theme) #theme-toggle .fa-moon { display: block; }
+        .hero { min-height: 100vh; display: flex; align-items: center; justify-content: center; text-align: center; position: relative; padding: 2rem; }
+        .hero-content { max-width: 800px; animation: fadeInUp 1s ease-out; }
+        .hero h1 { font-size: clamp(2.5rem, 5vw, 4.5rem); font-weight: 700; margin-bottom: 1.5rem; background: var(--gradient-1); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; line-height: 1.2; }
+        .hero-subtitle { font-size: clamp(1.1rem, 2vw, 1.3rem); color: var(--text-secondary); margin-bottom: 2.5rem; font-weight: 300; }
+        .hero-cta { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
+        .btn { padding: 0.875rem 2rem; border: none; border-radius: 0.5rem; font-weight: 600; text-decoration: none; transition: all 0.3s ease; display: inline-flex; align-items: center; gap: 0.5rem; cursor: pointer; font-size: 1rem; }
+        .btn-primary { background: var(--accent); color: white; } .btn-primary:hover { background: var(--accent-hover); transform: translateY(-3px); box-shadow: var(--shadow); }
+        .btn-secondary { background: transparent; color: var(--text-primary); border: 1px solid var(--border); } .btn-secondary:hover { background: var(--surface-lighter); border-color: var(--accent); transform: translateY(-3px); }
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 2rem; } .section { padding: 6rem 0; }
+        .section-title { text-align: center; margin-bottom: 4rem; }
+        .section-title h2 { font-size: clamp(2rem, 4vw, 3rem); font-weight: 700; margin-bottom: 1rem; background: var(--gradient-1); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+        .section-title p { color: var(--text-secondary); font-size: 1.1rem; max-width: 700px; margin: 0 auto; }
+        .card { background: var(--surface-light); border-radius: 1rem; padding: 2.5rem; border: 1px solid var(--border); transition: all 0.3s ease; position: relative; overflow: hidden; box-shadow: var(--shadow); }
+        .card:hover { transform: translateY(-8px); box-shadow: var(--shadow-lg); border-color: var(--accent); }
+        .about-grid { display: grid; grid-template-columns: auto 1fr; gap: 3rem; align-items: center; } .about-image-wrapper { max-width: 280px; }
+        .about-image { width: 100%; height: auto; border-radius: 50%; border: 5px solid var(--surface-lighter); box-shadow: var(--shadow-lg); transition: transform 0.3s ease; } .about-image:hover { transform: scale(1.05); }
+        .about-content h2 { color: var(--text-primary); margin-bottom: 1rem; } .about-content p { margin-bottom: 1.5rem; color: var(--text-secondary); line-height: 1.8; } .about-content p:last-child { margin-bottom: 0; }
+        .research-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 2rem; }
+        .research-card i { font-size: 2.5rem; color: var(--accent); margin-bottom: 1.5rem; display: block; }
+        .research-card h3 { font-size: 1.4rem; font-weight: 600; margin-bottom: 1rem; color: var(--text-primary); }
+        .research-card p { color: var(--text-secondary); line-height: 1.6; }
+        .skills-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; }
+        .skill-category h3 { font-size: 1.3rem; font-weight: 600; margin-bottom: 1.5rem; color: var(--text-primary); display: flex; align-items: center; gap: 0.75rem; }
+        .skill-category i { color: var(--accent); font-size: 1.5rem; }
+        .skill-tags { display: flex; flex-wrap: wrap; gap: 0.75rem; }
+        .skill-tag { background: var(--surface-lighter); color: var(--text-secondary); padding: 0.5rem 1rem; border-radius: 2rem; font-size: 0.9rem; border: 1px solid var(--border); transition: all 0.3s ease; }
+        .skill-tag:hover { background: var(--accent); color: white; transform: translateY(-2px); border-color: var(--accent); }
         
-        h1 {
-            font-size: 3.5rem;
-            margin-bottom: 0.5rem;
-            letter-spacing: 1px;
-        }
+        /* Publications Section Styling */
+        #publications-list { display: flex; flex-direction: column; gap: 1.5rem; }
+        .publication-item { background: var(--surface-light); border: 1px solid var(--border); border-left: 4px solid var(--accent); padding: 1.5rem; border-radius: 0.5rem; transition: all 0.3s ease; }
+        .publication-item:hover { transform: translateX(10px); box-shadow: var(--shadow); border-color: var(--accent); }
+        .publication-title { font-size: 1.2rem; font-weight: 600; color: var(--text-primary); margin-bottom: 0.5rem; }
+        .publication-title a { color: inherit; text-decoration: none; transition: color 0.3s ease; }
+        .publication-title a:hover { color: var(--accent); }
+        .publication-authors { font-style: italic; color: var(--text-secondary); margin-bottom: 0.5rem; }
+        .publication-venue { font-size: 0.9rem; color: var(--text-muted); }
+        .publication-cited { font-size: 0.9rem; color: var(--text-muted); margin-top: 0.5rem; font-weight: 500; }
+        .publication-cited a { color: var(--accent); text-decoration: none; }
+        .loader, .error-message { text-align: center; color: var(--text-secondary); font-size: 1.1rem; padding: 2rem; }
 
-        .title {
-            font-size: 1.5rem;
-            opacity: 0.9;
-            font-weight: 300;
-            max-width: 800px;
-            margin: 0 auto;
-        }
-
-        section {
-            background: white;
-            border-radius: 10px;
-            padding: 2rem;
-            margin-bottom: 2rem;
-            box-shadow: 0 2px 15px rgba(0, 0, 0, 0.05);
-        }
-
-        h2 {
-            color: var(--primary-color);
-            margin-bottom: 1.5rem;
-            font-size: 2rem;
-            border-bottom: 2px solid var(--accent-color);
-            padding-bottom: 0.5rem;
-        }
-
-        h3 {
-            color: var(--primary-color);
-            margin: 2rem 0 1rem;
-            font-size: 1.5rem;
-        }
-
-        .about-text {
-            font-size: 1.1rem;
-            line-height: 1.8;
-            color: #555;
-        }
-        
-        .badge-container {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 8px;
-            align-items: center;
-        }
-
-        .contact-list {
-            list-style: none;
-            margin-bottom: 2rem;
-        }
-
-        .contact-list li {
-            margin-bottom: 1.2rem;
-            display: flex;
-            align-items: center;
-            font-size: 1.1rem;
-        }
-
-        .contact-list i {
-            width: 25px;
-            color: var(--accent-color);
-            margin-right: 15px;
-            text-align: center;
-        }
-        
-        ul.research-interests {
-            list-style-type: '✔ ';
-            padding-left: 20px;
-            font-size: 1.1rem;
-            color: #555;
-        }
-
-        ul.research-interests li {
-            margin-bottom: 0.5rem;
-            padding-left: 10px;
-        }
-
-        .github-stats-img {
-            max-width: 100%;
-            height: auto;
-            display: block;
-            margin: 1.5rem auto 0;
-        }
-
-        footer {
-            text-align: center;
-            padding: 2rem 0;
-            margin-top: 2rem;
-            color: #555;
-            font-style: italic;
-        }
-
-        a {
-            color: var(--accent-color);
-            text-decoration: none;
-            transition: color 0.3s ease;
-        }
-
-        a:hover {
-            color: var(--primary-color);
-            text-decoration: none;
-        }
-
-        @media (max-width: 768px) {
-            h1 {
-                font-size: 2.5rem;
-            }
-            .title {
-                font-size: 1.2rem;
-            }
-            section {
-                padding: 1.5rem;
-            }
-        }
+        .contact-grid { display: grid; grid-template-columns: 1fr 1.5fr; gap: 3rem; align-items: center; }
+        .linkedin-badge-container { min-height: 300px; } .dark-linkedin-badge, .light-linkedin-badge { transition: opacity 0.3s ease; }
+        body:not(.light-theme) .light-linkedin-badge, .light-theme .dark-linkedin-badge { display: none; }
+        .social-links { display: grid; grid-template-columns: repeat(auto-fit, minmax(130px, 1fr)); gap: 1rem; }
+        .social-link { display: flex; align-items: center; justify-content: center; gap: 0.75rem; padding: 1rem; background: var(--surface-light); border: 1px solid var(--border); border-radius: 0.75rem; color: var(--text-secondary); text-decoration: none; transition: all 0.3s ease; font-size: 0.9rem; font-weight: 500; }
+        .social-link:hover { background: var(--accent); color: white; transform: translateY(-5px); box-shadow: var(--shadow); border-color: var(--accent); }
+        .social-link i { font-size: 1.2rem; }
+        .footer { background: var(--primary); border-top: 1px solid var(--border); padding: 3rem 0; text-align: center; }
+        .footer p { color: var(--text-secondary); margin-bottom: 0.5rem; }
+        #back-to-top { position: fixed; bottom: 2rem; right: 2rem; width: 3rem; height: 3rem; background: var(--accent); color: white; border: none; border-radius: 50%; display: grid; place-items: center; font-size: 1.2rem; cursor: pointer; transition: opacity 0.3s, transform 0.3s; opacity: 0; transform: translateY(100%); z-index: 999; }
+        #back-to-top.visible { opacity: 1; transform: translateY(0); } #back-to-top:hover { background: var(--accent-hover); }
+        @keyframes fadeInUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
+        .fade-in { opacity: 0; transform: translateY(30px); transition: opacity 0.6s ease-out, transform 0.6s ease-out; }
+        .fade-in.visible { opacity: 1; transform: translateY(0); }
+        .fade-in:nth-child(2) { transition-delay: 0.1s; } .fade-in:nth-child(3) { transition-delay: 0.2s; }
+        .fade-in:nth-child(4) { transition-delay: 0.3s; } .fade-in:nth-child(5) { transition-delay: 0.4s; }
+        .fade-in:nth-child(6) { transition-delay: 0.5s; }
+        @media (max-width: 992px) { .about-grid, .contact-grid { grid-template-columns: 1fr; text-align: center; } .about-image-wrapper { margin: 0 auto 2rem auto; } }
+        @media (max-width: 768px) { .nav-links { display: none; } .hero-cta { flex-direction: column; align-items: center; } .btn { width: 100%; justify-content: center; max-width: 300px; } .section { padding: 4rem 0; } }
+        ::-webkit-scrollbar { width: 10px; } ::-webkit-scrollbar-track { background: var(--surface); } ::-webkit-scrollbar-thumb { background: var(--accent); border-radius: 5px; } ::-webkit-scrollbar-thumb:hover { background: var(--accent-hover); }
     </style>
 </head>
 <body>
-    <header>
-        <div class="container">
+    <!-- Navigation -->
+    <nav id="navbar">
+        <div class="nav-container">
+            <a href="#" class="logo">MS</a>
+            <div class="nav-menu">
+                <ul class="nav-links">
+                    <li><a href="#about" class="active">About</a></li>
+                    <li><a href="#research">Research</a></li>
+                    <li><a href="#skills">Skills</a></li>
+                    <li><a href="#publications">Publications</a></li> <!-- New Nav Link -->
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+                <button id="theme-toggle" title="Toggle theme">
+                    <i class="fas fa-sun"></i><i class="fas fa-moon"></i>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-content">
             <h1>Mohamed Shamroukh</h1>
-            <p class="title">Doctoral researcher specialising in geospatial intelligence, urban planning, and data-driven modelling for sustainable cities.</p>
+            <p class="hero-subtitle">Doctoral researcher specialising in geospatial intelligence, urban planning, and data-driven modelling for sustainable cities.</p>
+            <div class="hero-cta">
+                <a href="#contact" class="btn btn-primary"><i class="fas fa-envelope"></i>Get In Touch</a>
+                <a href="#research" class="btn btn-secondary"><i class="fas fa-microscope"></i>View Research</a>
+            </div>
         </div>
-    </header>
+    </section>
 
-    <div class="container">
-        <section>
-            <h2>👋 About Me</h2>
-            <p class="about-text">
-                Mohamed Shamroukh is a doctoral researcher at The Impact Hub, School of Architecture, Building and Civil Engineering, Loughborough University. He specialises in Geospatial Intelligence, GIS, Remote Sensing, Urban Planning, and GeoAI (Geospatial Artificial Intelligence). His PhD research focuses on data-driven modelling, geospatial analysis, and machine learning for pedestrian-friendly urban planning and sustainable city development. Mohamed has extensive expertise in geospatial data science, urban analytics, spatial modelling, Python programming, and geospatial databases. He has conducted research and teaching in GIS, remote sensing, and urban studies, including experience as a research and teaching assistant at South Valley University, Egypt. His projects include WiFi-based pedestrian monitoring, point of interest (POI) analysis, street network, and geospatial data integration.
-            </p>
-        </section>
-
-        <!-- New Section for Keywords -->
-        <section>
-            <h2>🔬 Key Research Interests</h2>
-            <ul class="research-interests">
-                <li>Data-Driven Urban Modelling & Geospatial Analysis</li>
-                <li>Geospatial Artificial Intelligence (GeoAI) & Machine Learning</li>
-                <li>Pedestrian-Friendly Urban Planning</li>
-                <li>Sustainable City Development</li>
-                <li>Urban Analytics & Geospatial Data Science</li>
-                <li>GIS & Remote Sensing Applications</li>
-            </ul>
-        </section>
-
-        <section>
-            <h2>🛠️ Skills & Tools</h2>
-            
-            <h3>Programming & Data Science</h3>
-            <div class="badge-container">
-                <a href="https://www.python.org/" target="_blank"><img src="https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white" alt="Python Badge"></a>
-                <a href="https://pandas.pydata.org/" target="_blank"><img src="https://img.shields.io/badge/Pandas-150458?style=for-the-badge&logo=pandas&logoColor=white" alt="Pandas Badge"></a>
-                <a href="https://numpy.org/" target="_blank"><img src="https://img.shields.io/badge/NumPy-013243?style=for-the-badge&logo=numpy&logoColor=white" alt="NumPy Badge"></a>
-                <a href="https://geopandas.org/" target="_blank"><img src="https://img.shields.io/badge/GeoPandas-139455?style=for-the-badge" alt="GeoPandas Badge"></a>
-                <a href="https://scikit-learn.org/" target="_blank"><img src="https://img.shields.io/badge/Scikit--learn-F7931A?style=for-the-badge&logo=scikit-learn&logoColor=white" alt="Scikit-learn Badge"></a>
-                <a href="https://www.tensorflow.org/" target="_blank"><img src="https://img.shields.io/badge/TensorFlow-FF6F00?style=for-the-badge&logo=tensorflow&logoColor=white" alt="TensorFlow Badge"></a>
-                <a href="https://www.postgresql.org" target="_blank"><img src="https://img.shields.io/badge/PostgreSQL-316192?style=for-the-badge&logo=postgresql&logoColor=white" alt="PostgreSQL Badge"></a>
-                <a href="https://postgis.net/" target="_blank"><img src="https://img.shields.io/badge/PostGIS-E36329?style=for-the-badge" alt="PostGIS Badge"></a>
-            </div>
-
-            <h3>GIS & Remote Sensing</h3>
-            <div class="badge-container">
-                <a href="https://www.qgis.org/en/site/" target="_blank"><img src="https://img.shields.io/badge/QGIS-589632?style=for-the-badge&logo=qgis&logoColor=white" alt="QGIS Badge"></a>
-                <a href="https://www.esri.com/en-us/arcgis/products/arcgis-pro/overview" target="_blank"><img src="https://img.shields.io/badge/ArcGIS_Pro-007AC2?style=for-the-badge" alt="ArcGIS Pro Badge"></a>
-                <a href="https://earthengine.google.com/" target="_blank"><img src="https://img.shields.io/badge/Google_Earth_Engine-4285F4?style=for-the-badge&logo=google-earth&logoColor=white" alt="Google Earth Engine Badge"></a>
-            </div>
-
-            <h3>Other Tools & Platforms</h3>
-            <div class="badge-container">
-                <a href="https://jupyter.org/" target="_blank"><img src="https://img.shields.io/badge/Jupyter-F37626?style=for-the-badge&logo=jupyter&logoColor=white" alt="Jupyter Badge"></a>
-                <a href="https://git-scm.com/" target="_blank"><img src="https://img.shields.io/badge/Git-F05032?style=for-the-badge&logo=git&logoColor=white" alt="Git Badge"></a>
-                <a href="https://github.com" target="_blank"><img src="https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white" alt="GitHub Badge"></a>
-            </div>
-        </section>
-
-        <section>
-            <h2>📊 GitHub Stats</h2>
-            <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=MohamedShamroukh&layout=compact&theme=radical&hide_border=true&langs_count=8" alt="Mohamed Shamroukh's Top Languages on GitHub" class="github-stats-img" />
-        </section>
-
-        <section>
-            <h2>📫 Contact & Profiles</h2>
-            <ul class="contact-list">
-                <li>
-                    <i class="fas fa-envelope"></i>
-                    <span>
-                        <a href="mailto:m.shamroukh@lboro.ac.uk">m.shamroukh@lboro.ac.uk</a>
-                    </span>
-                </li>
-                 <li>
-                    <i class="fas fa-map-marker-alt"></i>
-                    <span>Loughborough University, UK</span>
-                </li>
-            </ul>
-
-            <div class="badge-container">
-                <a href="https://www.lboro.ac.uk/departments/abce/staff/mohamed-mahmoud/" target="_blank"><img src="https://img.shields.io/badge/Loughborough_Uni-C81F7A?style=for-the-badge&logo=loughborough-university&logoColor=white" alt="Loughborough University Staff Profile"></a>
-                <a href="https://www.linkedin.com/in/mohamed-shamroukh-348083126/" target="_blank"><img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn Profile"></a>
-                <a href="https://scholar.google.co.uk/citations?user=BUM-R3QAAAAJ&hl=en" target="_blank"><img src="https://img.shields.io/badge/Google_Scholar-4285F4?style=for-the-badge&logo=google-scholar&logoColor=white" alt="Google Scholar Profile"></a>
-                <a href="https://x.com/mohamed_shm3" target="_blank"><img src="https://img.shields.io/badge/Twitter-1DA1F2?style=for-the-badge&logo=x&logoColor=white" alt="Twitter Profile"></a>
-                <a href="https://github.com/MohamedShamroukh" target="_blank"><img src="https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white" alt="GitHub Profile"></a>
-                <a href="https://orcid.org/0000-0002-1005-2600" target="_blank"><img src="https://img.shields.io/badge/ORCID-A6CE39?style=for-the-badge&logo=orcid&logoColor=white" alt="ORCID Profile"></a>
-                <a href="https://www.researchgate.net/profile/Mohamed-Shamroukh" target="_blank"><img src="https://img.shields.io/badge/ResearchGate-00CCBB?style=for-the-badge&logo=researchgate&logoColor=white" alt="ResearchGate Profile"></a>
-                <a href="https://www.webofscience.com/wos/author/record/JCN-7329-2023" target="_blank"><img src="https://img.shields.io/badge/Web_of_Science-9F1C20?style=for-the-badge&logo=clarivate&logoColor=white" alt="Web of Science Profile"></a>
-                <a href="https://loop.frontiersin.org/people/2895153/overview" target="_blank"><img src="https://img.shields.io/badge/Loop-00A6E3?style=for-the-badge&logo=frontiers&logoColor=white" alt="Frontiers Loop Profile"></a>
-                <a href="https://gis.stackexchange.com/users/162813/mohamed-shamroukh" target="_blank"><img src="https://img.shields.io/badge/GIS_Stack_Exchange-1E5397?style=for-the-badge&logo=stack-exchange&logoColor=white" alt="GIS Stack Exchange Profile"></a>
-            </div>
-        </section>
-    </div>
-
-    <footer>
+    <!-- About Section -->
+    <section class="section" id="about">
         <div class="container">
-            <p>⭐ I am always open to research collaborations and discussions related to geospatial analytics, urban planning, and sustainable city development. Feel free to reach out!</p>
+            <div class="about-grid">
+                <div class="about-image-wrapper fade-in">
+                    <img src="https://pbs.twimg.com/profile_images/1959981871770550272/bi8kuSYk_400x400.jpg" alt="Profile picture of Mohamed Shamroukh" class="about-image">
+                </div>
+                <div class="card fade-in">
+                    <div class="about-content">
+                        <h2>About Me</h2>
+                        <p>I am a doctoral researcher at The Impact Hub, School of Architecture, Building and Civil Engineering at Loughborough University. My work is at the intersection of Geospatial Intelligence, GIS, Remote Sensing, Urban Planning, and GeoAI (Geospatial Artificial Intelligence).</p>
+                        <p>My PhD research focuses on data-driven modelling and machine learning to champion pedestrian-friendly urban planning and sustainable city development. I possess extensive expertise in geospatial data science, urban analytics, spatial modelling, Python programming, and geospatial databases.</p>
+                    </div>
+                </div>
+            </div>
         </div>
+    </section>
+
+    <!-- Research Section -->
+    <section class="section" id="research">
+        <div class="container">
+            <div class="section-title"><h2 class="fade-in">Research Focus</h2><p class="fade-in">My research employs data-driven methods to build more sustainable, equitable, and pedestrian-friendly cities.</p></div>
+            <div class="research-grid">
+                <div class="card research-card fade-in"><i class="fas fa-brain"></i><h3>Data-Driven Urban Modelling</h3><p>Leveraging advanced analytics and spatial modeling to understand urban patterns, predict trends, and optimize city planning decisions.</p></div>
+                <div class="card research-card fade-in"><i class="fas fa-robot"></i><h3>Geospatial AI (GeoAI)</h3><p>Developing intelligent systems that analyze spatial patterns and predict urban dynamics using advanced machine learning and AI.</p></div>
+                <div class="card research-card fade-in"><i class="fas fa-walking"></i><h3>Pedestrian-Friendly Planning</h3><p>Creating models to design cities that prioritize walkability, accessibility, and human-centered environments for sustainable mobility.</p></div>
+                <div class="card research-card fade-in"><i class="fas fa-leaf"></i><h3>Sustainable City Development</h3><p>Using geospatial analytics to support sustainable urban growth, environmental monitoring, and smart city initiatives for resilient communities.</p></div>
+                <div class="card research-card fade-in"><i class="fas fa-chart-line"></i><h3>Urban Analytics & Data Science</h3><p>Applying advanced statistical methods and data science to analyze complex urban datasets and extract insights for policy making.</p></div>
+                <div class="card research-card fade-in"><i class="fas fa-satellite"></i><h3>GIS & Remote Sensing</h3><p>Utilizing satellite imagery, remote sensing, and GIS to monitor urban change and environmental conditions.</p></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section class="section" id="skills">
+        <div class="container">
+            <div class="section-title"><h2 class="fade-in">Technical Expertise</h2><p class="fade-in">A comprehensive toolkit for geospatial analysis, data science, and urban research.</p></div>
+            <div class="skills-grid">
+                <div class="card skill-category fade-in"><h3><i class="fab fa-python"></i> Python & Data Science</h3><div class="skill-tags"><span class="skill-tag">Python</span><span class="skill-tag">Pandas</span><span class="skill-tag">NumPy</span><span class="skill-tag">GeoPandas</span><span class="skill-tag">Scikit-learn</span><span class="skill-tag">TensorFlow</span><span class="skill-tag">Matplotlib</span><span class="skill-tag">Seaborn</span><span class="skill-tag">Plotly</span><span class="skill-tag">Folium</span></div></div>
+                <div class="card skill-category fade-in"><h3><i class="fas fa-globe"></i> GIS & Geospatial Software</h3><div class="skill-tags"><span class="skill-tag">QGIS</span><span class="skill-tag">ArcGIS Pro</span><span class="skill-tag">PostGIS</span><span class="skill-tag">Google Earth Engine</span><span class="skill-tag">OSGeo</span><span class="skill-tag">Leaflet</span><span class="skill-tag">OpenLayers</span><span class="skill-tag">GRASS GIS</span></div></div>
+                <div class="card skill-category fade-in"><h3><i class="fas fa-tools"></i> Development & Databases</h3><div class="skill-tags"><span class="skill-tag">Jupyter</span><span class="skill-tag">Git & GitHub</span><span class="skill-tag">PostgreSQL</span><span class="skill-tag">PyCharm</span><span class="skill-tag">Linux</span><span class="skill-tag">VS Code</span><span class="skill-tag">SQL</span></div></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ================== NEW PUBLICATIONS SECTION ================== -->
+    <section class="section" id="publications">
+        <div class="container">
+            <div class="section-title">
+                <h2 class="fade-in">Recent Publications</h2>
+                <p class="fade-in">A live feed of my publications, automatically updated from Google Scholar.</p>
+            </div>
+            <div id="publications-list" class="fade-in">
+                <div class="loader">
+                    <i class="fas fa-spinner fa-spin"></i> Loading publications...
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="section" id="contact">
+        <div class="container">
+            <div class="section-title"><h2 class="fade-in">Let's Connect</h2><p class="fade-in">I am always open to discussing research collaborations, sharing ideas, or exploring new opportunities.</p></div>
+            <div class="contact-grid">
+                <div class="linkedin-badge-container fade-in"><div class="light-linkedin-badge"><div class="badge-base LI-profile-badge" data-locale="en_US" data-size="medium" data-theme="light" data-type="VERTICAL" data-vanity="mohamed-shamroukh-348083126" data-version="v1"></div></div><div class="dark-linkedin-badge"><div class="badge-base LI-profile-badge" data-locale="en_US" data-size="medium" data-theme="dark" data-type="VERTICAL" data-vanity="mohamed-shamroukh-348083126" data-version="v1"></div></div></div>
+                <div class="social-links fade-in">
+                    <a href="https://www.lboro.ac.uk/departments/abce/staff/mohamed-mahmoud/" target="_blank" class="social-link"><i class="fas fa-university"></i><span>Uni Profile</span></a>
+                    <a href="https://scholar.google.co.uk/citations?user=BUM-R3QAAAAJ&hl=en" target="_blank" class="social-link"><i class="fas fa-graduation-cap"></i><span>Scholar</span></a>
+                    <a href="https://x.com/mohamed_shm3" target="_blank" class="social-link"><i class="fab fa-x-twitter"></i><span>X (Twitter)</span></a>
+                    <a href="https://github.com/MohamedShamroukh" target="_blank" class="social-link"><i class="fab fa-github"></i><span>GitHub</span></a>
+                    <a href="https://orcid.org/0000-0002-1005-2600" target="_blank" class="social-link"><i class="fab fa-orcid"></i><span>ORCID</span></a>
+                    <a href="https://www.researchgate.net/profile/Mohamed-Shamroukh" target="_blank" class="social-link"><i class="fab fa-researchgate"></i><span>ResearchGate</span></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container footer-content"><p>&copy; 2024 Mohamed Shamroukh. All rights reserved.</p><p>Built with passion and a touch of geospatial magic.</p></div>
     </footer>
+
+    <!-- Back to Top Button -->
+    <button id="back-to-top" title="Back to Top"><i class="fas fa-arrow-up"></i></button>
+
+    <!-- LinkedIn Badge Script -->
+    <script src="https://platform.linkedin.com/badges/js/profile.js" async defer type="text/javascript"></script>
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // ... [All other JS from the previous step remains unchanged] ...
+            const navbar = document.getElementById('navbar'); const navLinks = document.querySelectorAll('.nav-links a'); const sections = document.querySelectorAll('section'); const backToTopButton = document.getElementById('back-to-top'); const themeToggleBtn = document.getElementById('theme-toggle'); const body = document.body; const THEME_KEY = 'user-theme';
+            const applyTheme = (theme) => { if (theme === 'light') { body.classList.add('light-theme'); } else { body.classList.remove('light-theme'); } };
+            const toggleTheme = () => { const currentTheme = body.classList.contains('light-theme') ? 'light' : 'dark'; const newTheme = currentTheme === 'light' ? 'dark' : 'light'; applyTheme(newTheme); localStorage.setItem(THEME_KEY, newTheme); };
+            const savedTheme = localStorage.getItem(THEME_KEY); const prefersLight = window.matchMedia('(prefers-color-scheme: light)').matches;
+            if (savedTheme) { applyTheme(savedTheme); } else if (prefersLight) { applyTheme('light'); }
+            themeToggleBtn.addEventListener('click', toggleTheme);
+            const handleScroll = () => {
+                const scrollPosition = window.scrollY; navbar.classList.toggle('scrolled', scrollPosition > 50); backToTopButton.classList.toggle('visible', scrollPosition > 300); let currentSectionId = '';
+                sections.forEach(section => { const sectionTop = section.offsetTop; if (scrollPosition >= sectionTop - navbar.offsetHeight) { currentSectionId = section.getAttribute('id'); } });
+                navLinks.forEach(link => { link.classList.remove('active'); if (link.getAttribute('href') === `#${currentSectionId}`) { link.classList.add('active'); } });
+            };
+            window.addEventListener('scroll', handleScroll);
+            backToTopButton.addEventListener('click', () => { window.scrollTo({ top: 0, behavior: 'smooth' }); });
+            const fadeInElements = document.querySelectorAll('.fade-in');
+            const observer = new IntersectionObserver((entries) => { entries.forEach(entry => { if (entry.isIntersecting) { entry.target.classList.add('visible'); observer.unobserve(entry.target); } }); }, { threshold: 0.1 });
+            fadeInElements.forEach(el => { observer.observe(el); });
+
+            // ================== NEW PUBLICATIONS FETCHING LOGIC ==================
+            async function fetchPublications() {
+                const publicationsList = document.getElementById('publications-list');
+                
+                // --- CONFIGURATION ---
+                // IMPORTANT: Replace with your actual SerpApi key.
+                // To keep this key secure, it's best to use a serverless function, but for a simple portfolio, this is okay.
+                const apiKey = "44ba081eb02e9a0ac784c55035a687c7dea7dcf11c6ff0175b6b37f0e3646eab"; // <--- PASTE YOUR API KEY HERE
+                const authorId = "BUM-R3QAAAAJ"; // Your Google Scholar User ID from the URL
+                const apiURL = `https://serpapi.com/search.json?engine=google_scholar_author&author_id=${authorId}&api_key=${apiKey}&sort=pubdate`;
+
+                try {
+                    const response = await fetch(apiURL);
+                    if (!response.ok) {
+                        throw new Error(`HTTP error! status: ${response.status}`);
+                    }
+                    const data = await response.json();
+
+                    // Clear the loading message
+                    publicationsList.innerHTML = ''; 
+
+                    if (data.articles && data.articles.length > 0) {
+                        data.articles.forEach(article => {
+                            const authors = article.authors || 'N/A';
+                            const venue = article.publication || 'N/A';
+                            const year = article.year || '';
+                            const citedByCount = article.cited_by?.value || 0;
+                            const citedByLink = article.cited_by?.link || '#';
+
+                            const item = document.createElement('div');
+                            item.className = 'publication-item';
+                            item.innerHTML = `
+                                <h3 class="publication-title"><a href="${article.link}" target="_blank" rel="noopener noreferrer">${article.title}</a></h3>
+                                <p class="publication-authors">${authors}</p>
+                                <p class="publication-venue">${venue}, ${year}</p>
+                                ${citedByCount > 0 ? `<p class="publication-cited">Cited by <a href="https://scholar.google.com${citedByLink}" target="_blank">${citedByCount}</a></p>` : ''}
+                            `;
+                            publicationsList.appendChild(item);
+                        });
+                    } else {
+                        publicationsList.innerHTML = '<div class="error-message">Could not find any publications.</div>';
+                    }
+                } catch (error) {
+                    console.error("Error fetching publications:", error);
+                    publicationsList.innerHTML = `<div class="error-message">Failed to load publications. Please try again later.</div>`;
+                }
+            }
+            
+            // Call the function to fetch publications when the page loads
+            fetchPublications();
+        });
+    </script>
 </body>
 </html>

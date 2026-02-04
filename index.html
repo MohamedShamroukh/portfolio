@@ -3,16 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
+
     <title>Mohamed Shamroukh | Geospatial Intelligence & Urban Planning Researcher</title>
     <meta name="description" content="Personal portfolio of Mohamed Shamroukh, a doctoral researcher at Loughborough University specializing in Geospatial Intelligence, GIS, GeoAI, and data-driven urban planning for sustainable cities.">
     <meta name="keywords" content="Mohamed Shamroukh, Geospatial Intelligence, GIS, GeoAI, Remote Sensing, Urban Planning, Loughborough University, PhD Researcher, Data Science, Python, Sustainable Cities, Publications, ORCID">
     <meta name="author" content="Mohamed Shamroukh">
-    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22> MS </text></svg>">
-    
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>MS</text></svg>">
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap" rel="stylesheet">
-    
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
     <style>
         :root {
             /* Dark Theme (Default) */
@@ -65,9 +65,19 @@
         .section-title p { color: var(--text-secondary); font-size: 1.1rem; max-width: 700px; margin: 0 auto; }
         .card { background: var(--surface-light); border-radius: 1rem; padding: 2.5rem; border: 1px solid var(--border); transition: all 0.3s ease; position: relative; overflow: hidden; box-shadow: var(--shadow); }
         .card:hover { transform: translateY(-8px); box-shadow: var(--shadow-lg); border-color: var(--accent); }
+
         .about-grid { display: grid; grid-template-columns: auto 1fr; gap: 3rem; align-items: center; } .about-image-wrapper { max-width: 280px; }
         .about-image { width: 100%; height: auto; border-radius: 50%; border: 5px solid var(--surface-lighter); box-shadow: var(--shadow-lg); transition: transform 0.3s ease; } .about-image:hover { transform: scale(1.05); }
         .about-content h2 { color: var(--text-primary); margin-bottom: 1rem; } .about-content p { margin-bottom: 1.5rem; color: var(--text-secondary); line-height: 1.8; } .about-content p:last-child { margin-bottom: 0; }
+
+        /* PhD Project Styling */
+        .phd-project { background: linear-gradient(135deg, rgba(59, 130, 246, 0.1) 0%, rgba(139, 92, 246, 0.1) 100%); border-left: 4px solid var(--accent); margin-top: 2rem; padding: 1.5rem; border-radius: 0.5rem; }
+        .phd-project h3 { color: var(--text-primary); margin-bottom: 0.75rem; font-size: 1.2rem; display: flex; align-items: center; gap: 0.5rem; }
+        .phd-project h3 i { color: var(--accent); }
+        .phd-project p { color: var(--text-secondary); margin-bottom: 0.5rem; }
+        .phd-project a { color: var(--accent); text-decoration: none; transition: color 0.3s ease; }
+        .phd-project a:hover { color: var(--accent-hover); text-decoration: underline; }
+
         .research-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 2rem; }
         .research-card i { font-size: 2.5rem; color: var(--accent); margin-bottom: 1.5rem; display: block; }
         .research-card h3 { font-size: 1.4rem; font-weight: 600; margin-bottom: 1rem; color: var(--text-primary); }
@@ -78,6 +88,18 @@
         .skill-tags { display: flex; flex-wrap: wrap; gap: 0.75rem; }
         .skill-tag { background: var(--surface-lighter); color: var(--text-secondary); padding: 0.5rem 1rem; border-radius: 2rem; font-size: 0.9rem; border: 1px solid var(--border); transition: all 0.3s ease; }
         .skill-tag:hover { background: var(--accent); color: white; transform: translateY(-2px); border-color: var(--accent); }
+
+        /* Projects Section Styling */
+        .projects-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 2rem; }
+        .project-card { position: relative; }
+        .project-card h3 { font-size: 1.3rem; font-weight: 600; margin-bottom: 1rem; color: var(--text-primary); display: flex; align-items: center; gap: 0.75rem; }
+        .project-card h3 i { color: var(--accent); font-size: 1.5rem; }
+        .project-card p { color: var(--text-secondary); margin-bottom: 1.5rem; line-height: 1.6; }
+        .project-links { display: flex; gap: 1rem; flex-wrap: wrap; }
+        .project-link { display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.5rem 1rem; background: var(--surface-lighter); border: 1px solid var(--border); border-radius: 0.5rem; color: var(--text-secondary); text-decoration: none; font-size: 0.9rem; transition: all 0.3s ease; }
+        .project-link:hover { background: var(--accent); color: white; border-color: var(--accent); transform: translateY(-2px); }
+        .project-link i { font-size: 1rem; }
+
         #publications-list { display: flex; flex-direction: column; gap: 1.5rem; }
         .publication-item { background: var(--surface-light); border: 1px solid var(--border); border-left: 4px solid var(--accent); padding: 1.5rem; border-radius: 0.5rem; transition: all 0.3s ease; }
         .publication-item:hover { transform: translateX(10px); box-shadow: var(--shadow); border-color: var(--accent); }
@@ -87,6 +109,9 @@
         .publication-authors { font-style: italic; color: var(--text-secondary); margin-bottom: 0.5rem; }
         .publication-venue { font-size: 0.9rem; color: var(--text-muted); }
         .loader, .error-message { text-align: center; color: var(--text-secondary); font-size: 1.1rem; padding: 2rem; }
+
+        .view-all-btn { text-align: center; margin-top: 2rem; }
+
         .contact-grid { display: grid; grid-template-columns: 1fr 1.5fr; gap: 3rem; align-items: center; }
         .linkedin-badge-container { min-height: 300px; } .dark-linkedin-badge, .light-linkedin-badge { transition: opacity 0.3s ease; }
         body:not(.light-theme) .light-linkedin-badge, .light-theme .dark-linkedin-badge { display: none; }
@@ -105,7 +130,13 @@
         .fade-in:nth-child(4) { transition-delay: 0.3s; } .fade-in:nth-child(5) { transition-delay: 0.4s; }
         .fade-in:nth-child(6) { transition-delay: 0.5s; }
         @media (max-width: 992px) { .about-grid, .contact-grid { grid-template-columns: 1fr; text-align: center; } .about-image-wrapper { margin: 0 auto 2rem auto; } }
-        @media (max-width: 768px) { .nav-links { display: none; } .hero-cta { flex-direction: column; align-items: center; } .btn { width: 100%; justify-content: center; max-width: 300px; } .section { padding: 4rem 0; } }
+        @media (max-width: 768px) {
+            .nav-links { display: none; }
+            .hero-cta { flex-direction: column; align-items: center; }
+            .btn { width: 100%; justify-content: center; max-width: 300px; }
+            .section { padding: 4rem 0; }
+            .projects-grid { grid-template-columns: 1fr; }
+        }
         ::-webkit-scrollbar { width: 10px; } ::-webkit-scrollbar-track { background: var(--surface); } ::-webkit-scrollbar-thumb { background: var(--accent); border-radius: 5px; } ::-webkit-scrollbar-thumb:hover { background: var(--accent-hover); }
     </style>
 </head>
@@ -117,6 +148,7 @@
                 <ul class="nav-links">
                     <li><a href="#about" class="active">About</a></li>
                     <li><a href="#research">Research</a></li>
+                    <li><a href="#projects">Projects</a></li>
                     <li><a href="#skills">Skills</a></li>
                     <li><a href="#publications">Publications</a></li>
                     <li><a href="#contact">Contact</a></li>
@@ -131,7 +163,7 @@
     <section class="hero" id="home">
         <div class="hero-content">
             <h1>Mohamed Shamroukh</h1>
-            <p class="hero-subtitle">Doctoral researcher specialising in geospatial intelligence, urban planning, and data-driven modelling for sustainable cities.</p>
+            <p class="hero-subtitle">Doctoral researcher at Loughborough University specialising in Geospatial Intelligence, GeoAI, and data-driven urban planning for pedestrian-friendly, sustainable cities.</p>
             <div class="hero-cta">
                 <a href="#contact" class="btn btn-primary"><i class="fas fa-envelope"></i>Get In Touch</a>
                 <a href="#research" class="btn btn-secondary"><i class="fas fa-microscope"></i>View Research</a>
@@ -148,8 +180,16 @@
                 <div class="card fade-in">
                     <div class="about-content">
                         <h2>About Me</h2>
-                        <p>I am a doctoral researcher at The Impact Hub, School of Architecture, Building and Civil Engineering at Loughborough University. My work is at the intersection of Geospatial Intelligence, GIS, Remote Sensing, Urban Planning, and GeoAI (Geospatial Artificial Intelligence).</p>
-                        <p>My PhD research focuses on data-driven modelling and machine learning to champion pedestrian-friendly urban planning and sustainable city development. I possess extensive expertise in geospatial data science, urban analytics, spatial modelling, Python programming, and geospatial databases.</p>
+                        <p>I am a doctoral researcher at The Impact Hub, School of Architecture, Building and Civil Engineering at Loughborough University, and a member of the Perceptive City Lab. My work is at the intersection of Geospatial Intelligence, GIS, Remote Sensing, Urban Planning, and GeoAI (Geospatial Artificial Intelligence).</p>
+                        <p>My PhD research focuses on data-driven modelling, geospatial analysis, and machine learning for pedestrian-friendly urban planning and sustainable city development. I possess extensive expertise in geospatial data science, urban analytics, spatial modelling, Python programming, and geospatial databases.</p>
+                        <p>Previously, I worked as a research and teaching assistant at South Valley University, Egypt, where I conducted research and teaching in GIS, remote sensing, and urban studies. My projects include WiFi-based pedestrian monitoring, point of interest (POI) analysis, street network analysis, and geospatial data integration.</p>
+
+                        <div class="phd-project">
+                            <h3><i class="fas fa-graduation-cap"></i> PhD Project</h3>
+                            <p><strong>Towards Pedestrian-Friendly Cities</strong></p>
+                            <p>This research develops innovative data-driven methodologies to create more walkable, accessible, and human-centered urban environments through advanced geospatial analysis and machine learning.</p>
+                            <a href="https://www.lboro.ac.uk/research/perceptive-city/projects/pedestrian-friendly-cities/" target="_blank" rel="noopener noreferrer">Learn more at Perceptive City Lab <i class="fas fa-external-link-alt"></i></a>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -170,13 +210,117 @@
         </div>
     </section>
 
+    <section class="section" id="projects">
+        <div class="container">
+            <div class="section-title">
+                <h2 class="fade-in">Open Source Projects</h2>
+                <p class="fade-in">Software tools and applications developed to advance geospatial analysis and urban research.</p>
+            </div>
+            <div class="projects-grid">
+                <div class="card project-card fade-in">
+                    <h3><i class="fas fa-plug"></i> QGIS Pip Manager</h3>
+                    <p>A modern, full-featured graphical interface for managing Python packages directly within QGIS. Enables easy installation, uninstallation, upgrading, and downgrading of specific package versions without touching the command line, featuring asynchronous operations and robust error handling.</p>
+                    <div class="project-links">
+                        <a href="https://plugins.qgis.org/plugins/pip_manager/" target="_blank" rel="noopener noreferrer" class="project-link">
+                            <i class="fas fa-puzzle-piece"></i> Plugin Page
+                        </a>
+                        <a href="https://github.com/MohamedShamroukh" target="_blank" rel="noopener noreferrer" class="project-link">
+                            <i class="fab fa-github"></i> GitHub
+                        </a>
+                    </div>
+                </div>
+
+                <div class="card project-card fade-in">
+                    <h3><i class="fas fa-bluetooth-b"></i> Bluetooth Beacon Scanner</h3>
+                    <p>A Python-based tool for scanning and analyzing Bluetooth beacons for pedestrian tracking and urban mobility research. Enables real-time monitoring of pedestrian movement patterns in urban environments.</p>
+                    <div class="project-links">
+                        <a href="https://github.com/MohamedShamroukh/bluetooth-beacon" target="_blank" rel="noopener noreferrer" class="project-link">
+                            <i class="fab fa-github"></i> View on GitHub
+                        </a>
+                    </div>
+                </div>
+
+                <div class="card project-card fade-in">
+                    <h3><i class="fas fa-users"></i> Pedestrian Counter</h3>
+                    <p>An automated pedestrian counting system using computer vision and machine learning for urban analytics. Provides accurate footfall data for pedestrian-friendly urban planning and public space management.</p>
+                    <div class="project-links">
+                        <a href="https://github.com/MohamedShamroukh/Pedestrian-Counter" target="_blank" rel="noopener noreferrer" class="project-link">
+                            <i class="fab fa-github"></i> View on GitHub
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <section class="section" id="skills">
         <div class="container">
-            <div class="section-title"><h2 class="fade-in">Technical Expertise</h2><p class="fade-in">A comprehensive toolkit for geospatial analysis, data science, and urban research.</p></div>
+            <div class="section-title"><h2 class="fade-in">Technical Expertise</h2><p class="fade-in">A comprehensive toolkit for geospatial analysis, AI, and urban research.</p></div>
             <div class="skills-grid">
-                <div class="card skill-category fade-in"><h3><i class="fab fa-python"></i> Python & Data Science</h3><div class="skill-tags"><span class="skill-tag">Python</span><span class="skill-tag">Pandas</span><span class="skill-tag">NumPy</span><span class="skill-tag">GeoPandas</span><span class="skill-tag">Scikit-learn</span><span class="skill-tag">TensorFlow</span><span class="skill-tag">Matplotlib</span><span class="skill-tag">Seaborn</span><span class="skill-tag">Plotly</span><span class="skill-tag">Folium</span></div></div>
-                <div class="card skill-category fade-in"><h3><i class="fas fa-globe"></i> GIS & Geospatial Software</h3><div class="skill-tags"><span class="skill-tag">QGIS</span><span class="skill-tag">ArcGIS Pro</span><span class="skill-tag">PostGIS</span><span class="skill-tag">Google Earth Engine</span><span class="skill-tag">OSGeo</span><span class="skill-tag">Leaflet</span><span class="skill-tag">OpenLayers</span><span class="skill-tag">GRASS GIS</span></div></div>
-                <div class="card skill-category fade-in"><h3><i class="fas fa-tools"></i> Development & Databases</h3><div class="skill-tags"><span class="skill-tag">Jupyter</span><span class="skill-tag">Git & GitHub</span><span class="skill-tag">PostgreSQL</span><span class="skill-tag">PyCharm</span><span class="skill-tag">Linux</span><span class="skill-tag">VS Code</span><span class="skill-tag">SQL</span></div></div>
+                <div class="card skill-category fade-in">
+                    <h3><i class="fas fa-robot"></i> Machine Learning & AI</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Machine Learning</span>
+                        <span class="skill-tag">Deep Learning</span>
+                        <span class="skill-tag">Computer Vision</span>
+                        <span class="skill-tag">Neural Networks</span>
+                        <span class="skill-tag">CNNs</span>
+                        <span class="skill-tag">YOLO</span>
+                        <span class="skill-tag">Object Detection</span>
+                        <span class="skill-tag">Semantic Segmentation</span>
+                        <span class="skill-tag">Transfer Learning</span>
+                    </div>
+                </div>
+
+                <div class="card skill-category fade-in">
+                    <h3><i class="fab fa-python"></i> Python & Data Science</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Python</span>
+                        <span class="skill-tag">PyTorch</span>
+                        <span class="skill-tag">TensorFlow</span>
+                        <span class="skill-tag">Keras</span>
+                        <span class="skill-tag">Pandas</span>
+                        <span class="skill-tag">NumPy</span>
+                        <span class="skill-tag">GeoPandas</span>
+                        <span class="skill-tag">Scikit-learn</span>
+                        <span class="skill-tag">OpenCV</span>
+                        <span class="skill-tag">Matplotlib</span>
+                        <span class="skill-tag">Seaborn</span>
+                        <span class="skill-tag">Plotly</span>
+                    </div>
+                </div>
+
+                <div class="card skill-category fade-in">
+                    <h3><i class="fas fa-globe"></i> GIS & Geospatial</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">QGIS</span>
+                        <span class="skill-tag">ArcGIS Pro</span>
+                        <span class="skill-tag">PostGIS</span>
+                        <span class="skill-tag">Google Earth Engine</span>
+                        <span class="skill-tag">Remote Sensing</span>
+                        <span class="skill-tag">Spatial Analysis</span>
+                        <span class="skill-tag">Rasterio</span>
+                        <span class="skill-tag">GDAL</span>
+                        <span class="skill-tag">Folium</span>
+                        <span class="skill-tag">Leaflet</span>
+                        <span class="skill-tag">OSGeo</span>
+                    </div>
+                </div>
+
+                <div class="card skill-category fade-in">
+                    <h3><i class="fas fa-code"></i> Development & Tools</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Git & GitHub</span>
+                        <span class="skill-tag">Jupyter</span>
+                        <span class="skill-tag">VS Code</span>
+                        <span class="skill-tag">PyCharm</span>
+                        <span class="skill-tag">PostgreSQL</span>
+                        <span class="skill-tag">SQL</span>
+                        <span class="skill-tag">Linux</span>
+                        <span class="skill-tag">Docker</span>
+                        <span class="skill-tag">Cloud Computing</span>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
@@ -185,12 +329,17 @@
         <div class="container">
             <div class="section-title">
                 <h2 class="fade-in">Recent Publications</h2>
-                <p class="fade-in">A live feed of my publications from my ORCID profile.</p>
+                <p class="fade-in">Latest research contributions in geospatial intelligence and urban planning.</p>
             </div>
             <div id="publications-list" class="fade-in">
                 <div class="loader">
                     <i class="fas fa-spinner fa-spin"></i> Loading publications...
                 </div>
+            </div>
+            <div class="view-all-btn">
+                <a href="https://orcid.org/0000-0002-1005-2600" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">
+                    <i class="fab fa-orcid"></i> View All Publications on ORCID
+                </a>
             </div>
         </div>
     </section>
@@ -199,90 +348,147 @@
         <div class="container">
             <div class="section-title"><h2 class="fade-in">Let's Connect</h2><p class="fade-in">I am always open to discussing research collaborations, sharing ideas, or exploring new opportunities.</p></div>
             <div class="contact-grid">
-                <div class="linkedin-badge-container fade-in"><div class="light-linkedin-badge"><div class="badge-base LI-profile-badge" data-locale="en_US" data-size="medium" data-theme="light" data-type="VERTICAL" data-vanity="mohamed-shamroukh-348083126" data-version="v1"></div></div><div class="dark-linkedin-badge"><div class="badge-base LI-profile-badge" data-locale="en_US" data-size="medium" data-theme="dark" data-type="VERTICAL" data-vanity="mohamed-shamroukh-348083126" data-version="v1"></div></div></div>
+                <div class="linkedin-badge-container fade-in">
+                    <div class="light-linkedin-badge">
+                        <div class="badge-base LI-profile-badge" data-locale="en_US" data-size="medium" data-theme="light" data-type="VERTICAL" data-vanity="mohamed-shamroukh-348083126" data-version="v1"></div>
+                    </div>
+                    <div class="dark-linkedin-badge">
+                        <div class="badge-base LI-profile-badge" data-locale="en_US" data-size="medium" data-theme="dark" data-type="VERTICAL" data-vanity="mohamed-shamroukh-348083126" data-version="v1"></div>
+                    </div>
+                </div>
                 <div class="social-links fade-in">
-                    <a href="https://www.lboro.ac.uk/departments/abce/staff/mohamed-mahmoud/" target="_blank" class="social-link"><i class="fas fa-university"></i><span>Uni Profile</span></a>
-                    <a href="https://scholar.google.co.uk/citations?user=BUM-R3QAAAAJ&hl=en" target="_blank" class="social-link"><i class="fas fa-graduation-cap"></i><span>Scholar</span></a>
-                    <a href="https://x.com/mohamed_shm3" target="_blank" class="social-link"><i class="fab fa-x-twitter"></i><span>X (Twitter)</span></a>
-                    <a href="https://github.com/MohamedShamroukh" target="_blank" class="social-link"><i class="fab fa-github"></i><span>GitHub</span></a>
-                    <a href="https://orcid.org/0000-0002-1005-2600" target="_blank" class="social-link"><i class="fab fa-orcid"></i><span>ORCID</span></a>
-                    <a href="https://www.researchgate.net/profile/Mohamed-Shamroukh" target="_blank" class="social-link"><i class="fab fa-researchgate"></i><span>ResearchGate</span></a>
+                    <a href="https://www.linkedin.com/in/mohamed-shamroukh-348083126/" target="_blank" rel="noopener noreferrer" class="social-link"><i class="fab fa-linkedin"></i><span>LinkedIn</span></a>
+                    <a href="https://www.lboro.ac.uk/departments/abce/staff/mohamed-mahmoud/" target="_blank" rel="noopener noreferrer" class="social-link"><i class="fas fa-university"></i><span>Uni Profile</span></a>
+                    <a href="https://scholar.google.co.uk/citations?user=BUM-R3QAAAAJ&hl=en" target="_blank" rel="noopener noreferrer" class="social-link"><i class="fas fa-graduation-cap"></i><span>Scholar</span></a>
+                    <a href="https://x.com/mohamed_shm3" target="_blank" rel="noopener noreferrer" class="social-link"><i class="fab fa-x-twitter"></i><span>X (Twitter)</span></a>
+                    <a href="https://github.com/MohamedShamroukh" target="_blank" rel="noopener noreferrer" class="social-link"><i class="fab fa-github"></i><span>GitHub</span></a>
+                    <a href="https://orcid.org/0000-0002-1005-2600" target="_blank" rel="noopener noreferrer" class="social-link"><i class="fab fa-orcid"></i><span>ORCID</span></a>
+                    <a href="https://www.researchgate.net/profile/Mohamed-Shamroukh" target="_blank" rel="noopener noreferrer" class="social-link"><i class="fab fa-researchgate"></i><span>ResearchGate</span></a>
                 </div>
             </div>
         </div>
     </section>
 
     <footer class="footer">
-        <div class="container footer-content"><p>&copy; 2024 Mohamed Shamroukh. All rights reserved.</p><p>Built with passion and a touch of geospatial magic.</p></div>
+        <div class="container footer-content"><p>&copy; 2026 Mohamed Shamroukh. All rights reserved.</p><p>Built with passion and a touch of geospatial magic.</p></div>
     </footer>
 
     <button id="back-to-top" title="Back to Top"><i class="fas fa-arrow-up"></i></button>
 
     <script src="https://platform.linkedin.com/badges/js/profile.js" async defer type="text/javascript"></script>
-    
+
     <script>
         document.addEventListener('DOMContentLoaded', function() {
-            // --- THEME & UI SCRIPT (No changes) ---
-            const navbar = document.getElementById('navbar'); const navLinks = document.querySelectorAll('.nav-links a'); const sections = document.querySelectorAll('section'); const backToTopButton = document.getElementById('back-to-top'); const themeToggleBtn = document.getElementById('theme-toggle'); const body = document.body; const THEME_KEY = 'user-theme';
-            const applyTheme = (theme) => { if (theme === 'light') { body.classList.add('light-theme'); } else { body.classList.remove('light-theme'); } };
-            const toggleTheme = () => { const currentTheme = body.classList.contains('light-theme') ? 'light' : 'dark'; const newTheme = currentTheme === 'light' ? 'dark' : 'light'; applyTheme(newTheme); localStorage.setItem(THEME_KEY, newTheme); };
-            const savedTheme = localStorage.getItem(THEME_KEY); const prefersLight = window.matchMedia('(prefers-color-scheme: light)').matches;
-            if (savedTheme) { applyTheme(savedTheme); } else if (prefersLight) { applyTheme('light'); }
-            themeToggleBtn.addEventListener('click', toggleTheme);
-            const handleScroll = () => {
-                const scrollPosition = window.scrollY; navbar.classList.toggle('scrolled', scrollPosition > 50); backToTopButton.classList.toggle('visible', scrollPosition > 300); let currentSectionId = '';
-                sections.forEach(section => { const sectionTop = section.offsetTop; if (scrollPosition >= sectionTop - navbar.offsetHeight) { currentSectionId = section.getAttribute('id'); } });
-                navLinks.forEach(link => { link.classList.remove('active'); if (link.getAttribute('href') === `#${currentSectionId}`) { link.classList.add('active'); } });
+            const navbar = document.getElementById('navbar');
+            const navLinks = document.querySelectorAll('.nav-links a');
+            const sections = document.querySelectorAll('section');
+            const backToTopButton = document.getElementById('back-to-top');
+            const themeToggleBtn = document.getElementById('theme-toggle');
+            const body = document.body;
+            const THEME_KEY = 'user-theme';
+
+            const applyTheme = (theme) => {
+                if (theme === 'light') {
+                    body.classList.add('light-theme');
+                } else {
+                    body.classList.remove('light-theme');
+                }
             };
+
+            const toggleTheme = () => {
+                const currentTheme = body.classList.contains('light-theme') ? 'light' : 'dark';
+                const newTheme = currentTheme === 'light' ? 'dark' : 'light';
+                applyTheme(newTheme);
+                localStorage.setItem(THEME_KEY, newTheme);
+            };
+
+            const savedTheme = localStorage.getItem(THEME_KEY);
+            const prefersLight = window.matchMedia('(prefers-color-scheme: light)').matches;
+            if (savedTheme) {
+                applyTheme(savedTheme);
+            } else if (prefersLight) {
+                applyTheme('light');
+            }
+
+            themeToggleBtn.addEventListener('click', toggleTheme);
+
+            const handleScroll = () => {
+                const scrollPosition = window.scrollY;
+                navbar.classList.toggle('scrolled', scrollPosition > 50);
+                backToTopButton.classList.toggle('visible', scrollPosition > 300);
+                let currentSectionId = '';
+                sections.forEach(section => {
+                    const sectionTop = section.offsetTop;
+                    if (scrollPosition >= sectionTop - navbar.offsetHeight) {
+                        currentSectionId = section.getAttribute('id');
+                    }
+                });
+                navLinks.forEach(link => {
+                    link.classList.remove('active');
+                    if (link.getAttribute('href') === `#${currentSectionId}`) {
+                        link.classList.add('active');
+                    }
+                });
+            };
+
             window.addEventListener('scroll', handleScroll);
-            backToTopButton.addEventListener('click', () => { window.scrollTo({ top: 0, behavior: 'smooth' }); });
+            backToTopButton.addEventListener('click', () => {
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            });
+
             const fadeInElements = document.querySelectorAll('.fade-in');
-            const observer = new IntersectionObserver((entries) => { entries.forEach(entry => { if (entry.isIntersecting) { entry.target.classList.add('visible'); observer.unobserve(entry.target); } }); }, { threshold: 0.1 });
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.1 });
             fadeInElements.forEach(el => { observer.observe(el); });
 
-            // --- NEW ORCID PUBLICATIONS FETCHING SCRIPT ---
+            // Publications fetch
             async function fetchOrcidPublications() {
                 const publicationsList = document.getElementById('publications-list');
-                const orcidId = "0000-0002-1005-2600"; // Your ORCID ID
+                const orcidId = "0000-0002-1005-2600";
                 const apiUrl = `https://pub.orcid.org/v3.0/${orcidId}/works`;
 
                 try {
-                    // Step 1: Get the list of work summaries to find their "put-codes"
                     const initialResponse = await fetch(apiUrl, { headers: { 'Accept': 'application/json' } });
                     if (!initialResponse.ok) throw new Error(`ORCID API Error: ${initialResponse.status}`);
                     const summaryData = await initialResponse.json();
-                    
+
                     const putCodes = summaryData.group.map(work => work['work-summary'][0]['put-code']).join(',');
 
                     if (!putCodes) {
                         publicationsList.innerHTML = '<div class="error-message">No publications found on this ORCID profile.</div>';
                         return;
                     }
-                    
-                    // Step 2: Get the full details for all works using their put-codes
+
                     const detailResponse = await fetch(`${apiUrl}/${putCodes}`, { headers: { 'Accept': 'application/json' } });
                     if (!detailResponse.ok) throw new Error(`ORCID API Error: ${detailResponse.status}`);
                     const detailData = await detailResponse.json();
 
-                    publicationsList.innerHTML = ''; // Clear loader
+                    publicationsList.innerHTML = '';
 
-                    // Sort publications by year, descending
                     const works = detailData.bulk.sort((a, b) => {
                         const yearA = a.work['publication-date']?.year?.value || 0;
                         const yearB = b.work['publication-date']?.year?.value || 0;
                         return yearB - yearA;
                     });
 
-                    works.forEach(item => {
+                    const displayWorks = works.slice(0, 5);
+
+                    displayWorks.forEach(item => {
                         const work = item.work;
                         const title = work.title?.title?.value || 'No title provided';
                         const journal = work['journal-title']?.value || '';
-                        
+
                         const year = work['publication-date']?.year?.value || '';
                         const month = work['publication-date']?.month?.value || '';
                         const day = work['publication-date']?.day?.value || '';
                         const date = [year, month, day].filter(Boolean).join('-');
-                        
+
                         const link = work.url?.value;
 
                         let authors = 'N/A';
@@ -292,13 +498,13 @@
 
                         const publicationDiv = document.createElement('div');
                         publicationDiv.className = 'publication-item';
-                        
+
                         let venueHTML = '';
                         if (journal || date) {
                             venueHTML = `<p class="publication-venue">${[journal, date].filter(Boolean).join(', ')}</p>`;
                         }
-                        
-                        let titleHTML = link 
+
+                        let titleHTML = link
                             ? `<h3 class="publication-title"><a href="${link}" target="_blank" rel="noopener noreferrer">${title}</a></h3>`
                             : `<h3 class="publication-title">${title}</h3>`;
 

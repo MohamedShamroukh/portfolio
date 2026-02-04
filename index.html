@@ -13,6 +13,9 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 
+    <!-- LinkedIn Badge Script in Head -->
+    <script src="https://platform.linkedin.com/badges/js/profile.js" async defer type="text/javascript"></script>
+
     <style>
         :root {
             /* Dark Theme (Default) */
@@ -21,6 +24,7 @@
             --text-muted: #94a3b8; --surface: #0f172a; --surface-light: #1e293b;
             --surface-lighter: #334155; --border: #334155;
             --gradient-1: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            --gradient-2: linear-gradient(135deg, #3b82f6 0%, #8b5cf6 100%);
             --shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.2), 0 4px 6px -2px rgba(0, 0, 0, 0.15);
             --shadow-lg: 0 25px 50px -12px rgba(0, 0, 0, 0.4);
         }
@@ -31,6 +35,7 @@
             --text-muted: #64748b; --surface: #f8fafc; --surface-light: #ffffff;
             --surface-lighter: #f1f5f9; --border: #e2e8f0;
             --gradient-1: linear-gradient(135deg, #3b82f6 0%, #6d28d9 100%);
+            --gradient-2: linear-gradient(135deg, #3b82f6 0%, #8b5cf6 100%);
             --shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.07), 0 4px 6px -2px rgba(0, 0, 0, 0.04);
             --shadow-lg: 0 25px 50px -12px rgba(0, 0, 0, 0.15);
         }
@@ -38,6 +43,20 @@
         body { font-family: 'Inter', sans-serif; background: var(--surface); color: var(--text-primary); line-height: 1.7; overflow-x: hidden; transition: background 0.3s ease, color 0.3s ease; }
         body::before { content: ''; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: radial-gradient(circle at 20% 20%, rgba(59, 130, 246, 0.08) 0%, transparent 40%), radial-gradient(circle at 80% 80%, rgba(139, 92, 246, 0.08) 0%, transparent 40%); z-index: -1; animation: backgroundFlow 30s ease-in-out infinite; transition: opacity 0.3s ease; } .light-theme body::before { opacity: 0.5; }
         @keyframes backgroundFlow { 0%, 100% { transform: scale(1) rotate(0deg); } 50% { transform: scale(1.2) rotate(180deg); } }
+
+        /* Scroll Progress Indicator */
+        #scroll-progress {
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 4px;
+            background: var(--gradient-2);
+            width: 0%;
+            z-index: 10000;
+            transition: width 0.1s ease;
+            box-shadow: 0 0 10px rgba(59, 130, 246, 0.5);
+        }
+
         nav { position: fixed; top: 0; width: 100%; z-index: 1000; padding: 1.2rem 0; transition: all 0.3s ease-in-out; }
         nav.scrolled { background: rgba(15, 23, 42, 0.85); backdrop-filter: blur(10px); box-shadow: var(--shadow); padding: 0.8rem 0; }
         .light-theme nav.scrolled { background: rgba(255, 255, 255, 0.85); }
@@ -51,10 +70,37 @@
         #theme-toggle:hover { color: var(--accent); border-color: var(--accent); transform: rotate(15deg); }
         .light-theme #theme-toggle .fa-moon, #theme-toggle .fa-sun { display: none; }
         .light-theme #theme-toggle .fa-sun { display: block; } body:not(.light-theme) #theme-toggle .fa-moon { display: block; }
+
         .hero { min-height: 100vh; display: flex; align-items: center; justify-content: center; text-align: center; position: relative; padding: 2rem; }
-        .hero-content { max-width: 800px; animation: fadeInUp 1s ease-out; }
+        .hero-content { max-width: 900px; animation: fadeInUp 1s ease-out; }
         .hero h1 { font-size: clamp(2.5rem, 5vw, 4.5rem); font-weight: 700; margin-bottom: 1.5rem; background: var(--gradient-1); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; line-height: 1.2; }
-        .hero-subtitle { font-size: clamp(1.1rem, 2vw, 1.3rem); color: var(--text-secondary); margin-bottom: 2.5rem; font-weight: 300; }
+
+        /* Typewriter Effect - Centered on Two Lines */
+        .hero-subtitle {
+            font-size: clamp(1.1rem, 2vw, 1.3rem);
+            color: var(--text-secondary);
+            margin-bottom: 2.5rem;
+            font-weight: 300;
+            min-height: 5rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+        }
+        .typewriter-line {
+            display: block;
+            text-align: center;
+        }
+        .typewriter-line.active {
+            border-right: 3px solid var(--accent);
+            animation: blink-caret 0.75s step-end infinite;
+        }
+        @keyframes blink-caret {
+            from, to { border-color: transparent; }
+            50% { border-color: var(--accent); }
+        }
+
         .hero-cta { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
         .btn { padding: 0.875rem 2rem; border: none; border-radius: 0.5rem; font-weight: 600; text-decoration: none; transition: all 0.3s ease; display: inline-flex; align-items: center; gap: 0.5rem; cursor: pointer; font-size: 1rem; }
         .btn-primary { background: var(--accent); color: white; } .btn-primary:hover { background: var(--accent-hover); transform: translateY(-3px); box-shadow: var(--shadow); }
@@ -63,8 +109,22 @@
         .section-title { text-align: center; margin-bottom: 4rem; }
         .section-title h2 { font-size: clamp(2rem, 4vw, 3rem); font-weight: 700; margin-bottom: 1rem; background: var(--gradient-1); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
         .section-title p { color: var(--text-secondary); font-size: 1.1rem; max-width: 700px; margin: 0 auto; }
-        .card { background: var(--surface-light); border-radius: 1rem; padding: 2.5rem; border: 1px solid var(--border); transition: all 0.3s ease; position: relative; overflow: hidden; box-shadow: var(--shadow); }
-        .card:hover { transform: translateY(-8px); box-shadow: var(--shadow-lg); border-color: var(--accent); }
+
+        .card {
+            background: var(--surface-light);
+            border-radius: 1rem;
+            padding: 2.5rem;
+            border: 1px solid var(--border);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+        }
+        .card:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-lg);
+            border-color: var(--accent);
+        }
 
         .about-grid { display: grid; grid-template-columns: auto 1fr; gap: 3rem; align-items: center; } .about-image-wrapper { max-width: 280px; }
         .about-image { width: 100%; height: auto; border-radius: 50%; border: 5px solid var(--surface-lighter); box-shadow: var(--shadow-lg); transition: transform 0.3s ease; } .about-image:hover { transform: scale(1.05); }
@@ -77,6 +137,110 @@
         .phd-project p { color: var(--text-secondary); margin-bottom: 0.5rem; }
         .phd-project a { color: var(--accent); text-decoration: none; transition: color 0.3s ease; }
         .phd-project a:hover { color: var(--accent-hover); text-decoration: underline; }
+
+        /* Research Interests Word Cloud - Enhanced */
+        .word-cloud-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            gap: 1.5rem;
+            padding: 3rem 2rem;
+            background: var(--surface-light);
+            border-radius: 1rem;
+            border: 1px solid var(--border);
+            margin: 3rem 0;
+            min-height: 400px;
+        }
+        .word-cloud-item {
+            display: inline-block;
+            padding: 0.5rem 1.2rem;
+            background: var(--surface-lighter);
+            border: 1px solid var(--border);
+            border-radius: 2rem;
+            transition: all 0.3s ease;
+            cursor: default;
+            animation: float 3s ease-in-out infinite;
+        }
+        .word-cloud-item:hover {
+            transform: scale(1.15) translateY(-5px);
+            background: var(--accent);
+            color: white;
+            border-color: var(--accent);
+            box-shadow: var(--shadow);
+        }
+        .word-cloud-item.size-1 { font-size: 2rem; font-weight: 700; animation-delay: 0s; }
+        .word-cloud-item.size-2 { font-size: 1.6rem; font-weight: 600; animation-delay: 0.5s; }
+        .word-cloud-item.size-3 { font-size: 1.3rem; font-weight: 500; animation-delay: 1s; }
+        .word-cloud-item.size-4 { font-size: 1.1rem; font-weight: 400; animation-delay: 1.5s; }
+        .word-cloud-item.size-5 { font-size: 0.95rem; font-weight: 400; animation-delay: 2s; }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+        }
+
+        /* Research Areas Distribution Chart */
+        .research-impact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+        .impact-card {
+            background: var(--surface-light);
+            border-radius: 1rem;
+            padding: 2rem;
+            border: 1px solid var(--border);
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+        .impact-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-lg);
+            border-color: var(--accent);
+        }
+        .impact-icon {
+            width: 60px;
+            height: 60px;
+            margin: 0 auto 1rem;
+            background: var(--gradient-2);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.8rem;
+            color: white;
+            box-shadow: var(--shadow);
+        }
+        .impact-label {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            margin-bottom: 0.5rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        .impact-value {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--text-primary);
+            margin-bottom: 0.5rem;
+        }
+        .impact-bar {
+            width: 100%;
+            height: 8px;
+            background: var(--surface-lighter);
+            border-radius: 1rem;
+            overflow: hidden;
+            margin-top: 1rem;
+        }
+        .impact-bar-fill {
+            height: 100%;
+            background: var(--gradient-2);
+            border-radius: 1rem;
+            transition: width 1s ease-out;
+            width: 0%;
+        }
 
         .research-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 2rem; }
         .research-card i { font-size: 2.5rem; color: var(--accent); margin-bottom: 1.5rem; display: block; }
@@ -100,17 +264,142 @@
         .project-link:hover { background: var(--accent); color: white; border-color: var(--accent); transform: translateY(-2px); }
         .project-link i { font-size: 1rem; }
 
-        #publications-list { display: flex; flex-direction: column; gap: 1.5rem; }
-        .publication-item { background: var(--surface-light); border: 1px solid var(--border); border-left: 4px solid var(--accent); padding: 1.5rem; border-radius: 0.5rem; transition: all 0.3s ease; }
-        .publication-item:hover { transform: translateX(10px); box-shadow: var(--shadow); border-color: var(--accent); }
-        .publication-title { font-size: 1.2rem; font-weight: 600; color: var(--text-primary); margin-bottom: 0.5rem; }
-        .publication-title a { color: inherit; text-decoration: none; transition: color 0.3s ease; }
-        .publication-title a:hover { color: var(--accent); }
-        .publication-authors { font-style: italic; color: var(--text-secondary); margin-bottom: 0.5rem; }
-        .publication-venue { font-size: 0.9rem; color: var(--text-muted); }
-        .loader, .error-message { text-align: center; color: var(--text-secondary); font-size: 1.1rem; padding: 2rem; }
+        /* Enhanced Publications Section */
+        #publications-list { display: flex; flex-direction: column; gap: 2rem; }
+        .publication-item {
+            background: var(--surface-light);
+            border: 1px solid var(--border);
+            border-radius: 1rem;
+            padding: 2rem;
+            transition: all 0.4s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        .publication-item::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            height: 100%;
+            width: 4px;
+            background: var(--gradient-2);
+            transform: scaleY(0);
+            transition: transform 0.3s ease;
+        }
+        .publication-item:hover::before {
+            transform: scaleY(1);
+        }
+        .publication-item:hover {
+            transform: translateX(12px);
+            box-shadow: var(--shadow-lg);
+            border-color: var(--accent);
+        }
+        .publication-header {
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+            margin-bottom: 1rem;
+        }
+        .publication-icon {
+            background: var(--gradient-2);
+            width: 48px;
+            height: 48px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            box-shadow: var(--shadow);
+        }
+        .publication-icon i {
+            color: white;
+            font-size: 1.5rem;
+        }
+        .publication-content {
+            flex: 1;
+        }
+        .publication-title {
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: var(--text-primary);
+            margin-bottom: 0.75rem;
+            line-height: 1.4;
+        }
+        .publication-title a {
+            color: inherit;
+            text-decoration: none;
+            transition: color 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        .publication-title a:hover {
+            color: var(--accent);
+        }
+        .publication-title a i {
+            font-size: 0.9rem;
+            opacity: 0;
+            transform: translateX(-5px);
+            transition: all 0.3s ease;
+        }
+        .publication-title a:hover i {
+            opacity: 1;
+            transform: translateX(0);
+        }
+        .publication-authors {
+            font-style: italic;
+            color: var(--text-secondary);
+            margin-bottom: 0.75rem;
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+        .publication-meta {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            align-items: center;
+            margin-top: 1rem;
+        }
+        .publication-journal {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: var(--surface-lighter);
+            padding: 0.5rem 1rem;
+            border-radius: 2rem;
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            border: 1px solid var(--border);
+        }
+        .publication-journal i {
+            color: var(--accent);
+        }
+        .publication-date {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.9rem;
+            color: var(--text-muted);
+        }
+        .publication-date i {
+            color: var(--accent);
+        }
+        .publication-type {
+            display: inline-flex;
+            align-items: center;
+            background: linear-gradient(135deg, rgba(59, 130, 246, 0.2) 0%, rgba(139, 92, 246, 0.2) 100%);
+            color: var(--accent);
+            padding: 0.4rem 0.9rem;
+            border-radius: 2rem;
+            font-size: 0.85rem;
+            font-weight: 600;
+            border: 1px solid var(--accent);
+        }
 
-        .view-all-btn { text-align: center; margin-top: 2rem; }
+        .loader, .error-message { text-align: center; color: var(--text-secondary); font-size: 1.1rem; padding: 2rem; }
+        .loader i { font-size: 2rem; margin-bottom: 1rem; color: var(--accent); }
+
+        .view-all-btn { text-align: center; margin-top: 2.5rem; }
 
         .contact-grid { display: grid; grid-template-columns: 1fr 1.5fr; gap: 3rem; align-items: center; }
         .linkedin-badge-container { min-height: 300px; } .dark-linkedin-badge, .light-linkedin-badge { transition: opacity 0.3s ease; }
@@ -136,11 +425,19 @@
             .btn { width: 100%; justify-content: center; max-width: 300px; }
             .section { padding: 4rem 0; }
             .projects-grid { grid-template-columns: 1fr; }
+            .publication-header { flex-direction: column; }
+            .publication-meta { flex-direction: column; align-items: flex-start; gap: 0.5rem; }
+            .word-cloud-item.size-1 { font-size: 1.5rem; }
+            .word-cloud-item.size-2 { font-size: 1.2rem; }
+            .word-cloud-item.size-3 { font-size: 1rem; }
         }
         ::-webkit-scrollbar { width: 10px; } ::-webkit-scrollbar-track { background: var(--surface); } ::-webkit-scrollbar-thumb { background: var(--accent); border-radius: 5px; } ::-webkit-scrollbar-thumb:hover { background: var(--accent-hover); }
     </style>
 </head>
 <body>
+    <!-- Scroll Progress Indicator -->
+    <div id="scroll-progress"></div>
+
     <nav id="navbar">
         <div class="nav-container">
             <a href="#" class="logo">MS</a>
@@ -163,7 +460,10 @@
     <section class="hero" id="home">
         <div class="hero-content">
             <h1>Mohamed Shamroukh</h1>
-            <p class="hero-subtitle">Doctoral researcher at Loughborough University specialising in Geospatial Intelligence, GeoAI, and data-driven urban planning for pedestrian-friendly, sustainable cities.</p>
+            <p class="hero-subtitle">
+                <span class="typewriter-line" id="typewriter-line1"></span>
+                <span class="typewriter-line" id="typewriter-line2"></span>
+            </p>
             <div class="hero-cta">
                 <a href="#contact" class="btn btn-primary"><i class="fas fa-envelope"></i>Get In Touch</a>
                 <a href="#research" class="btn btn-secondary"><i class="fas fa-microscope"></i>View Research</a>
@@ -191,6 +491,85 @@
                             <a href="https://www.lboro.ac.uk/research/perceptive-city/projects/pedestrian-friendly-cities/" target="_blank" rel="noopener noreferrer">Learn more at Perceptive City Lab <i class="fas fa-external-link-alt"></i></a>
                         </div>
                     </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Research Interests Word Cloud -->
+    <section class="section" id="research-interests">
+        <div class="container">
+            <div class="section-title">
+                <h2 class="fade-in">Research Interests</h2>
+                <p class="fade-in">Key areas shaping my work in geospatial intelligence and urban planning.</p>
+            </div>
+            <div class="word-cloud-container fade-in">
+                <span class="word-cloud-item size-1">GeoAI</span>
+                <span class="word-cloud-item size-3">Machine Learning</span>
+                <span class="word-cloud-item size-2">Urban Planning</span>
+                <span class="word-cloud-item size-4">Remote Sensing</span>
+                <span class="word-cloud-item size-2">Computer Vision</span>
+                <span class="word-cloud-item size-5">Spatial Analysis</span>
+                <span class="word-cloud-item size-1">Python</span>
+                <span class="word-cloud-item size-3">Deep Learning</span>
+                <span class="word-cloud-item size-4">Pedestrian Analytics</span>
+                <span class="word-cloud-item size-2">Smart Cities</span>
+                <span class="word-cloud-item size-5">Data Science</span>
+                <span class="word-cloud-item size-1">QGIS</span>
+                <span class="word-cloud-item size-4">Sustainable Development</span>
+                <span class="word-cloud-item size-5">Geospatial Databases</span>
+                <span class="word-cloud-item size-2">YOLO</span>
+                <span class="word-cloud-item size-4">Urban Mobility</span>
+                <span class="word-cloud-item size-3">PostGIS</span>
+                <span class="word-cloud-item size-5">ArcGIS</span>
+                <span class="word-cloud-item size-3">TensorFlow</span>
+                <span class="word-cloud-item size-4">PyTorch</span>
+                <span class="word-cloud-item size-5">Keras</span>
+                <span class="word-cloud-item size-2">Object Detection</span>
+                <span class="word-cloud-item size-4">OpenCV</span>
+                <span class="word-cloud-item size-5">Neural Networks</span>
+                <span class="word-cloud-item size-3">Google Earth Engine</span>
+                <span class="word-cloud-item size-4">Semantic Segmentation</span>
+                <span class="word-cloud-item size-5">Transfer Learning</span>
+                <span class="word-cloud-item size-3">Spatial Modeling</span>
+                <span class="word-cloud-item size-4">Urban Analytics</span>
+                <span class="word-cloud-item size-5">CNN</span>
+                <span class="word-cloud-item size-2">Geospatial Intelligence</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Research Impact Visualization -->
+    <section class="section" id="research-impact">
+        <div class="container">
+            <div class="section-title">
+                <h2 class="fade-in">Research Impact</h2>
+                <p class="fade-in">Distribution of my research contributions across key domains.</p>
+            </div>
+            <div class="research-impact-grid">
+                <div class="impact-card fade-in">
+                    <div class="impact-icon"><i class="fas fa-brain"></i></div>
+                    <div class="impact-label">Machine Learning & AI</div>
+                    <div class="impact-value">35%</div>
+                    <div class="impact-bar"><div class="impact-bar-fill" data-percentage="35"></div></div>
+                </div>
+                <div class="impact-card fade-in">
+                    <div class="impact-icon"><i class="fas fa-map-marked-alt"></i></div>
+                    <div class="impact-label">Geospatial Analysis</div>
+                    <div class="impact-value">30%</div>
+                    <div class="impact-bar"><div class="impact-bar-fill" data-percentage="30"></div></div>
+                </div>
+                <div class="impact-card fade-in">
+                    <div class="impact-icon"><i class="fas fa-city"></i></div>
+                    <div class="impact-label">Urban Planning</div>
+                    <div class="impact-value">25%</div>
+                    <div class="impact-bar"><div class="impact-bar-fill" data-percentage="25"></div></div>
+                </div>
+                <div class="impact-card fade-in">
+                    <div class="impact-icon"><i class="fas fa-satellite"></i></div>
+                    <div class="impact-label">Remote Sensing</div>
+                    <div class="impact-value">10%</div>
+                    <div class="impact-bar"><div class="impact-bar-fill" data-percentage="10"></div></div>
                 </div>
             </div>
         </div>
@@ -328,12 +707,13 @@
     <section class="section" id="publications">
         <div class="container">
             <div class="section-title">
-                <h2 class="fade-in">Recent Publications</h2>
-                <p class="fade-in">Latest research contributions in geospatial intelligence and urban planning.</p>
+                <h2 class="fade-in">Journal Publications</h2>
+                <p class="fade-in">Peer-reviewed research contributions in geospatial intelligence and urban planning.</p>
             </div>
             <div id="publications-list" class="fade-in">
                 <div class="loader">
-                    <i class="fas fa-spinner fa-spin"></i> Loading publications...
+                    <i class="fas fa-spinner fa-spin"></i>
+                    <p>Loading journal publications...</p>
                 </div>
             </div>
             <div class="view-all-btn">
@@ -350,10 +730,32 @@
             <div class="contact-grid">
                 <div class="linkedin-badge-container fade-in">
                     <div class="light-linkedin-badge">
-                        <div class="badge-base LI-profile-badge" data-locale="en_US" data-size="medium" data-theme="light" data-type="VERTICAL" data-vanity="mohamed-shamroukh-348083126" data-version="v1"></div>
+                        <div class="badge-base LI-profile-badge"
+                             data-locale="en_US"
+                             data-size="medium"
+                             data-theme="light"
+                             data-type="VERTICAL"
+                             data-vanity="mohamed-shamroukh-348083126"
+                             data-version="v1">
+                            <a class="badge-base__link LI-simple-link"
+                               href="https://www.linkedin.com/in/mohamed-shamroukh-348083126?trk=profile-badge">
+                                Mohamed Shamroukh
+                            </a>
+                        </div>
                     </div>
                     <div class="dark-linkedin-badge">
-                        <div class="badge-base LI-profile-badge" data-locale="en_US" data-size="medium" data-theme="dark" data-type="VERTICAL" data-vanity="mohamed-shamroukh-348083126" data-version="v1"></div>
+                        <div class="badge-base LI-profile-badge"
+                             data-locale="en_US"
+                             data-size="medium"
+                             data-theme="dark"
+                             data-type="VERTICAL"
+                             data-vanity="mohamed-shamroukh-348083126"
+                             data-version="v1">
+                            <a class="badge-base__link LI-simple-link"
+                               href="https://www.linkedin.com/in/mohamed-shamroukh-348083126?trk=profile-badge">
+                                Mohamed Shamroukh
+                            </a>
+                        </div>
                     </div>
                 </div>
                 <div class="social-links fade-in">
@@ -375,8 +777,6 @@
 
     <button id="back-to-top" title="Back to Top"><i class="fas fa-arrow-up"></i></button>
 
-    <script src="https://platform.linkedin.com/badges/js/profile.js" async defer type="text/javascript"></script>
-
     <script>
         document.addEventListener('DOMContentLoaded', function() {
             const navbar = document.getElementById('navbar');
@@ -386,7 +786,9 @@
             const themeToggleBtn = document.getElementById('theme-toggle');
             const body = document.body;
             const THEME_KEY = 'user-theme';
+            const scrollProgress = document.getElementById('scroll-progress');
 
+            // Theme Management
             const applyTheme = (theme) => {
                 if (theme === 'light') {
                     body.classList.add('light-theme');
@@ -412,10 +814,22 @@
 
             themeToggleBtn.addEventListener('click', toggleTheme);
 
+            // Scroll Progress Indicator
+            const updateScrollProgress = () => {
+                const windowHeight = window.innerHeight;
+                const documentHeight = document.documentElement.scrollHeight - windowHeight;
+                const scrolled = window.scrollY;
+                const progress = (scrolled / documentHeight) * 100;
+                scrollProgress.style.width = progress + '%';
+            };
+
+            // Scroll Handler
             const handleScroll = () => {
                 const scrollPosition = window.scrollY;
                 navbar.classList.toggle('scrolled', scrollPosition > 50);
                 backToTopButton.classList.toggle('visible', scrollPosition > 300);
+                updateScrollProgress();
+
                 let currentSectionId = '';
                 sections.forEach(section => {
                     const sectionTop = section.offsetTop;
@@ -436,6 +850,7 @@
                 window.scrollTo({ top: 0, behavior: 'smooth' });
             });
 
+            // Fade-in Observer
             const fadeInElements = document.querySelectorAll('.fade-in');
             const observer = new IntersectionObserver((entries) => {
                 entries.forEach(entry => {
@@ -447,7 +862,63 @@
             }, { threshold: 0.1 });
             fadeInElements.forEach(el => { observer.observe(el); });
 
-            // Publications fetch
+            // Two-Line Centered Typewriter Effect
+            const line1 = document.getElementById('typewriter-line1');
+            const line2 = document.getElementById('typewriter-line2');
+            const text1 = "Doctoral researcher at Loughborough University specialising in";
+            const text2 = "Geospatial Intelligence, GeoAI, and data-driven urban planning.";
+            let index1 = 0;
+            let index2 = 0;
+
+            function typeLine1() {
+                if (index1 < text1.length) {
+                    line1.textContent += text1.charAt(index1);
+                    index1++;
+                    setTimeout(typeLine1, 30);
+                } else {
+                    line1.classList.remove('active');
+                    line2.classList.add('active');
+                    setTimeout(typeLine2, 300);
+                }
+            }
+
+            function typeLine2() {
+                if (index2 < text2.length) {
+                    line2.textContent += text2.charAt(index2);
+                    index2++;
+                    setTimeout(typeLine2, 30);
+                } else {
+                    line2.classList.remove('active');
+                }
+            }
+
+            setTimeout(() => {
+                line1.classList.add('active');
+                typeLine1();
+            }, 500);
+
+            // Research Impact Bars Animation
+            const impactBarsObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const bars = entry.target.querySelectorAll('.impact-bar-fill');
+                        bars.forEach(bar => {
+                            const percentage = bar.getAttribute('data-percentage');
+                            setTimeout(() => {
+                                bar.style.width = percentage + '%';
+                            }, 300);
+                        });
+                        impactBarsObserver.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.5 });
+
+            const impactSection = document.querySelector('#research-impact');
+            if (impactSection) {
+                impactBarsObserver.observe(impactSection);
+            }
+
+            // Publications fetch - Journal articles only
             async function fetchOrcidPublications() {
                 const publicationsList = document.getElementById('publications-list');
                 const orcidId = "0000-0002-1005-2600";
@@ -471,13 +942,27 @@
 
                     publicationsList.innerHTML = '';
 
-                    const works = detailData.bulk.sort((a, b) => {
+                    // Filter for journal articles only
+                    const journalWorks = detailData.bulk.filter(item => {
+                        const work = item.work;
+                        const workType = work.type?.toLowerCase() || '';
+                        const hasJournal = work['journal-title']?.value;
+                        return hasJournal && (workType.includes('journal') || workType.includes('article'));
+                    });
+
+                    // Sort by year
+                    const works = journalWorks.sort((a, b) => {
                         const yearA = a.work['publication-date']?.year?.value || 0;
                         const yearB = b.work['publication-date']?.year?.value || 0;
                         return yearB - yearA;
                     });
 
-                    const displayWorks = works.slice(0, 5);
+                    if (works.length === 0) {
+                        publicationsList.innerHTML = '<div class="error-message">No journal publications found.</div>';
+                        return;
+                    }
+
+                    const displayWorks = works.slice(0, 3);
 
                     displayWorks.forEach(item => {
                         const work = item.work;
@@ -490,28 +975,35 @@
                         const date = [year, month, day].filter(Boolean).join('-');
 
                         const link = work.url?.value;
+                        const workType = work.type || 'journal-article';
 
                         let authors = 'N/A';
                         if (work.contributors?.contributor) {
-                            authors = work.contributors.contributor.map(c => c['credit-name']?.value).join(', ');
+                            authors = work.contributors.contributor.map(c => c['credit-name']?.value).filter(Boolean).join(', ');
                         }
 
                         const publicationDiv = document.createElement('div');
                         publicationDiv.className = 'publication-item';
 
-                        let venueHTML = '';
-                        if (journal || date) {
-                            venueHTML = `<p class="publication-venue">${[journal, date].filter(Boolean).join(', ')}</p>`;
-                        }
-
                         let titleHTML = link
-                            ? `<h3 class="publication-title"><a href="${link}" target="_blank" rel="noopener noreferrer">${title}</a></h3>`
+                            ? `<h3 class="publication-title"><a href="${link}" target="_blank" rel="noopener noreferrer">${title} <i class="fas fa-external-link-alt"></i></a></h3>`
                             : `<h3 class="publication-title">${title}</h3>`;
 
                         publicationDiv.innerHTML = `
-                            ${titleHTML}
-                            <p class="publication-authors">${authors}</p>
-                            ${venueHTML}
+                            <div class="publication-header">
+                                <div class="publication-icon">
+                                    <i class="fas fa-file-alt"></i>
+                                </div>
+                                <div class="publication-content">
+                                    ${titleHTML}
+                                    <p class="publication-authors">${authors}</p>
+                                    <div class="publication-meta">
+                                        ${journal ? `<span class="publication-journal"><i class="fas fa-book"></i>${journal}</span>` : ''}
+                                        ${date ? `<span class="publication-date"><i class="fas fa-calendar"></i>${date}</span>` : ''}
+                                        <span class="publication-type">Journal Article</span>
+                                    </div>
+                                </div>
+                            </div>
                         `;
                         publicationsList.appendChild(publicationDiv);
                     });

@@ -64,14 +64,81 @@
         .light-theme nav { background: rgba(255, 255, 255, 0.85); }
         .nav-container { max-width: 1200px; margin: 0 auto; padding: 0 2rem; display: flex; justify-content: space-between; align-items: center; }
         .logo { font-weight: 700; font-size: 1.5rem; background: var(--gradient-1); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; transition: transform 0.3s ease; text-decoration: none; cursor: pointer;} .logo:hover { transform: scale(1.1); }
-        .nav-menu { display: flex; align-items: center; gap: 2rem; } .nav-links { display: flex; list-style: none; gap: 2rem; }
-        .nav-links a { color: var(--text-secondary); text-decoration: none; transition: all 0.3s ease; position: relative; font-weight: 500; cursor: pointer; }
-        .nav-links a::after { content: ''; position: absolute; bottom: -5px; left: 0; width: 0; height: 2px; background: var(--accent); transition: width 0.3s ease; }
+        .nav-menu { display: flex; align-items: center; gap: 2rem; }
+        .nav-links { display: flex; list-style: none; gap: 2rem; }
+        .nav-links a { color: var(--text-secondary); text-decoration: none; transition: all 0.3s ease; position: relative; font-weight: 500; cursor: pointer; padding: 0.5rem 0; }
+        .nav-links a::after { content: ''; position: absolute; bottom: 0; left: 0; width: 0; height: 2px; background: var(--accent); transition: width 0.3s ease; }
         .nav-links a:hover { color: var(--text-primary); } .nav-links a:hover::after, .nav-links a.active::after { width: 100%; }
         #theme-toggle { background: var(--surface-light); border: 1px solid var(--border); color: var(--text-secondary); width: 2.5rem; height: 2.5rem; border-radius: 50%; cursor: pointer; display: grid; place-items: center; font-size: 1.2rem; transition: all 0.3s ease; }
         #theme-toggle:hover { color: var(--accent); border-color: var(--accent); transform: rotate(15deg); }
         .light-theme #theme-toggle .fa-moon, #theme-toggle .fa-sun { display: none; }
         .light-theme #theme-toggle .fa-sun { display: block; } body:not(.light-theme) #theme-toggle .fa-moon { display: block; }
+
+        /* Burger Menu */
+        .burger-menu {
+            display: none;
+            flex-direction: column;
+            gap: 5px;
+            cursor: pointer;
+            padding: 0.5rem;
+            z-index: 1001;
+        }
+        .burger-menu span {
+            width: 25px;
+            height: 3px;
+            background: var(--text-primary);
+            border-radius: 2px;
+            transition: all 0.3s ease;
+        }
+        .burger-menu.active span:nth-child(1) {
+            transform: rotate(45deg) translate(7px, 7px);
+        }
+        .burger-menu.active span:nth-child(2) {
+            opacity: 0;
+        }
+        .burger-menu.active span:nth-child(3) {
+            transform: rotate(-45deg) translate(7px, -7px);
+        }
+
+        /* Mobile Menu */
+        .mobile-menu {
+            position: fixed;
+            top: 70px;
+            right: -100%;
+            width: 80%;
+            max-width: 300px;
+            height: calc(100vh - 70px);
+            background: var(--surface-light);
+            box-shadow: var(--shadow-lg);
+            transition: right 0.3s ease;
+            z-index: 999;
+            padding: 2rem;
+            border-left: 1px solid var(--border);
+        }
+        .mobile-menu.active {
+            right: 0;
+        }
+        .mobile-menu ul {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+        .mobile-menu a {
+            color: var(--text-primary);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 1.1rem;
+            display: block;
+            padding: 0.75rem 1rem;
+            border-radius: 0.5rem;
+            transition: all 0.3s ease;
+        }
+        .mobile-menu a:hover,
+        .mobile-menu a.active {
+            background: var(--accent);
+            color: white;
+        }
 
         /* Page System */
         .page {
@@ -305,10 +372,10 @@
         .research-card h3 { font-size: 1.4rem; font-weight: 600; margin-bottom: 1rem; color: var(--text-primary); }
         .research-card p { color: var(--text-secondary); line-height: 1.6; }
 
-        /* Skills Grid - Now 6 cards (2x3) */
+        /* Skills Grid */
         .skills-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 2rem;
         }
         .skill-category h3 { font-size: 1.3rem; font-weight: 600; margin-bottom: 1.5rem; color: var(--text-primary); display: flex; align-items: center; gap: 0.75rem; }
@@ -318,7 +385,7 @@
         .skill-tag:hover { background: var(--accent); color: white; transform: translateY(-2px); border-color: var(--accent); }
 
         /* Projects Section Styling */
-        .projects-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 2rem; }
+        .projects-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; }
         .project-card { position: relative; }
         .project-card h3 { font-size: 1.3rem; font-weight: 600; margin-bottom: 1rem; color: var(--text-primary); display: flex; align-items: center; gap: 0.75rem; }
         .project-card h3 i { color: var(--accent); font-size: 1.5rem; }
@@ -477,25 +544,56 @@
 
         @keyframes fadeInUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
 
+        /* Mobile Optimizations */
         @media (max-width: 992px) {
             .about-grid, .contact-grid { grid-template-columns: 1fr; text-align: center; }
             .about-image-wrapper { margin: 0 auto 2rem auto; }
-            .bubble-chart-container { grid-template-columns: 1fr; }
-            .bubble-chart-wrapper { max-width: 400px; }
+            .bubble-chart-container { grid-template-columns: 1fr; gap: 2rem; }
+            .bubble-chart-wrapper { max-width: 350px; }
+            .research-grid { grid-template-columns: 1fr; }
+            .projects-grid { grid-template-columns: 1fr; }
+            .skills-grid { grid-template-columns: 1fr; }
         }
+
         @media (max-width: 768px) {
             .nav-links { display: none; }
-            .hero-cta { flex-direction: column; align-items: center; }
-            .btn { width: 100%; justify-content: center; max-width: 300px; }
+            .burger-menu { display: flex; }
+            nav { padding: 1rem 0; }
+            .nav-container { padding: 0 1rem; }
+            .page { padding-top: 70px; }
+            .hero { min-height: calc(100vh - 70px); padding: 1.5rem; }
+            .hero h1 { font-size: 2rem; }
+            .hero-cta { flex-direction: column; width: 100%; }
+            .btn { width: 100%; justify-content: center; }
             .section { padding: 3rem 0; }
-            .projects-grid { grid-template-columns: 1fr; }
+            .container { padding: 0 1.5rem; }
+            .card { padding: 1.5rem; }
+            .section-title { margin-bottom: 2.5rem; }
             .publication-header { flex-direction: column; }
             .publication-meta { flex-direction: column; align-items: flex-start; gap: 0.5rem; }
             .word-cloud-item.size-1 { font-size: 1.5rem; }
             .word-cloud-item.size-2 { font-size: 1.2rem; }
             .word-cloud-item.size-3 { font-size: 1rem; }
-            .skills-grid { grid-template-columns: 1fr; }
+            .word-cloud-item.size-4 { font-size: 0.9rem; }
+            .word-cloud-item.size-5 { font-size: 0.85rem; }
+            .word-cloud-container { padding: 2rem 1rem; min-height: 300px; gap: 1rem; }
+            .bubble-chart-container { padding: 2rem 1.5rem; }
+            .bubble-legend-item { padding: 1rem; }
+            .bubble-legend-color { width: 40px; height: 40px; }
+            .bubble-legend-percentage { font-size: 1.5rem; }
+            .social-links { grid-template-columns: repeat(2, 1fr); }
         }
+
+        @media (max-width: 480px) {
+            .hero h1 { font-size: 1.75rem; }
+            .logo { font-size: 1.3rem; }
+            .section-title h2 { font-size: 1.75rem; }
+            .about-image-wrapper { max-width: 200px; }
+            .bubble-chart-wrapper { max-width: 280px; }
+            .research-card i { font-size: 2rem; }
+            .research-card h3 { font-size: 1.2rem; }
+        }
+
         ::-webkit-scrollbar { width: 10px; } ::-webkit-scrollbar-track { background: var(--surface); } ::-webkit-scrollbar-thumb { background: var(--accent); border-radius: 5px; } ::-webkit-scrollbar-thumb:hover { background: var(--accent-hover); }
     </style>
 </head>
@@ -517,8 +615,26 @@
                     <i class="fas fa-sun"></i><i class="fas fa-moon"></i>
                 </button>
             </div>
+            <div class="burger-menu" id="burgerMenu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
         </div>
     </nav>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobileMenu">
+        <ul>
+            <li><a data-page="home" class="active mobile-nav-link">Home</a></li>
+            <li><a data-page="about" class="mobile-nav-link">About</a></li>
+            <li><a data-page="research" class="mobile-nav-link">Research</a></li>
+            <li><a data-page="projects" class="mobile-nav-link">Projects</a></li>
+            <li><a data-page="skills" class="mobile-nav-link">Skills</a></li>
+            <li><a data-page="publications" class="mobile-nav-link">Publications</a></li>
+            <li><a data-page="contact" class="mobile-nav-link">Contact</a></li>
+        </ul>
+    </div>
 
     <!-- HOME PAGE -->
     <div id="home" class="page active">
@@ -879,6 +995,8 @@
             const themeToggleBtn = document.getElementById('theme-toggle');
             const body = document.body;
             const THEME_KEY = 'user-theme';
+            const burgerMenu = document.getElementById('burgerMenu');
+            const mobileMenu = document.getElementById('mobileMenu');
 
             // Theme Management
             const applyTheme = (theme) => {
@@ -906,9 +1024,16 @@
 
             themeToggleBtn.addEventListener('click', toggleTheme);
 
+            // Burger Menu Toggle
+            burgerMenu.addEventListener('click', () => {
+                burgerMenu.classList.toggle('active');
+                mobileMenu.classList.toggle('active');
+            });
+
             // Page Navigation System
             const pages = document.querySelectorAll('.page');
             const navLinks = document.querySelectorAll('[data-page]');
+            const mobileNavLinks = document.querySelectorAll('.mobile-nav-link');
             let currentPage = 'home';
 
             function navigateTo(pageId) {
@@ -923,13 +1048,25 @@
                     targetPage.classList.add('active');
                     currentPage = pageId;
 
-                    // Update active nav link
+                    // Update active nav link (desktop)
                     navLinks.forEach(link => {
                         link.classList.remove('active');
                         if (link.getAttribute('data-page') === pageId) {
                             link.classList.add('active');
                         }
                     });
+
+                    // Update active nav link (mobile)
+                    mobileNavLinks.forEach(link => {
+                        link.classList.remove('active');
+                        if (link.getAttribute('data-page') === pageId) {
+                            link.classList.add('active');
+                        }
+                    });
+
+                    // Close mobile menu
+                    burgerMenu.classList.remove('active');
+                    mobileMenu.classList.remove('active');
 
                     // Scroll to top
                     window.scrollTo(0, 0);
@@ -946,6 +1083,15 @@
 
             // Add click listeners to all navigation links
             navLinks.forEach(link => {
+                link.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    const pageId = link.getAttribute('data-page');
+                    navigateTo(pageId);
+                });
+            });
+
+            // Add click listeners to mobile navigation links
+            mobileNavLinks.forEach(link => {
                 link.addEventListener('click', (e) => {
                     e.preventDefault();
                     const pageId = link.getAttribute('data-page');

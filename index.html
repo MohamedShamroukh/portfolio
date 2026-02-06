@@ -40,30 +40,32 @@
             --shadow-lg: 0 25px 50px -12px rgba(0, 0, 0, 0.15);
         }
         html { scroll-behavior: smooth; } * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: 'Inter', sans-serif; background: var(--surface); color: var(--text-primary); line-height: 1.7; overflow-x: hidden; transition: background 0.3s ease, color 0.3s ease; }
+        body {
+            font-family: 'Inter', sans-serif;
+            background: var(--surface);
+            color: var(--text-primary);
+            line-height: 1.7;
+            overflow-x: hidden;
+            transition: background 0.3s ease, color 0.3s ease;
+        }
         body::before { content: ''; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: radial-gradient(circle at 20% 20%, rgba(59, 130, 246, 0.08) 0%, transparent 40%), radial-gradient(circle at 80% 80%, rgba(139, 92, 246, 0.08) 0%, transparent 40%); z-index: -1; animation: backgroundFlow 30s ease-in-out infinite; transition: opacity 0.3s ease; } .light-theme body::before { opacity: 0.5; }
         @keyframes backgroundFlow { 0%, 100% { transform: scale(1) rotate(0deg); } 50% { transform: scale(1.2) rotate(180deg); } }
 
-        /* Scroll Progress Indicator */
-        #scroll-progress {
+        nav {
             position: fixed;
             top: 0;
-            left: 0;
-            height: 4px;
-            background: var(--gradient-2);
-            width: 0%;
-            z-index: 10000;
-            transition: width 0.1s ease;
-            box-shadow: 0 0 10px rgba(59, 130, 246, 0.5);
+            width: 100%;
+            z-index: 1000;
+            padding: 1.2rem 0;
+            background: rgba(15, 23, 42, 0.85);
+            backdrop-filter: blur(10px);
+            box-shadow: var(--shadow);
         }
-
-        nav { position: fixed; top: 0; width: 100%; z-index: 1000; padding: 1.2rem 0; transition: all 0.3s ease-in-out; }
-        nav.scrolled { background: rgba(15, 23, 42, 0.85); backdrop-filter: blur(10px); box-shadow: var(--shadow); padding: 0.8rem 0; }
-        .light-theme nav.scrolled { background: rgba(255, 255, 255, 0.85); }
+        .light-theme nav { background: rgba(255, 255, 255, 0.85); }
         .nav-container { max-width: 1200px; margin: 0 auto; padding: 0 2rem; display: flex; justify-content: space-between; align-items: center; }
-        .logo { font-weight: 700; font-size: 1.5rem; background: var(--gradient-1); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; transition: transform 0.3s ease; text-decoration: none;} .logo:hover { transform: scale(1.1); }
+        .logo { font-weight: 700; font-size: 1.5rem; background: var(--gradient-1); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; transition: transform 0.3s ease; text-decoration: none; cursor: pointer;} .logo:hover { transform: scale(1.1); }
         .nav-menu { display: flex; align-items: center; gap: 2rem; } .nav-links { display: flex; list-style: none; gap: 2rem; }
-        .nav-links a { color: var(--text-secondary); text-decoration: none; transition: all 0.3s ease; position: relative; font-weight: 500; }
+        .nav-links a { color: var(--text-secondary); text-decoration: none; transition: all 0.3s ease; position: relative; font-weight: 500; cursor: pointer; }
         .nav-links a::after { content: ''; position: absolute; bottom: -5px; left: 0; width: 0; height: 2px; background: var(--accent); transition: width 0.3s ease; }
         .nav-links a:hover { color: var(--text-primary); } .nav-links a:hover::after, .nav-links a.active::after { width: 100%; }
         #theme-toggle { background: var(--surface-light); border: 1px solid var(--border); color: var(--text-secondary); width: 2.5rem; height: 2.5rem; border-radius: 50%; cursor: pointer; display: grid; place-items: center; font-size: 1.2rem; transition: all 0.3s ease; }
@@ -71,7 +73,24 @@
         .light-theme #theme-toggle .fa-moon, #theme-toggle .fa-sun { display: none; }
         .light-theme #theme-toggle .fa-sun { display: block; } body:not(.light-theme) #theme-toggle .fa-moon { display: block; }
 
-        .hero { min-height: 100vh; display: flex; align-items: center; justify-content: center; text-align: center; position: relative; padding: 2rem; }
+        /* Page System */
+        .page {
+            min-height: 100vh;
+            display: none;
+            opacity: 0;
+            transition: opacity 0.5s ease;
+            padding-top: 80px;
+        }
+        .page.active {
+            display: block;
+            animation: fadeIn 0.5s ease forwards;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .hero { min-height: calc(100vh - 80px); display: flex; align-items: center; justify-content: center; text-align: center; position: relative; padding: 2rem; }
         .hero-content { max-width: 900px; animation: fadeInUp 1s ease-out; }
         .hero h1 { font-size: clamp(2.5rem, 5vw, 4.5rem); font-weight: 700; margin-bottom: 1.5rem; background: var(--gradient-1); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; line-height: 1.2; }
 
@@ -105,7 +124,7 @@
         .btn { padding: 0.875rem 2rem; border: none; border-radius: 0.5rem; font-weight: 600; text-decoration: none; transition: all 0.3s ease; display: inline-flex; align-items: center; gap: 0.5rem; cursor: pointer; font-size: 1rem; }
         .btn-primary { background: var(--accent); color: white; } .btn-primary:hover { background: var(--accent-hover); transform: translateY(-3px); box-shadow: var(--shadow); }
         .btn-secondary { background: transparent; color: var(--text-primary); border: 1px solid var(--border); } .btn-secondary:hover { background: var(--surface-lighter); border-color: var(--accent); transform: translateY(-3px); }
-        .container { max-width: 1200px; margin: 0 auto; padding: 0 2rem; } .section { padding: 6rem 0; }
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 2rem; } .section { padding: 4rem 0; }
         .section-title { text-align: center; margin-bottom: 4rem; }
         .section-title h2 { font-size: clamp(2rem, 4vw, 3rem); font-weight: 700; margin-bottom: 1rem; background: var(--gradient-1); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
         .section-title p { color: var(--text-secondary); font-size: 1.1rem; max-width: 700px; margin: 0 auto; }
@@ -455,14 +474,9 @@
         .social-link i { font-size: 1.2rem; }
         .footer { background: var(--primary); border-top: 1px solid var(--border); padding: 3rem 0; text-align: center; }
         .footer p { color: var(--text-secondary); margin-bottom: 0.5rem; }
-        #back-to-top { position: fixed; bottom: 2rem; right: 2rem; width: 3rem; height: 3rem; background: var(--accent); color: white; border: none; border-radius: 50%; display: grid; place-items: center; font-size: 1.2rem; cursor: pointer; transition: opacity 0.3s, transform 0.3s; opacity: 0; transform: translateY(100%); z-index: 999; }
-        #back-to-top.visible { opacity: 1; transform: translateY(0); } #back-to-top:hover { background: var(--accent-hover); }
+
         @keyframes fadeInUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
-        .fade-in { opacity: 0; transform: translateY(30px); transition: opacity 0.6s ease-out, transform 0.6s ease-out; }
-        .fade-in.visible { opacity: 1; transform: translateY(0); }
-        .fade-in:nth-child(2) { transition-delay: 0.1s; } .fade-in:nth-child(3) { transition-delay: 0.2s; }
-        .fade-in:nth-child(4) { transition-delay: 0.3s; } .fade-in:nth-child(5) { transition-delay: 0.4s; }
-        .fade-in:nth-child(6) { transition-delay: 0.5s; }
+
         @media (max-width: 992px) {
             .about-grid, .contact-grid { grid-template-columns: 1fr; text-align: center; }
             .about-image-wrapper { margin: 0 auto 2rem auto; }
@@ -473,7 +487,7 @@
             .nav-links { display: none; }
             .hero-cta { flex-direction: column; align-items: center; }
             .btn { width: 100%; justify-content: center; max-width: 300px; }
-            .section { padding: 4rem 0; }
+            .section { padding: 3rem 0; }
             .projects-grid { grid-template-columns: 1fr; }
             .publication-header { flex-direction: column; }
             .publication-meta { flex-direction: column; align-items: flex-start; gap: 0.5rem; }
@@ -486,20 +500,18 @@
     </style>
 </head>
 <body>
-    <!-- Scroll Progress Indicator -->
-    <div id="scroll-progress"></div>
-
     <nav id="navbar">
         <div class="nav-container">
-            <a href="#" class="logo">MS</a>
+            <a class="logo" data-page="home">MS</a>
             <div class="nav-menu">
                 <ul class="nav-links">
-                    <li><a href="#about" class="active">About</a></li>
-                    <li><a href="#research">Research</a></li>
-                    <li><a href="#projects">Projects</a></li>
-                    <li><a href="#skills">Skills</a></li>
-                    <li><a href="#publications">Publications</a></li>
-                    <li><a href="#contact">Contact</a></li>
+                    <li><a data-page="home" class="active">Home</a></li>
+                    <li><a data-page="about">About</a></li>
+                    <li><a data-page="research">Research</a></li>
+                    <li><a data-page="projects">Projects</a></li>
+                    <li><a data-page="skills">Skills</a></li>
+                    <li><a data-page="publications">Publications</a></li>
+                    <li><a data-page="contact">Contact</a></li>
                 </ul>
                 <button id="theme-toggle" title="Toggle theme">
                     <i class="fas fa-sun"></i><i class="fas fa-moon"></i>
@@ -508,351 +520,365 @@
         </div>
     </nav>
 
-    <section class="hero" id="home">
-        <div class="hero-content">
-            <h1>Mohamed Shamroukh</h1>
-            <p class="hero-subtitle">
-                <span class="typewriter-line" id="typewriter-line1"></span>
-                <span class="typewriter-line" id="typewriter-line2"></span>
-            </p>
-            <div class="hero-cta">
-                <a href="#contact" class="btn btn-primary"><i class="fas fa-envelope"></i>Get In Touch</a>
-                <a href="#research" class="btn btn-secondary"><i class="fas fa-microscope"></i>View Research</a>
-            </div>
-        </div>
-    </section>
-
-    <section class="section" id="about">
-        <div class="container">
-            <div class="about-grid">
-                <div class="about-image-wrapper fade-in">
-                    <img src="https://pbs.twimg.com/profile_images/1959981871770550272/bi8kuSYk_400x400.jpg" alt="Profile picture of Mohamed Shamroukh" class="about-image">
+    <!-- HOME PAGE -->
+    <div id="home" class="page active">
+        <section class="hero">
+            <div class="hero-content">
+                <h1>Mohamed Shamroukh</h1>
+                <p class="hero-subtitle">
+                    <span class="typewriter-line" id="typewriter-line1"></span>
+                    <span class="typewriter-line" id="typewriter-line2"></span>
+                </p>
+                <div class="hero-cta">
+                    <a data-page="contact" class="btn btn-primary"><i class="fas fa-envelope"></i>Get In Touch</a>
+                    <a data-page="research" class="btn btn-secondary"><i class="fas fa-microscope"></i>View Research</a>
                 </div>
-                <div class="card fade-in">
-                    <div class="about-content">
-                        <h2>About Me</h2>
-                        <p>I am a doctoral researcher at The Impact Hub, School of Architecture, Building and Civil Engineering at Loughborough University, and a member of the Perceptive City Lab. My work is at the intersection of Geospatial Intelligence, GIS, Remote Sensing, Urban Planning, and GeoAI (Geospatial Artificial Intelligence).</p>
-                        <p>My PhD research focuses on data-driven modelling, geospatial analysis, and machine learning for pedestrian-friendly urban planning and sustainable city development. I possess extensive expertise in geospatial data science, urban analytics, spatial modelling, Python programming, and geospatial databases.</p>
-                        <p>Previously, I worked as a research and teaching assistant at South Valley University, Egypt, where I conducted research and teaching in GIS, remote sensing, and urban studies. My projects include WiFi-based pedestrian monitoring, point of interest (POI) analysis, street network analysis, and geospatial data integration.</p>
+            </div>
+        </section>
+    </div>
 
-                        <div class="phd-project">
-                            <h3><i class="fas fa-graduation-cap"></i> PhD Project</h3>
-                            <p><strong>Towards Pedestrian-Friendly Cities</strong></p>
-                            <p>This research develops innovative data-driven methodologies to create more walkable, accessible, and human-centered urban environments through advanced geospatial analysis and machine learning.</p>
-                            <a href="https://www.lboro.ac.uk/research/perceptive-city/projects/pedestrian-friendly-cities/" target="_blank" rel="noopener noreferrer">Learn more at Perceptive City Lab <i class="fas fa-external-link-alt"></i></a>
+    <!-- ABOUT PAGE -->
+    <div id="about" class="page">
+        <section class="section">
+            <div class="container">
+                <div class="about-grid">
+                    <div class="about-image-wrapper">
+                        <img src="https://pbs.twimg.com/profile_images/1959981871770550272/bi8kuSYk_400x400.jpg" alt="Profile picture of Mohamed Shamroukh" class="about-image">
+                    </div>
+                    <div class="card">
+                        <div class="about-content">
+                            <h2>About Me</h2>
+                            <p>I am a doctoral researcher at The Impact Hub, School of Architecture, Building and Civil Engineering at Loughborough University, and a member of the Perceptive City Lab. My work is at the intersection of Geospatial Intelligence, GIS, Remote Sensing, Urban Planning, and GeoAI (Geospatial Artificial Intelligence).</p>
+                            <p>My PhD research focuses on data-driven modelling, geospatial analysis, and machine learning for pedestrian-friendly urban planning and sustainable city development. I possess extensive expertise in geospatial data science, urban analytics, spatial modelling, Python programming, and geospatial databases.</p>
+                            <p>Previously, I worked as a research and teaching assistant at South Valley University, Egypt, where I conducted research and teaching in GIS, remote sensing, and urban studies. My projects include WiFi-based pedestrian monitoring, point of interest (POI) analysis, street network analysis, and geospatial data integration.</p>
+
+                            <div class="phd-project">
+                                <h3><i class="fas fa-graduation-cap"></i> PhD Project</h3>
+                                <p><strong>Towards Pedestrian-Friendly Cities</strong></p>
+                                <p>This research develops innovative data-driven methodologies to create more walkable, accessible, and human-centered urban environments through advanced geospatial analysis and machine learning.</p>
+                                <a href="https://www.lboro.ac.uk/research/perceptive-city/projects/pedestrian-friendly-cities/" target="_blank" rel="noopener noreferrer">Learn more at Perceptive City Lab <i class="fas fa-external-link-alt"></i></a>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
-        </div>
-    </section>
 
-    <!-- Research Interests Word Cloud -->
-    <section class="section" id="research-interests">
-        <div class="container">
-            <div class="section-title">
-                <h2 class="fade-in">Research Interests</h2>
-                <p class="fade-in">Key areas shaping my work in geospatial intelligence and urban planning.</p>
-            </div>
-            <div class="word-cloud-container fade-in">
-                <span class="word-cloud-item size-1">GeoAI</span>
-                <span class="word-cloud-item size-3">Machine Learning</span>
-                <span class="word-cloud-item size-2">Urban Planning</span>
-                <span class="word-cloud-item size-4">Remote Sensing</span>
-                <span class="word-cloud-item size-2">Computer Vision</span>
-                <span class="word-cloud-item size-5">Spatial Analysis</span>
-                <span class="word-cloud-item size-1">Python</span>
-                <span class="word-cloud-item size-3">Deep Learning</span>
-                <span class="word-cloud-item size-4">Pedestrian Analytics</span>
-                <span class="word-cloud-item size-2">Smart Cities</span>
-                <span class="word-cloud-item size-5">Data Science</span>
-                <span class="word-cloud-item size-1">QGIS</span>
-                <span class="word-cloud-item size-4">Sustainable Development</span>
-                <span class="word-cloud-item size-5">Geospatial Databases</span>
-                <span class="word-cloud-item size-2">YOLO</span>
-                <span class="word-cloud-item size-4">Urban Mobility</span>
-                <span class="word-cloud-item size-3">PostGIS</span>
-                <span class="word-cloud-item size-5">ArcGIS</span>
-                <span class="word-cloud-item size-3">TensorFlow</span>
-                <span class="word-cloud-item size-4">PyTorch</span>
-                <span class="word-cloud-item size-5">Keras</span>
-                <span class="word-cloud-item size-2">Object Detection</span>
-                <span class="word-cloud-item size-4">OpenCV</span>
-                <span class="word-cloud-item size-5">Neural Networks</span>
-                <span class="word-cloud-item size-3">Google Earth Engine</span>
-                <span class="word-cloud-item size-3">Spatial Modeling</span>
-                <span class="word-cloud-item size-4">Urban Analytics</span>
-                <span class="word-cloud-item size-5">CNN</span>
-                <span class="word-cloud-item size-2">Geospatial Intelligence</span>
-            </div>
-        </div>
-    </section>
-
-    <!-- Research Impact with Bubble Chart -->
-    <section class="section" id="research-impact">
-        <div class="container">
-            <div class="section-title">
-                <h2 class="fade-in">Research Impact</h2>
-                <p class="fade-in">Distribution of my research contributions across key domains.</p>
-            </div>
-            <div class="bubble-chart-container fade-in">
-                <div class="bubble-chart-wrapper">
-                    <div class="bubble-chart" id="bubbleChart"></div>
+                <!-- Research Interests Word Cloud -->
+                <div class="section-title" style="margin-top: 6rem;">
+                    <h2>Research Interests</h2>
+                    <p>Key areas shaping my work in geospatial intelligence and urban planning.</p>
                 </div>
-                <div class="bubble-legend">
-                    <div class="bubble-legend-item">
-                        <div class="bubble-legend-color ml"></div>
-                        <div class="bubble-legend-content">
-                            <div class="bubble-legend-title">Machine Learning & AI</div>
-                            <div class="bubble-legend-percentage ml">35%</div>
+                <div class="word-cloud-container">
+                    <span class="word-cloud-item size-1">GeoAI</span>
+                    <span class="word-cloud-item size-3">Machine Learning</span>
+                    <span class="word-cloud-item size-2">Urban Planning</span>
+                    <span class="word-cloud-item size-4">Remote Sensing</span>
+                    <span class="word-cloud-item size-2">Computer Vision</span>
+                    <span class="word-cloud-item size-5">Spatial Analysis</span>
+                    <span class="word-cloud-item size-1">Python</span>
+                    <span class="word-cloud-item size-3">Deep Learning</span>
+                    <span class="word-cloud-item size-4">Pedestrian Analytics</span>
+                    <span class="word-cloud-item size-2">Smart Cities</span>
+                    <span class="word-cloud-item size-5">Data Science</span>
+                    <span class="word-cloud-item size-1">QGIS</span>
+                    <span class="word-cloud-item size-4">Sustainable Development</span>
+                    <span class="word-cloud-item size-5">Geospatial Databases</span>
+                    <span class="word-cloud-item size-2">YOLO</span>
+                    <span class="word-cloud-item size-4">Urban Mobility</span>
+                    <span class="word-cloud-item size-3">PostGIS</span>
+                    <span class="word-cloud-item size-5">ArcGIS</span>
+                    <span class="word-cloud-item size-3">TensorFlow</span>
+                    <span class="word-cloud-item size-4">PyTorch</span>
+                    <span class="word-cloud-item size-5">Keras</span>
+                    <span class="word-cloud-item size-2">Object Detection</span>
+                    <span class="word-cloud-item size-4">OpenCV</span>
+                    <span class="word-cloud-item size-5">Neural Networks</span>
+                    <span class="word-cloud-item size-3">Google Earth Engine</span>
+                    <span class="word-cloud-item size-3">Spatial Modeling</span>
+                    <span class="word-cloud-item size-4">Urban Analytics</span>
+                    <span class="word-cloud-item size-5">CNN</span>
+                    <span class="word-cloud-item size-2">Geospatial Intelligence</span>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- RESEARCH PAGE -->
+    <div id="research" class="page">
+        <section class="section">
+            <div class="container">
+                <div class="section-title">
+                    <h2>Research Impact</h2>
+                    <p>Distribution of my research contributions across key domains.</p>
+                </div>
+                <div class="bubble-chart-container">
+                    <div class="bubble-chart-wrapper">
+                        <div class="bubble-chart" id="bubbleChart"></div>
+                    </div>
+                    <div class="bubble-legend">
+                        <div class="bubble-legend-item">
+                            <div class="bubble-legend-color ml"></div>
+                            <div class="bubble-legend-content">
+                                <div class="bubble-legend-title">Machine Learning & AI</div>
+                                <div class="bubble-legend-percentage ml">35%</div>
+                            </div>
+                        </div>
+                        <div class="bubble-legend-item">
+                            <div class="bubble-legend-color geo"></div>
+                            <div class="bubble-legend-content">
+                                <div class="bubble-legend-title">Geospatial Analysis</div>
+                                <div class="bubble-legend-percentage geo">30%</div>
+                            </div>
+                        </div>
+                        <div class="bubble-legend-item">
+                            <div class="bubble-legend-color urban"></div>
+                            <div class="bubble-legend-content">
+                                <div class="bubble-legend-title">Urban Planning</div>
+                                <div class="bubble-legend-percentage urban">25%</div>
+                            </div>
+                        </div>
+                        <div class="bubble-legend-item">
+                            <div class="bubble-legend-color remote"></div>
+                            <div class="bubble-legend-content">
+                                <div class="bubble-legend-title">Remote Sensing</div>
+                                <div class="bubble-legend-percentage remote">10%</div>
+                            </div>
                         </div>
                     </div>
-                    <div class="bubble-legend-item">
-                        <div class="bubble-legend-color geo"></div>
-                        <div class="bubble-legend-content">
-                            <div class="bubble-legend-title">Geospatial Analysis</div>
-                            <div class="bubble-legend-percentage geo">30%</div>
-                        </div>
-                    </div>
-                    <div class="bubble-legend-item">
-                        <div class="bubble-legend-color urban"></div>
-                        <div class="bubble-legend-content">
-                            <div class="bubble-legend-title">Urban Planning</div>
-                            <div class="bubble-legend-percentage urban">25%</div>
-                        </div>
-                    </div>
-                    <div class="bubble-legend-item">
-                        <div class="bubble-legend-color remote"></div>
-                        <div class="bubble-legend-content">
-                            <div class="bubble-legend-title">Remote Sensing</div>
-                            <div class="bubble-legend-percentage remote">10%</div>
-                        </div>
-                    </div>
+                </div>
+
+                <div class="section-title" style="margin-top: 6rem;">
+                    <h2>Research Focus</h2>
+                    <p>My research employs data-driven methods to build more sustainable, equitable, and pedestrian-friendly cities.</p>
+                </div>
+                <div class="research-grid">
+                    <div class="card research-card"><i class="fas fa-brain"></i><h3>Data-Driven Urban Modelling</h3><p>Leveraging advanced analytics and spatial modeling to understand urban patterns, predict trends, and optimize city planning decisions.</p></div>
+                    <div class="card research-card"><i class="fas fa-robot"></i><h3>Geospatial AI (GeoAI)</h3><p>Developing intelligent systems that analyze spatial patterns and predict urban dynamics using advanced machine learning and AI.</p></div>
+                    <div class="card research-card"><i class="fas fa-walking"></i><h3>Pedestrian-Friendly Planning</h3><p>Creating models to design cities that prioritize walkability, accessibility, and human-centered environments for sustainable mobility.</p></div>
+                    <div class="card research-card"><i class="fas fa-leaf"></i><h3>Sustainable City Development</h3><p>Using geospatial analytics to support sustainable urban growth, environmental monitoring, and smart city initiatives for resilient communities.</p></div>
+                    <div class="card research-card"><i class="fas fa-chart-line"></i><h3>Urban Analytics & Data Science</h3><p>Applying advanced statistical methods and data science to analyze complex urban datasets and extract insights for policy making.</p></div>
+                    <div class="card research-card"><i class="fas fa-satellite"></i><h3>GIS & Remote Sensing</h3><p>Utilizing satellite imagery, remote sensing, and GIS to monitor urban change and environmental conditions.</p></div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
+    </div>
 
-    <section class="section" id="research">
-        <div class="container">
-            <div class="section-title"><h2 class="fade-in">Research Focus</h2><p class="fade-in">My research employs data-driven methods to build more sustainable, equitable, and pedestrian-friendly cities.</p></div>
-            <div class="research-grid">
-                <div class="card research-card fade-in"><i class="fas fa-brain"></i><h3>Data-Driven Urban Modelling</h3><p>Leveraging advanced analytics and spatial modeling to understand urban patterns, predict trends, and optimize city planning decisions.</p></div>
-                <div class="card research-card fade-in"><i class="fas fa-robot"></i><h3>Geospatial AI (GeoAI)</h3><p>Developing intelligent systems that analyze spatial patterns and predict urban dynamics using advanced machine learning and AI.</p></div>
-                <div class="card research-card fade-in"><i class="fas fa-walking"></i><h3>Pedestrian-Friendly Planning</h3><p>Creating models to design cities that prioritize walkability, accessibility, and human-centered environments for sustainable mobility.</p></div>
-                <div class="card research-card fade-in"><i class="fas fa-leaf"></i><h3>Sustainable City Development</h3><p>Using geospatial analytics to support sustainable urban growth, environmental monitoring, and smart city initiatives for resilient communities.</p></div>
-                <div class="card research-card fade-in"><i class="fas fa-chart-line"></i><h3>Urban Analytics & Data Science</h3><p>Applying advanced statistical methods and data science to analyze complex urban datasets and extract insights for policy making.</p></div>
-                <div class="card research-card fade-in"><i class="fas fa-satellite"></i><h3>GIS & Remote Sensing</h3><p>Utilizing satellite imagery, remote sensing, and GIS to monitor urban change and environmental conditions.</p></div>
-            </div>
-        </div>
-    </section>
-
-    <section class="section" id="projects">
-        <div class="container">
-            <div class="section-title">
-                <h2 class="fade-in">Open Source Projects</h2>
-                <p class="fade-in">Software tools and applications developed to advance geospatial analysis and urban research.</p>
-            </div>
-            <div class="projects-grid">
-                <div class="card project-card fade-in">
-                    <h3><i class="fas fa-plug"></i> QGIS Pip Manager</h3>
-                    <p>A modern, full-featured graphical interface for managing Python packages directly within QGIS. Enables easy installation, uninstallation, upgrading, and downgrading of specific package versions without touching the command line, featuring asynchronous operations and robust error handling.</p>
-                    <div class="project-links">
-                        <a href="https://plugins.qgis.org/plugins/pip_manager/" target="_blank" rel="noopener noreferrer" class="project-link">
-                            <i class="fas fa-puzzle-piece"></i> Plugin Page
-                        </a>
-                        <a href="https://github.com/MohamedShamroukh" target="_blank" rel="noopener noreferrer" class="project-link">
-                            <i class="fab fa-github"></i> GitHub
-                        </a>
-                    </div>
+    <!-- PROJECTS PAGE -->
+    <div id="projects" class="page">
+        <section class="section">
+            <div class="container">
+                <div class="section-title">
+                    <h2>Open Source Projects</h2>
+                    <p>Software tools and applications developed to advance geospatial analysis and urban research.</p>
                 </div>
-
-                <div class="card project-card fade-in">
-                    <h3><i class="fas fa-bluetooth-b"></i> Bluetooth Beacon Scanner</h3>
-                    <p>A Python-based tool for scanning and analyzing Bluetooth beacons for pedestrian tracking and urban mobility research. Enables real-time monitoring of pedestrian movement patterns in urban environments.</p>
-                    <div class="project-links">
-                        <a href="https://github.com/MohamedShamroukh/bluetooth-beacon" target="_blank" rel="noopener noreferrer" class="project-link">
-                            <i class="fab fa-github"></i> View on GitHub
-                        </a>
-                    </div>
-                </div>
-
-                <div class="card project-card fade-in">
-                    <h3><i class="fas fa-users"></i> Pedestrian Counter</h3>
-                    <p>An automated pedestrian counting system using computer vision and machine learning for urban analytics. Provides accurate footfall data for pedestrian-friendly urban planning and public space management.</p>
-                    <div class="project-links">
-                        <a href="https://github.com/MohamedShamroukh/Pedestrian-Counter" target="_blank" rel="noopener noreferrer" class="project-link">
-                            <i class="fab fa-github"></i> View on GitHub
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="section" id="skills">
-        <div class="container">
-            <div class="section-title"><h2 class="fade-in">Technical Expertise</h2><p class="fade-in">A comprehensive toolkit for geospatial analysis, AI, and urban research.</p></div>
-            <div class="skills-grid">
-                <div class="card skill-category fade-in">
-                    <h3><i class="fas fa-robot"></i> Machine Learning & AI</h3>
-                    <div class="skill-tags">
-                        <span class="skill-tag">Machine Learning</span>
-                        <span class="skill-tag">Deep Learning</span>
-                        <span class="skill-tag">Computer Vision</span>
-                        <span class="skill-tag">Neural Networks</span>
-                        <span class="skill-tag">CNNs</span>
-                        <span class="skill-tag">YOLO</span>
-                        <span class="skill-tag">Object Detection</span>
-                    </div>
-                </div>
-
-                <div class="card skill-category fade-in">
-                    <h3><i class="fab fa-python"></i> Python & Data Science</h3>
-                    <div class="skill-tags">
-                        <span class="skill-tag">Python</span>
-                        <span class="skill-tag">PyTorch</span>
-                        <span class="skill-tag">TensorFlow</span>
-                        <span class="skill-tag">Keras</span>
-                        <span class="skill-tag">Pandas</span>
-                        <span class="skill-tag">NumPy</span>
-                        <span class="skill-tag">GeoPandas</span>
-                        <span class="skill-tag">Scikit-learn</span>
-                        <span class="skill-tag">OpenCV</span>
-                    </div>
-                </div>
-
-                <div class="card skill-category fade-in">
-                    <h3><i class="fas fa-globe"></i> GIS & Geospatial</h3>
-                    <div class="skill-tags">
-                        <span class="skill-tag">QGIS</span>
-                        <span class="skill-tag">ArcGIS Pro</span>
-                        <span class="skill-tag">PostGIS</span>
-                        <span class="skill-tag">Google Earth Engine</span>
-                        <span class="skill-tag">Remote Sensing</span>
-                        <span class="skill-tag">Spatial Analysis</span>
-                        <span class="skill-tag">Rasterio</span>
-                        <span class="skill-tag">GDAL</span>
-                    </div>
-                </div>
-
-                <div class="card skill-category fade-in">
-                    <h3><i class="fas fa-chart-bar"></i> Visualization & Mapping</h3>
-                    <div class="skill-tags">
-                        <span class="skill-tag">Matplotlib</span>
-                        <span class="skill-tag">Seaborn</span>
-                        <span class="skill-tag">Plotly</span>
-                        <span class="skill-tag">Folium</span>
-                        <span class="skill-tag">Leaflet</span>
-                    </div>
-                </div>
-
-                <div class="card skill-category fade-in">
-                    <h3><i class="fas fa-database"></i> Databases & Storage</h3>
-                    <div class="skill-tags">
-                        <span class="skill-tag">PostgreSQL</span>
-                        <span class="skill-tag">SQL</span>
-                        <span class="skill-tag">Cloud Storage</span>
-                    </div>
-                </div>
-
-                <div class="card skill-category fade-in">
-                    <h3><i class="fas fa-code"></i> Development & Tools</h3>
-                    <div class="skill-tags">
-                        <span class="skill-tag">Git & GitHub</span>
-                        <span class="skill-tag">Jupyter</span>
-                        <span class="skill-tag">VS Code</span>
-                        <span class="skill-tag">PyCharm</span>
-                        <span class="skill-tag">Linux</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="section" id="publications">
-        <div class="container">
-            <div class="section-title">
-                <h2 class="fade-in">Journal Publications</h2>
-                <p class="fade-in">Peer-reviewed research contributions in geospatial intelligence and urban planning.</p>
-            </div>
-            <div id="publications-list" class="fade-in">
-                <div class="loader">
-                    <i class="fas fa-spinner fa-spin"></i>
-                    <p>Loading journal publications...</p>
-                </div>
-            </div>
-            <div class="view-all-btn">
-                <a href="https://orcid.org/0000-0002-1005-2600" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">
-                    <i class="fab fa-orcid"></i> View All Publications on ORCID
-                </a>
-            </div>
-        </div>
-    </section>
-
-    <section class="section" id="contact">
-        <div class="container">
-            <div class="section-title"><h2 class="fade-in">Let's Connect</h2><p class="fade-in">I am always open to discussing research collaborations, sharing ideas, or exploring new opportunities.</p></div>
-            <div class="contact-grid">
-                <div class="linkedin-badge-container fade-in">
-                    <div class="light-linkedin-badge">
-                        <div class="badge-base LI-profile-badge"
-                             data-locale="en_US"
-                             data-size="medium"
-                             data-theme="light"
-                             data-type="VERTICAL"
-                             data-vanity="mohamed-shamroukh-348083126"
-                             data-version="v1">
-                            <a class="badge-base__link LI-simple-link"
-                               href="https://www.linkedin.com/in/mohamed-shamroukh-348083126?trk=profile-badge">
-                                Mohamed Shamroukh
+                <div class="projects-grid">
+                    <div class="card project-card">
+                        <h3><i class="fas fa-plug"></i> QGIS Pip Manager</h3>
+                        <p>A modern, full-featured graphical interface for managing Python packages directly within QGIS. Enables easy installation, uninstallation, upgrading, and downgrading of specific package versions without touching the command line, featuring asynchronous operations and robust error handling.</p>
+                        <div class="project-links">
+                            <a href="https://plugins.qgis.org/plugins/pip_manager/" target="_blank" rel="noopener noreferrer" class="project-link">
+                                <i class="fas fa-puzzle-piece"></i> Plugin Page
+                            </a>
+                            <a href="https://github.com/MohamedShamroukh" target="_blank" rel="noopener noreferrer" class="project-link">
+                                <i class="fab fa-github"></i> GitHub
                             </a>
                         </div>
                     </div>
-                    <div class="dark-linkedin-badge">
-                        <div class="badge-base LI-profile-badge"
-                             data-locale="en_US"
-                             data-size="medium"
-                             data-theme="dark"
-                             data-type="VERTICAL"
-                             data-vanity="mohamed-shamroukh-348083126"
-                             data-version="v1">
-                            <a class="badge-base__link LI-simple-link"
-                               href="https://www.linkedin.com/in/mohamed-shamroukh-348083126?trk=profile-badge">
-                                Mohamed Shamroukh
+
+                    <div class="card project-card">
+                        <h3><i class="fas fa-bluetooth-b"></i> Bluetooth Beacon Scanner</h3>
+                        <p>A Python-based tool for scanning and analyzing Bluetooth beacons for pedestrian tracking and urban mobility research. Enables real-time monitoring of pedestrian movement patterns in urban environments.</p>
+                        <div class="project-links">
+                            <a href="https://github.com/MohamedShamroukh/bluetooth-beacon" target="_blank" rel="noopener noreferrer" class="project-link">
+                                <i class="fab fa-github"></i> View on GitHub
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="card project-card">
+                        <h3><i class="fas fa-users"></i> Pedestrian Counter</h3>
+                        <p>An automated pedestrian counting system using computer vision and machine learning for urban analytics. Provides accurate footfall data for pedestrian-friendly urban planning and public space management.</p>
+                        <div class="project-links">
+                            <a href="https://github.com/MohamedShamroukh/Pedestrian-Counter" target="_blank" rel="noopener noreferrer" class="project-link">
+                                <i class="fab fa-github"></i> View on GitHub
                             </a>
                         </div>
                     </div>
                 </div>
-                <div class="social-links fade-in">
-                    <a href="https://www.linkedin.com/in/mohamed-shamroukh-348083126/" target="_blank" rel="noopener noreferrer" class="social-link"><i class="fab fa-linkedin"></i><span>LinkedIn</span></a>
-                    <a href="https://www.lboro.ac.uk/departments/abce/staff/mohamed-mahmoud/" target="_blank" rel="noopener noreferrer" class="social-link"><i class="fas fa-university"></i><span>Uni Profile</span></a>
-                    <a href="https://scholar.google.co.uk/citations?user=BUM-R3QAAAAJ&hl=en" target="_blank" rel="noopener noreferrer" class="social-link"><i class="fas fa-graduation-cap"></i><span>Scholar</span></a>
-                    <a href="https://x.com/mohamed_shm3" target="_blank" rel="noopener noreferrer" class="social-link"><i class="fab fa-x-twitter"></i><span>X (Twitter)</span></a>
-                    <a href="https://github.com/MohamedShamroukh" target="_blank" rel="noopener noreferrer" class="social-link"><i class="fab fa-github"></i><span>GitHub</span></a>
-                    <a href="https://orcid.org/0000-0002-1005-2600" target="_blank" rel="noopener noreferrer" class="social-link"><i class="fab fa-orcid"></i><span>ORCID</span></a>
-                    <a href="https://www.researchgate.net/profile/Mohamed-Shamroukh" target="_blank" rel="noopener noreferrer" class="social-link"><i class="fab fa-researchgate"></i><span>ResearchGate</span></a>
+            </div>
+        </section>
+    </div>
+
+    <!-- SKILLS PAGE -->
+    <div id="skills" class="page">
+        <section class="section">
+            <div class="container">
+                <div class="section-title">
+                    <h2>Technical Expertise</h2>
+                    <p>A comprehensive toolkit for geospatial analysis, AI, and urban research.</p>
+                </div>
+                <div class="skills-grid">
+                    <div class="card skill-category">
+                        <h3><i class="fas fa-robot"></i> Machine Learning & AI</h3>
+                        <div class="skill-tags">
+                            <span class="skill-tag">Machine Learning</span>
+                            <span class="skill-tag">Deep Learning</span>
+                            <span class="skill-tag">Computer Vision</span>
+                            <span class="skill-tag">Neural Networks</span>
+                            <span class="skill-tag">CNNs</span>
+                            <span class="skill-tag">YOLO</span>
+                            <span class="skill-tag">Object Detection</span>
+                        </div>
+                    </div>
+
+                    <div class="card skill-category">
+                        <h3><i class="fab fa-python"></i> Python & Data Science</h3>
+                        <div class="skill-tags">
+                            <span class="skill-tag">Python</span>
+                            <span class="skill-tag">PyTorch</span>
+                            <span class="skill-tag">TensorFlow</span>
+                            <span class="skill-tag">Keras</span>
+                            <span class="skill-tag">Pandas</span>
+                            <span class="skill-tag">NumPy</span>
+                            <span class="skill-tag">GeoPandas</span>
+                            <span class="skill-tag">Scikit-learn</span>
+                            <span class="skill-tag">OpenCV</span>
+                        </div>
+                    </div>
+
+                    <div class="card skill-category">
+                        <h3><i class="fas fa-globe"></i> GIS & Geospatial</h3>
+                        <div class="skill-tags">
+                            <span class="skill-tag">QGIS</span>
+                            <span class="skill-tag">ArcGIS Pro</span>
+                            <span class="skill-tag">PostGIS</span>
+                            <span class="skill-tag">Google Earth Engine</span>
+                            <span class="skill-tag">Remote Sensing</span>
+                            <span class="skill-tag">Spatial Analysis</span>
+                            <span class="skill-tag">Rasterio</span>
+                            <span class="skill-tag">GDAL</span>
+                        </div>
+                    </div>
+
+                    <div class="card skill-category">
+                        <h3><i class="fas fa-chart-bar"></i> Visualization & Mapping</h3>
+                        <div class="skill-tags">
+                            <span class="skill-tag">Matplotlib</span>
+                            <span class="skill-tag">Seaborn</span>
+                            <span class="skill-tag">Plotly</span>
+                            <span class="skill-tag">Folium</span>
+                            <span class="skill-tag">Leaflet</span>
+                        </div>
+                    </div>
+
+                    <div class="card skill-category">
+                        <h3><i class="fas fa-database"></i> Databases & Storage</h3>
+                        <div class="skill-tags">
+                            <span class="skill-tag">PostgreSQL</span>
+                            <span class="skill-tag">SQL</span>
+                            <span class="skill-tag">Cloud Storage</span>
+                        </div>
+                    </div>
+
+                    <div class="card skill-category">
+                        <h3><i class="fas fa-code"></i> Development & Tools</h3>
+                        <div class="skill-tags">
+                            <span class="skill-tag">Git & GitHub</span>
+                            <span class="skill-tag">Jupyter</span>
+                            <span class="skill-tag">VS Code</span>
+                            <span class="skill-tag">PyCharm</span>
+                            <span class="skill-tag">Linux</span>
+                        </div>
+                    </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
+    </div>
 
-    <footer class="footer">
-        <div class="container footer-content"><p>&copy; 2026 Mohamed Shamroukh. All rights reserved.</p><p>Built with passion and a touch of geospatial magic.</p></div>
-    </footer>
+    <!-- PUBLICATIONS PAGE -->
+    <div id="publications" class="page">
+        <section class="section">
+            <div class="container">
+                <div class="section-title">
+                    <h2>Journal Publications</h2>
+                    <p>Peer-reviewed research contributions in geospatial intelligence and urban planning.</p>
+                </div>
+                <div id="publications-list">
+                    <div class="loader">
+                        <i class="fas fa-spinner fa-spin"></i>
+                        <p>Loading journal publications...</p>
+                    </div>
+                </div>
+                <div class="view-all-btn">
+                    <a href="https://orcid.org/0000-0002-1005-2600" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">
+                        <i class="fab fa-orcid"></i> View All Publications on ORCID
+                    </a>
+                </div>
+            </div>
+        </section>
+    </div>
 
-    <button id="back-to-top" title="Back to Top"><i class="fas fa-arrow-up"></i></button>
+    <!-- CONTACT PAGE -->
+    <div id="contact" class="page">
+        <section class="section">
+            <div class="container">
+                <div class="section-title">
+                    <h2>Let's Connect</h2>
+                    <p>I am always open to discussing research collaborations, sharing ideas, or exploring new opportunities.</p>
+                </div>
+                <div class="contact-grid">
+                    <div class="linkedin-badge-container">
+                        <div class="light-linkedin-badge">
+                            <div class="badge-base LI-profile-badge"
+                                 data-locale="en_US"
+                                 data-size="medium"
+                                 data-theme="light"
+                                 data-type="VERTICAL"
+                                 data-vanity="mohamed-shamroukh-348083126"
+                                 data-version="v1">
+                                <a class="badge-base__link LI-simple-link"
+                                   href="https://www.linkedin.com/in/mohamed-shamroukh-348083126?trk=profile-badge">
+                                    Mohamed Shamroukh
+                                </a>
+                            </div>
+                        </div>
+                        <div class="dark-linkedin-badge">
+                            <div class="badge-base LI-profile-badge"
+                                 data-locale="en_US"
+                                 data-size="medium"
+                                 data-theme="dark"
+                                 data-type="VERTICAL"
+                                 data-vanity="mohamed-shamroukh-348083126"
+                                 data-version="v1">
+                                <a class="badge-base__link LI-simple-link"
+                                   href="https://www.linkedin.com/in/mohamed-shamroukh-348083126?trk=profile-badge">
+                                    Mohamed Shamroukh
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="social-links">
+                        <a href="https://www.linkedin.com/in/mohamed-shamroukh-348083126/" target="_blank" rel="noopener noreferrer" class="social-link"><i class="fab fa-linkedin"></i><span>LinkedIn</span></a>
+                        <a href="https://www.lboro.ac.uk/departments/abce/staff/mohamed-mahmoud/" target="_blank" rel="noopener noreferrer" class="social-link"><i class="fas fa-university"></i><span>Uni Profile</span></a>
+                        <a href="https://scholar.google.co.uk/citations?user=BUM-R3QAAAAJ&hl=en" target="_blank" rel="noopener noreferrer" class="social-link"><i class="fas fa-graduation-cap"></i><span>Scholar</span></a>
+                        <a href="https://x.com/mohamed_shm3" target="_blank" rel="noopener noreferrer" class="social-link"><i class="fab fa-x-twitter"></i><span>X (Twitter)</span></a>
+                        <a href="https://github.com/MohamedShamroukh" target="_blank" rel="noopener noreferrer" class="social-link"><i class="fab fa-github"></i><span>GitHub</span></a>
+                        <a href="https://orcid.org/0000-0002-1005-2600" target="_blank" rel="noopener noreferrer" class="social-link"><i class="fab fa-orcid"></i><span>ORCID</span></a>
+                        <a href="https://www.researchgate.net/profile/Mohamed-Shamroukh" target="_blank" rel="noopener noreferrer" class="social-link"><i class="fab fa-researchgate"></i><span>ResearchGate</span></a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <footer class="footer">
+            <div class="container footer-content"><p>&copy; 2026 Mohamed Shamroukh. All rights reserved.</p><p>Built with passion and a touch of geospatial magic.</p></div>
+        </footer>
+    </div>
 
     <script>
         document.addEventListener('DOMContentLoaded', function() {
-            const navbar = document.getElementById('navbar');
-            const navLinks = document.querySelectorAll('.nav-links a');
-            const sections = document.querySelectorAll('section');
-            const backToTopButton = document.getElementById('back-to-top');
             const themeToggleBtn = document.getElementById('theme-toggle');
             const body = document.body;
             const THEME_KEY = 'user-theme';
-            const scrollProgress = document.getElementById('scroll-progress');
 
             // Theme Management
             const applyTheme = (theme) => {
@@ -880,53 +906,52 @@
 
             themeToggleBtn.addEventListener('click', toggleTheme);
 
-            // Scroll Progress Indicator
-            const updateScrollProgress = () => {
-                const windowHeight = window.innerHeight;
-                const documentHeight = document.documentElement.scrollHeight - windowHeight;
-                const scrolled = window.scrollY;
-                const progress = (scrolled / documentHeight) * 100;
-                scrollProgress.style.width = progress + '%';
-            };
+            // Page Navigation System
+            const pages = document.querySelectorAll('.page');
+            const navLinks = document.querySelectorAll('[data-page]');
+            let currentPage = 'home';
 
-            // Scroll Handler
-            const handleScroll = () => {
-                const scrollPosition = window.scrollY;
-                navbar.classList.toggle('scrolled', scrollPosition > 50);
-                backToTopButton.classList.toggle('visible', scrollPosition > 300);
-                updateScrollProgress();
-
-                let currentSectionId = '';
-                sections.forEach(section => {
-                    const sectionTop = section.offsetTop;
-                    if (scrollPosition >= sectionTop - navbar.offsetHeight) {
-                        currentSectionId = section.getAttribute('id');
-                    }
+            function navigateTo(pageId) {
+                // Hide all pages
+                pages.forEach(page => {
+                    page.classList.remove('active');
                 });
-                navLinks.forEach(link => {
-                    link.classList.remove('active');
-                    if (link.getAttribute('href') === `#${currentSectionId}`) {
-                        link.classList.add('active');
-                    }
-                });
-            };
 
-            window.addEventListener('scroll', handleScroll);
-            backToTopButton.addEventListener('click', () => {
-                window.scrollTo({ top: 0, behavior: 'smooth' });
+                // Show selected page
+                const targetPage = document.getElementById(pageId);
+                if (targetPage) {
+                    targetPage.classList.add('active');
+                    currentPage = pageId;
+
+                    // Update active nav link
+                    navLinks.forEach(link => {
+                        link.classList.remove('active');
+                        if (link.getAttribute('data-page') === pageId) {
+                            link.classList.add('active');
+                        }
+                    });
+
+                    // Scroll to top
+                    window.scrollTo(0, 0);
+
+                    // Trigger page-specific initializations
+                    if (pageId === 'research' && !document.querySelector('.bubble')) {
+                        setTimeout(() => generateBubbles(), 100);
+                    }
+                    if (pageId === 'publications' && !publicationsLoaded) {
+                        fetchOrcidPublications();
+                    }
+                }
+            }
+
+            // Add click listeners to all navigation links
+            navLinks.forEach(link => {
+                link.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    const pageId = link.getAttribute('data-page');
+                    navigateTo(pageId);
+                });
             });
-
-            // Fade-in Observer
-            const fadeInElements = document.querySelectorAll('.fade-in');
-            const observer = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.classList.add('visible');
-                        observer.unobserve(entry.target);
-                    }
-                });
-            }, { threshold: 0.1 });
-            fadeInElements.forEach(el => { observer.observe(el); });
 
             // Two-Line Centered Typewriter Effect
             const line1 = document.getElementById('typewriter-line1');
@@ -964,35 +989,21 @@
             }, 500);
 
             // Circular Bubble Chart
-            const bubbleObserver = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        generateBubbles();
-                        bubbleObserver.unobserve(entry.target);
-                    }
-                });
-            }, { threshold: 0.3 });
-
-            const bubbleSection = document.querySelector('#research-impact');
-            if (bubbleSection) {
-                bubbleObserver.observe(bubbleSection);
-            }
-
             function generateBubbles() {
                 const container = document.getElementById('bubbleChart');
-                if (!container) return;
+                if (!container || container.children.length > 0) return;
 
                 const data = [
-                    { type: 'ml', count: 14, color: '#3b82f6' },      // 35% = 14 bubbles
-                    { type: 'geo', count: 12, color: '#10b981' },     // 30% = 12 bubbles
-                    { type: 'urban', count: 10, color: '#8b5cf6' },   // 25% = 10 bubbles
-                    { type: 'remote', count: 4, color: '#f59e0b' }    // 10% = 4 bubbles
+                    { type: 'ml', count: 14, color: '#3b82f6' },
+                    { type: 'geo', count: 12, color: '#10b981' },
+                    { type: 'urban', count: 10, color: '#8b5cf6' },
+                    { type: 'remote', count: 4, color: '#f59e0b' }
                 ];
 
                 const totalBubbles = 40;
                 const containerSize = container.offsetWidth;
-                const bubbleSize = containerSize * 0.12; // 12% of container
-                const radius = containerSize * 0.38; // Radius for circular placement
+                const bubbleSize = containerSize * 0.12;
+                const radius = containerSize * 0.38;
                 const centerX = containerSize / 2;
                 const centerY = containerSize / 2;
 
@@ -1003,7 +1014,6 @@
                         const bubble = document.createElement('div');
                         bubble.className = `bubble ${category.type}`;
 
-                        // Use golden angle for natural spiral pattern
                         const angle = bubbleIndex * 137.5 * (Math.PI / 180);
                         const spiralRadius = radius * Math.sqrt(bubbleIndex / totalBubbles);
 
@@ -1014,9 +1024,7 @@
                         bubble.style.height = bubbleSize + 'px';
                         bubble.style.left = x + 'px';
                         bubble.style.top = y + 'px';
-                        bubble.style.animationDelay = `${bubbleIndex * 0.03}s`;
 
-                        // Add floating animation with unique delays
                         const floatDelay = Math.random() * 4;
                         bubble.style.animationDelay = `${bubbleIndex * 0.03}s, ${floatDelay}s`;
 
@@ -1026,8 +1034,12 @@
                 });
             }
 
-            // Publications fetch - Journal articles only
+            // Publications fetch
+            let publicationsLoaded = false;
             async function fetchOrcidPublications() {
+                if (publicationsLoaded) return;
+                publicationsLoaded = true;
+
                 const publicationsList = document.getElementById('publications-list');
                 const orcidId = "0000-0002-1005-2600";
                 const apiUrl = `https://pub.orcid.org/v3.0/${orcidId}/works`;
@@ -1050,7 +1062,6 @@
 
                     publicationsList.innerHTML = '';
 
-                    // Filter for journal articles only
                     const journalWorks = detailData.bulk.filter(item => {
                         const work = item.work;
                         const workType = work.type?.toLowerCase() || '';
@@ -1058,7 +1069,6 @@
                         return hasJournal && (workType.includes('journal') || workType.includes('article'));
                     });
 
-                    // Sort by year
                     const works = journalWorks.sort((a, b) => {
                         const yearA = a.work['publication-date']?.year?.value || 0;
                         const yearB = b.work['publication-date']?.year?.value || 0;
@@ -1083,7 +1093,6 @@
                         const date = [year, month, day].filter(Boolean).join('-');
 
                         const link = work.url?.value;
-                        const workType = work.type || 'journal-article';
 
                         let authors = 'N/A';
                         if (work.contributors?.contributor) {
@@ -1121,8 +1130,6 @@
                     publicationsList.innerHTML = `<div class="error-message">Could not load publications from ORCID. Please try again later.</div>`;
                 }
             }
-
-            fetchOrcidPublications();
         });
     </script>
 </body>

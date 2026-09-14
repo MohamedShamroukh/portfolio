@@ -5,102 +5,174 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>Mohamed Shamroukh | Geospatial Intelligence & Urban Planning Researcher</title>
-    <meta name="description" content="Personal portfolio of Mohamed Shamroukh, a doctoral researcher at Loughborough University specializing in Geospatial Intelligence, GIS, GeoAI, and data-driven urban planning for sustainable cities.">
-    <meta name="keywords" content="Mohamed Shamroukh, Geospatial Intelligence, GIS, GeoAI, Remote Sensing, Urban Planning, Loughborough University, PhD Researcher, Data Science, Python, Sustainable Cities, Publications, ORCID">
+    <meta name="description" content="Mohamed Shamroukh is a doctoral researcher at Loughborough University working in GeoAI, urban analytics, spatial data science, pedestrian modelling, and data-driven urban planning.">
+    <meta name="keywords" content="Mohamed Shamroukh, GeoAI, GIS, urban analytics, spatial data science, pedestrian flow prediction, pedestrian modelling, geospatial AI, machine learning, computer vision, urban planning, remote sensing, Python, Loughborough University">
     <meta name="author" content="Mohamed Shamroukh">
-    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>MS</text></svg>">
 
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>MS</text></svg>">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 
-    <!-- LinkedIn Badge Script in Head -->
-    <script src="https://platform.linkedin.com/badges/js/profile.js" async defer type="text/javascript"></script>
-
     <style>
         :root {
-            /* Dark Theme (Default) */
-            --primary: #0f172a; --secondary: #1e293b; --accent: #3b82f6;
-            --accent-hover: #2563eb; --text-primary: #f8fafc; --text-secondary: #cbd5e1;
-            --text-muted: #94a3b8; --surface: #0f172a; --surface-light: #1e293b;
-            --surface-lighter: #334155; --border: #334155;
+            --primary: #0f172a;
+            --secondary: #1e293b;
+            --accent: #3b82f6;
+            --accent-hover: #2563eb;
+            --text-primary: #f8fafc;
+            --text-secondary: #cbd5e1;
+            --text-muted: #94a3b8;
+            --surface: #0f172a;
+            --surface-light: #1e293b;
+            --surface-lighter: #334155;
+            --border: #334155;
             --gradient-1: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             --gradient-2: linear-gradient(135deg, #3b82f6 0%, #8b5cf6 100%);
-            --shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.2), 0 4px 6px -2px rgba(0, 0, 0, 0.15);
-            --shadow-lg: 0 25px 50px -12px rgba(0, 0, 0, 0.4);
+            --shadow: 0 10px 15px -3px rgba(0,0,0,.2), 0 4px 6px -2px rgba(0,0,0,.15);
+            --shadow-lg: 0 25px 50px -12px rgba(0,0,0,.4);
         }
+
         .light-theme {
-            /* Light Theme */
-            --primary: #ffffff; --secondary: #f1f5f9; --accent: #3b82f6;
-            --accent-hover: #2563eb; --text-primary: #0f172a; --text-secondary: #475569;
-            --text-muted: #64748b; --surface: #f8fafc; --surface-light: #ffffff;
-            --surface-lighter: #f1f5f9; --border: #e2e8f0;
+            --primary: #ffffff;
+            --secondary: #f1f5f9;
+            --accent: #3b82f6;
+            --accent-hover: #2563eb;
+            --text-primary: #0f172a;
+            --text-secondary: #475569;
+            --text-muted: #64748b;
+            --surface: #f8fafc;
+            --surface-light: #ffffff;
+            --surface-lighter: #f1f5f9;
+            --border: #e2e8f0;
             --gradient-1: linear-gradient(135deg, #3b82f6 0%, #6d28d9 100%);
             --gradient-2: linear-gradient(135deg, #3b82f6 0%, #8b5cf6 100%);
-            --shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.07), 0 4px 6px -2px rgba(0, 0, 0, 0.04);
-            --shadow-lg: 0 25px 50px -12px rgba(0, 0, 0, 0.15);
+            --shadow: 0 10px 15px -3px rgba(0,0,0,.07), 0 4px 6px -2px rgba(0,0,0,.04);
+            --shadow-lg: 0 25px 50px -12px rgba(0,0,0,.15);
         }
-        html { scroll-behavior: smooth; } * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+
         body {
             font-family: 'Inter', sans-serif;
             background: var(--surface);
             color: var(--text-primary);
             line-height: 1.7;
             overflow-x: hidden;
-            transition: background 0.3s ease, color 0.3s ease;
+            transition: background .3s ease, color .3s ease;
         }
-        body::before { content: ''; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: radial-gradient(circle at 20% 20%, rgba(59, 130, 246, 0.08) 0%, transparent 40%), radial-gradient(circle at 80% 80%, rgba(139, 92, 246, 0.08) 0%, transparent 40%); z-index: -1; animation: backgroundFlow 30s ease-in-out infinite; transition: opacity 0.3s ease; } .light-theme body::before { opacity: 0.5; }
-        @keyframes backgroundFlow { 0%, 100% { transform: scale(1) rotate(0deg); } 50% { transform: scale(1.2) rotate(180deg); } }
+
+        body::before {
+            content: '';
+            position: fixed;
+            inset: 0;
+            background:
+                radial-gradient(circle at 20% 20%, rgba(59,130,246,.08) 0%, transparent 40%),
+                radial-gradient(circle at 80% 80%, rgba(139,92,246,.08) 0%, transparent 40%);
+            z-index: -1;
+            pointer-events: none;
+        }
 
         nav {
             position: fixed;
             top: 0;
             width: 100%;
             z-index: 1000;
-            padding: 1.2rem 0;
-            background: rgba(15, 23, 42, 0.85);
-            backdrop-filter: blur(10px);
+            padding: 1.1rem 0;
+            background: rgba(15,23,42,.86);
+            backdrop-filter: blur(12px);
             box-shadow: var(--shadow);
         }
-        .light-theme nav { background: rgba(255, 255, 255, 0.85); }
-        .nav-container { max-width: 1200px; margin: 0 auto; padding: 0 2rem; display: flex; justify-content: space-between; align-items: center; }
-        .logo { font-weight: 700; font-size: 1.5rem; background: var(--gradient-1); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; transition: transform 0.3s ease; text-decoration: none; cursor: pointer;} .logo:hover { transform: scale(1.1); }
-        .nav-menu { display: flex; align-items: center; gap: 2rem; }
-        .nav-links { display: flex; list-style: none; gap: 2rem; }
-        .nav-links a { color: var(--text-secondary); text-decoration: none; transition: all 0.3s ease; position: relative; font-weight: 500; cursor: pointer; padding: 0.5rem 0; }
-        .nav-links a::after { content: ''; position: absolute; bottom: 0; left: 0; width: 0; height: 2px; background: var(--accent); transition: width 0.3s ease; }
-        .nav-links a:hover { color: var(--text-primary); } .nav-links a:hover::after, .nav-links a.active::after { width: 100%; }
-        #theme-toggle { background: var(--surface-light); border: 1px solid var(--border); color: var(--text-secondary); width: 2.5rem; height: 2.5rem; border-radius: 50%; cursor: pointer; display: grid; place-items: center; font-size: 1.2rem; transition: all 0.3s ease; }
-        #theme-toggle:hover { color: var(--accent); border-color: var(--accent); transform: rotate(15deg); }
-        .light-theme #theme-toggle .fa-moon, #theme-toggle .fa-sun { display: none; }
-        .light-theme #theme-toggle .fa-sun { display: block; } body:not(.light-theme) #theme-toggle .fa-moon { display: block; }
 
-        /* Burger Menu */
+        .light-theme nav { background: rgba(255,255,255,.88); }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-weight: 700;
+            font-size: 1.5rem;
+            background: var(--gradient-1);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        .nav-menu { display: flex; align-items: center; gap: 2rem; }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 1.8rem;
+        }
+
+        .nav-links a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-weight: 500;
+            cursor: pointer;
+            padding: .45rem 0;
+            position: relative;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--accent);
+            transition: width .25s ease;
+        }
+
+        .nav-links a:hover,
+        .nav-links a.active { color: var(--text-primary); }
+
+        .nav-links a:hover::after,
+        .nav-links a.active::after { width: 100%; }
+
+        #theme-toggle {
+            background: var(--surface-light);
+            border: 1px solid var(--border);
+            color: var(--text-secondary);
+            width: 2.5rem;
+            height: 2.5rem;
+            border-radius: 50%;
+            cursor: pointer;
+            display: grid;
+            place-items: center;
+            font-size: 1.1rem;
+        }
+
+        .light-theme #theme-toggle .fa-moon,
+        #theme-toggle .fa-sun { display: none; }
+
+        .light-theme #theme-toggle .fa-sun { display: block; }
+        body:not(.light-theme) #theme-toggle .fa-moon { display: block; }
+
         .burger-menu {
             display: none;
             flex-direction: column;
             gap: 5px;
             cursor: pointer;
-            padding: 0.5rem;
-            z-index: 1001;
+            padding: .5rem;
         }
+
         .burger-menu span {
             width: 25px;
             height: 3px;
             background: var(--text-primary);
             border-radius: 2px;
-            transition: all 0.3s ease;
-        }
-        .burger-menu.active span:nth-child(1) {
-            transform: rotate(45deg) translate(7px, 7px);
-        }
-        .burger-menu.active span:nth-child(2) {
-            opacity: 0;
-        }
-        .burger-menu.active span:nth-child(3) {
-            transform: rotate(-45deg) translate(7px, -7px);
         }
 
-        /* Mobile Menu */
         .mobile-menu {
             position: fixed;
             top: 70px;
@@ -110,512 +182,707 @@
             height: calc(100vh - 70px);
             background: var(--surface-light);
             box-shadow: var(--shadow-lg);
-            transition: right 0.3s ease;
+            transition: right .3s ease;
             z-index: 999;
             padding: 2rem;
             border-left: 1px solid var(--border);
         }
-        .mobile-menu.active {
-            right: 0;
-        }
+
+        .mobile-menu.active { right: 0; }
+
         .mobile-menu ul {
             list-style: none;
             display: flex;
             flex-direction: column;
-            gap: 1.5rem;
+            gap: 1rem;
         }
+
         .mobile-menu a {
             color: var(--text-primary);
             text-decoration: none;
             font-weight: 500;
-            font-size: 1.1rem;
+            font-size: 1.05rem;
             display: block;
-            padding: 0.75rem 1rem;
-            border-radius: 0.5rem;
-            transition: all 0.3s ease;
+            padding: .75rem 1rem;
+            border-radius: .5rem;
+            cursor: pointer;
         }
+
         .mobile-menu a:hover,
         .mobile-menu a.active {
             background: var(--accent);
             color: white;
         }
 
-        /* Page System */
         .page {
             min-height: 100vh;
             display: none;
+            padding-top: 78px;
             opacity: 0;
-            transition: opacity 0.5s ease;
-            padding-top: 80px;
         }
+
         .page.active {
             display: block;
-            animation: fadeIn 0.5s ease forwards;
+            animation: fadeIn .45s ease forwards;
         }
+
         @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(20px); }
+            from { opacity: 0; transform: translateY(12px); }
             to { opacity: 1; transform: translateY(0); }
         }
 
-        .hero { min-height: calc(100vh - 80px); display: flex; align-items: center; justify-content: center; text-align: center; position: relative; padding: 2rem; }
-        .hero-content { max-width: 900px; animation: fadeInUp 1s ease-out; }
-        .hero h1 { font-size: clamp(2.5rem, 5vw, 4.5rem); font-weight: 700; margin-bottom: 1.5rem; background: var(--gradient-1); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; line-height: 1.2; }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
 
-        /* Typewriter Effect - Centered on Two Lines */
-        .hero-subtitle {
-            font-size: clamp(1.1rem, 2vw, 1.3rem);
+        .section { padding: 4rem 0; }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .section-title h2 {
+            font-size: clamp(2rem, 4vw, 3rem);
+            font-weight: 700;
+            margin-bottom: .8rem;
+            background: var(--gradient-1);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .section-title p {
             color: var(--text-secondary);
-            margin-bottom: 2.5rem;
-            font-weight: 300;
-            min-height: 5rem;
+            max-width: 720px;
+            margin: 0 auto;
+            font-size: 1.05rem;
+        }
+
+        .hero {
+            min-height: calc(100vh - 78px);
             display: flex;
-            flex-direction: column;
             align-items: center;
             justify-content: center;
-            gap: 0.5rem;
-        }
-        .typewriter-line {
-            display: block;
             text-align: center;
+            padding: 3rem 2rem;
         }
+
+        .hero-content { max-width: 920px; }
+
+        .hero h1 {
+            font-size: clamp(2.7rem, 6vw, 5rem);
+            line-height: 1.15;
+            margin-bottom: 1.3rem;
+            background: var(--gradient-1);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hero-subtitle {
+            color: var(--text-secondary);
+            font-size: clamp(1.05rem, 2vw, 1.3rem);
+            font-weight: 300;
+            min-height: 4rem;
+            margin-bottom: 2rem;
+        }
+
+        .typewriter-line { display: block; }
+
         .typewriter-line.active {
-            border-right: 3px solid var(--accent);
-            animation: blink-caret 0.75s step-end infinite;
+            border-right: 2px solid var(--accent);
+            animation: blink-caret .75s step-end infinite;
         }
+
         @keyframes blink-caret {
             from, to { border-color: transparent; }
             50% { border-color: var(--accent); }
         }
 
-        .hero-cta { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
-        .btn { padding: 0.875rem 2rem; border: none; border-radius: 0.5rem; font-weight: 600; text-decoration: none; transition: all 0.3s ease; display: inline-flex; align-items: center; gap: 0.5rem; cursor: pointer; font-size: 1rem; }
-        .btn-primary { background: var(--accent); color: white; } .btn-primary:hover { background: var(--accent-hover); transform: translateY(-3px); box-shadow: var(--shadow); }
-        .btn-secondary { background: transparent; color: var(--text-primary); border: 1px solid var(--border); } .btn-secondary:hover { background: var(--surface-lighter); border-color: var(--accent); transform: translateY(-3px); }
-        .container { max-width: 1200px; margin: 0 auto; padding: 0 2rem; } .section { padding: 4rem 0; }
-        .section-title { text-align: center; margin-bottom: 4rem; }
-        .section-title h2 { font-size: clamp(2rem, 4vw, 3rem); font-weight: 700; margin-bottom: 1rem; background: var(--gradient-1); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
-        .section-title p { color: var(--text-secondary); font-size: 1.1rem; max-width: 700px; margin: 0 auto; }
+        .hero-cta {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
 
-        .card {
+        .btn {
+            padding: .85rem 1.6rem;
+            border-radius: .5rem;
+            font-weight: 600;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: .5rem;
+            cursor: pointer;
+            border: 1px solid transparent;
+            transition: all .25s ease;
+        }
+
+        .btn-primary { background: var(--accent); color: white; }
+        .btn-primary:hover { background: var(--accent-hover); transform: translateY(-2px); }
+
+        .btn-secondary {
+            background: transparent;
+            color: var(--text-primary);
+            border-color: var(--border);
+        }
+
+        .btn-secondary:hover {
+            background: var(--surface-lighter);
+            border-color: var(--accent);
+            transform: translateY(-2px);
+        }
+
+        /* project gallery */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.6rem;
+        }
+
+        .project-card {
             background: var(--surface-light);
-            border-radius: 1rem;
-            padding: 2.5rem;
             border: 1px solid var(--border);
-            transition: all 0.3s ease;
-            position: relative;
+            border-radius: 1rem;
             overflow: hidden;
             box-shadow: var(--shadow);
+            transition: transform .3s ease, box-shadow .3s ease, border-color .3s ease;
         }
-        .card:hover {
-            transform: translateY(-8px);
+
+        .project-card:hover {
+            transform: translateY(-7px);
             box-shadow: var(--shadow-lg);
             border-color: var(--accent);
         }
 
-        .about-grid { display: grid; grid-template-columns: auto 1fr; gap: 3rem; align-items: center; } .about-image-wrapper { max-width: 280px; }
-        .about-image { width: 100%; height: auto; border-radius: 50%; border: 5px solid var(--surface-lighter); box-shadow: var(--shadow-lg); transition: transform 0.3s ease; } .about-image:hover { transform: scale(1.05); }
-        .about-content h2 { color: var(--text-primary); margin-bottom: 1rem; } .about-content p { margin-bottom: 1.5rem; color: var(--text-secondary); line-height: 1.8; } .about-content p:last-child { margin-bottom: 0; }
+        .project-image {
+            width: 100%;
+            height: 190px;
+            object-fit: cover;
+            display: block;
+            background: var(--surface-lighter);
+        }
 
-        /* PhD Project Styling */
-        .phd-project { background: linear-gradient(135deg, rgba(59, 130, 246, 0.1) 0%, rgba(139, 92, 246, 0.1) 100%); border-left: 4px solid var(--accent); margin-top: 2rem; padding: 1.5rem; border-radius: 0.5rem; }
-        .phd-project h3 { color: var(--text-primary); margin-bottom: 0.75rem; font-size: 1.2rem; display: flex; align-items: center; gap: 0.5rem; }
-        .phd-project h3 i { color: var(--accent); }
-        .phd-project p { color: var(--text-secondary); margin-bottom: 0.5rem; }
-        .phd-project a { color: var(--accent); text-decoration: none; transition: color 0.3s ease; }
-        .phd-project a:hover { color: var(--accent-hover); text-decoration: underline; }
+        .project-body { padding: 1.5rem; }
 
-        /* Research Interests Word Cloud - Enhanced */
-        .word-cloud-container {
+        .project-body h3 {
+            font-size: 1.2rem;
+            margin-bottom: .7rem;
+        }
+
+        .project-body p {
+            color: var(--text-secondary);
+            font-size: .94rem;
+            line-height: 1.65;
+            margin-bottom: 1.2rem;
+        }
+
+        .project-links {
             display: flex;
             flex-wrap: wrap;
-            justify-content: center;
+            gap: .65rem;
+        }
+
+        .project-link {
+            display: inline-flex;
             align-items: center;
-            gap: 1.5rem;
-            padding: 3rem 2rem;
+            gap: .45rem;
+            padding: .5rem .8rem;
+            border: 1px solid var(--border);
+            border-radius: .45rem;
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: .86rem;
+        }
+
+        .project-link:hover {
+            color: white;
+            background: var(--accent);
+            border-color: var(--accent);
+        }
+
+        /* about */
+        .about-layout {
+            display: grid;
+            grid-template-columns: 280px 1fr;
+            gap: 3rem;
+            align-items: start;
+        }
+
+        .about-image {
+            width: 100%;
+            border-radius: 50%;
+            border: 5px solid var(--surface-lighter);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .about-content h2 { margin-bottom: 1rem; }
+
+        .about-content p {
+            color: var(--text-secondary);
+            line-height: 1.8;
+            margin-bottom: 1.4rem;
+        }
+
+        .phd-project {
+            margin-top: 1.8rem;
+            padding: 1.4rem 1.5rem;
+            border-left: 4px solid var(--accent);
+            background: linear-gradient(135deg, rgba(59,130,246,.09), rgba(139,92,246,.09));
+            border-radius: .5rem;
+        }
+
+        .phd-project h3 {
+            margin-bottom: .5rem;
+            display: flex;
+            gap: .5rem;
+            align-items: center;
+        }
+
+        .phd-project h3 i { color: var(--accent); }
+
+        .phd-project p {
+            margin-bottom: .45rem;
+        }
+
+        .phd-project a {
+            color: var(--accent);
+            text-decoration: none;
+        }
+
+        .contact-panel {
+            margin-top: 3rem;
+            padding: 2rem;
             background: var(--surface-light);
+            border: 1px solid var(--border);
             border-radius: 1rem;
-            border: 1px solid var(--border);
-            margin: 3rem 0;
-            min-height: 400px;
+            box-shadow: var(--shadow);
         }
-        .word-cloud-item {
-            display: inline-block;
-            padding: 0.5rem 1.2rem;
-            background: var(--surface-lighter);
-            border: 1px solid var(--border);
-            border-radius: 2rem;
-            transition: all 0.3s ease;
-            cursor: default;
-            animation: float 3s ease-in-out infinite;
+
+        .contact-panel h3 { margin-bottom: 1rem; }
+
+        .contact-links {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: .8rem;
         }
-        .word-cloud-item:hover {
-            transform: scale(1.15) translateY(-5px);
+
+        .contact-link {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: .55rem;
+            padding: .8rem;
+            border: 1px solid var(--border);
+            border-radius: .6rem;
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: .9rem;
+        }
+
+        .contact-link:hover {
             background: var(--accent);
             color: white;
             border-color: var(--accent);
-            box-shadow: var(--shadow);
-        }
-        .word-cloud-item.size-1 { font-size: 2rem; font-weight: 700; animation-delay: 0s; }
-        .word-cloud-item.size-2 { font-size: 1.6rem; font-weight: 600; animation-delay: 0.5s; }
-        .word-cloud-item.size-3 { font-size: 1.3rem; font-weight: 500; animation-delay: 1s; }
-        .word-cloud-item.size-4 { font-size: 1.1rem; font-weight: 400; animation-delay: 1.5s; }
-        .word-cloud-item.size-5 { font-size: 0.95rem; font-weight: 400; animation-delay: 2s; }
-
-        @keyframes float {
-            0%, 100% { transform: translateY(0px); }
-            50% { transform: translateY(-10px); }
         }
 
-        /* Circular Bubble Chart */
-        .bubble-chart-container {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 4rem;
-            align-items: center;
-            padding: 3rem;
-            background: var(--surface-light);
-            border-radius: 1rem;
-            border: 1px solid var(--border);
-            margin-top: 3rem;
-        }
-        .bubble-chart-wrapper {
-            position: relative;
-            width: 100%;
-            max-width: 500px;
-            margin: 0 auto;
-        }
-        .bubble-chart {
-            position: relative;
-            width: 100%;
-            padding-bottom: 100%;
-            border-radius: 50%;
-            overflow: visible;
-        }
-        .bubble {
-            position: absolute;
-            border-radius: 50%;
-            opacity: 0;
-            animation: bubbleFloat 4s ease-in-out infinite, bubbleFadeIn 0.6s ease-out forwards;
-            transition: transform 0.3s ease;
-        }
-        .bubble:hover {
-            transform: scale(1.15);
-            z-index: 10;
-        }
-        .bubble.ml { background: #3b82f6; }
-        .bubble.geo { background: #10b981; }
-        .bubble.urban { background: #8b5cf6; }
-        .bubble.remote { background: #f59e0b; }
-
-        @keyframes bubbleFadeIn {
-            from { opacity: 0; transform: scale(0); }
-            to { opacity: 0.9; }
-        }
-        @keyframes bubbleFloat {
-            0%, 100% { transform: translateY(0) translateX(0); }
-            25% { transform: translateY(-8px) translateX(4px); }
-            50% { transform: translateY(0) translateX(-4px); }
-            75% { transform: translateY(8px) translateX(4px); }
-        }
-
-        .bubble-legend {
-            display: flex;
-            flex-direction: column;
-            gap: 1.5rem;
-        }
-        .bubble-legend-item {
-            display: flex;
-            align-items: center;
-            gap: 1.25rem;
-            padding: 1.5rem;
-            background: var(--surface-lighter);
-            border-radius: 1rem;
-            border: 1px solid var(--border);
-            transition: all 0.3s ease;
-        }
-        .bubble-legend-item:hover {
-            transform: translateX(10px);
-            box-shadow: var(--shadow-lg);
-        }
-        .bubble-legend-color {
-            width: 50px;
-            height: 50px;
-            border-radius: 50%;
-            flex-shrink: 0;
-            box-shadow: var(--shadow);
-        }
-        .bubble-legend-color.ml { background: #3b82f6; }
-        .bubble-legend-color.geo { background: #10b981; }
-        .bubble-legend-color.urban { background: #8b5cf6; }
-        .bubble-legend-color.remote { background: #f59e0b; }
-
-        .bubble-legend-content {
-            flex: 1;
-        }
-        .bubble-legend-title {
-            font-weight: 600;
-            color: var(--text-primary);
-            margin-bottom: 0.25rem;
-            font-size: 1.1rem;
-        }
-        .bubble-legend-percentage {
-            font-size: 1.75rem;
-            font-weight: 700;
-        }
-        .bubble-legend-percentage.ml { color: #3b82f6; }
-        .bubble-legend-percentage.geo { color: #10b981; }
-        .bubble-legend-percentage.urban { color: #8b5cf6; }
-        .bubble-legend-percentage.remote { color: #f59e0b; }
-
-        .research-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 2rem; }
-        .research-card i { font-size: 2.5rem; color: var(--accent); margin-bottom: 1.5rem; display: block; }
-        .research-card h3 { font-size: 1.4rem; font-weight: 600; margin-bottom: 1rem; color: var(--text-primary); }
-        .research-card p { color: var(--text-secondary); line-height: 1.6; }
-
-        /* Skills Grid */
+        /* research and skills */
+        .research-grid,
         .skills-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.5rem;
         }
-        .skill-category h3 { font-size: 1.3rem; font-weight: 600; margin-bottom: 1.5rem; color: var(--text-primary); display: flex; align-items: center; gap: 0.75rem; }
-        .skill-category i { color: var(--accent); font-size: 1.5rem; }
-        .skill-tags { display: flex; flex-wrap: wrap; gap: 0.75rem; }
-        .skill-tag { background: var(--surface-lighter); color: var(--text-secondary); padding: 0.5rem 1rem; border-radius: 2rem; font-size: 0.9rem; border: 1px solid var(--border); transition: all 0.3s ease; }
-        .skill-tag:hover { background: var(--accent); color: white; transform: translateY(-2px); border-color: var(--accent); }
 
-        /* Projects Section Styling */
-        .projects-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; }
-        .project-card { position: relative; }
-        .project-card h3 { font-size: 1.3rem; font-weight: 600; margin-bottom: 1rem; color: var(--text-primary); display: flex; align-items: center; gap: 0.75rem; }
-        .project-card h3 i { color: var(--accent); font-size: 1.5rem; }
-        .project-card p { color: var(--text-secondary); margin-bottom: 1.5rem; line-height: 1.6; }
-        .project-links { display: flex; gap: 1rem; flex-wrap: wrap; }
-        .project-link { display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.5rem 1rem; background: var(--surface-lighter); border: 1px solid var(--border); border-radius: 0.5rem; color: var(--text-secondary); text-decoration: none; font-size: 0.9rem; transition: all 0.3s ease; }
-        .project-link:hover { background: var(--accent); color: white; border-color: var(--accent); transform: translateY(-2px); }
-        .project-link i { font-size: 1rem; }
+        .research-card,
+        .skill-category {
+            background: var(--surface-light);
+            border: 1px solid var(--border);
+            border-radius: 1rem;
+            padding: 1.7rem;
+            box-shadow: var(--shadow);
+            transition: transform .25s ease, border-color .25s ease;
+        }
 
-        /* Enhanced Publications Section */
-        #publications-list { display: flex; flex-direction: column; gap: 2rem; }
+        .research-card:hover,
+        .skill-category:hover {
+            transform: translateY(-5px);
+            border-color: var(--accent);
+        }
+
+        .research-card i,
+        .skill-category > h3 i {
+            color: var(--accent);
+        }
+
+        .research-card > i {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        .research-card h3,
+        .skill-category h3 {
+            font-size: 1.15rem;
+            margin-bottom: .7rem;
+        }
+
+        .research-card p {
+            color: var(--text-secondary);
+            line-height: 1.65;
+            font-size: .94rem;
+        }
+
+        .interest-list {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+
+        .interest-item {
+            padding: 1.2rem 1.3rem;
+            background: var(--surface-light);
+            border: 1px solid var(--border);
+            border-radius: .8rem;
+        }
+
+        .interest-item h3 {
+            font-size: 1rem;
+            margin-bottom: .35rem;
+        }
+
+        .interest-item p {
+            color: var(--text-secondary);
+            font-size: .9rem;
+            line-height: 1.6;
+        }
+
+        .skills-section { margin-top: 5rem; }
+
+        .skill-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: .55rem;
+        }
+
+        .skill-tag {
+            background: var(--surface-lighter);
+            color: var(--text-secondary);
+            padding: .45rem .75rem;
+            border-radius: 2rem;
+            font-size: .83rem;
+            border: 1px solid var(--border);
+        }
+
+        /* publications */
+        #publications-list {
+            display: flex;
+            flex-direction: column;
+            gap: 1.3rem;
+        }
+
         .publication-item {
             background: var(--surface-light);
             border: 1px solid var(--border);
             border-radius: 1rem;
-            padding: 2rem;
-            transition: all 0.4s ease;
-            position: relative;
-            overflow: hidden;
+            padding: 1.5rem;
+            transition: transform .25s ease, border-color .25s ease;
         }
-        .publication-item::before {
-            content: '';
-            position: absolute;
-            left: 0;
-            top: 0;
-            height: 100%;
-            width: 4px;
-            background: var(--gradient-2);
-            transform: scaleY(0);
-            transition: transform 0.3s ease;
-        }
-        .publication-item:hover::before {
-            transform: scaleY(1);
-        }
+
         .publication-item:hover {
-            transform: translateX(12px);
-            box-shadow: var(--shadow-lg);
+            transform: translateX(6px);
             border-color: var(--accent);
         }
+
         .publication-header {
             display: flex;
             align-items: flex-start;
             gap: 1rem;
-            margin-bottom: 1rem;
         }
+
         .publication-icon {
+            width: 46px;
+            height: 46px;
+            border-radius: 11px;
             background: var(--gradient-2);
-            width: 48px;
-            height: 48px;
-            border-radius: 12px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
+            display: grid;
+            place-items: center;
             flex-shrink: 0;
-            box-shadow: var(--shadow);
         }
-        .publication-icon i {
-            color: white;
-            font-size: 1.5rem;
-        }
-        .publication-content {
-            flex: 1;
-        }
+
+        .publication-icon i { color: white; }
+
+        .publication-content { flex: 1; }
+
         .publication-title {
-            font-size: 1.25rem;
-            font-weight: 600;
-            color: var(--text-primary);
-            margin-bottom: 0.75rem;
-            line-height: 1.4;
+            font-size: 1.1rem;
+            line-height: 1.45;
+            margin-bottom: .5rem;
         }
+
         .publication-title a {
-            color: inherit;
+            color: var(--text-primary);
             text-decoration: none;
-            transition: color 0.3s ease;
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
         }
-        .publication-title a:hover {
-            color: var(--accent);
-        }
-        .publication-title a i {
-            font-size: 0.9rem;
-            opacity: 0;
-            transform: translateX(-5px);
-            transition: all 0.3s ease;
-        }
-        .publication-title a:hover i {
-            opacity: 1;
-            transform: translateX(0);
-        }
+
+        .publication-title a:hover { color: var(--accent); }
+
         .publication-authors {
-            font-style: italic;
             color: var(--text-secondary);
-            margin-bottom: 0.75rem;
-            font-size: 0.95rem;
-            line-height: 1.6;
+            font-size: .9rem;
+            margin-bottom: .7rem;
         }
+
         .publication-meta {
             display: flex;
             flex-wrap: wrap;
-            gap: 1rem;
-            align-items: center;
-            margin-top: 1rem;
+            gap: .6rem;
         }
-        .publication-journal {
+
+        .publication-meta span {
             display: inline-flex;
             align-items: center;
-            gap: 0.5rem;
-            background: var(--surface-lighter);
-            padding: 0.5rem 1rem;
+            gap: .4rem;
+            padding: .35rem .7rem;
             border-radius: 2rem;
-            font-size: 0.9rem;
-            color: var(--text-secondary);
+            font-size: .8rem;
             border: 1px solid var(--border);
+            color: var(--text-secondary);
+            background: var(--surface-lighter);
         }
-        .publication-journal i {
-            color: var(--accent);
-        }
-        .publication-date {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            font-size: 0.9rem;
-            color: var(--text-muted);
-        }
-        .publication-date i {
-            color: var(--accent);
-        }
+
         .publication-type {
-            display: inline-flex;
-            align-items: center;
-            background: linear-gradient(135deg, rgba(59, 130, 246, 0.2) 0%, rgba(139, 92, 246, 0.2) 100%);
-            color: var(--accent);
-            padding: 0.4rem 0.9rem;
-            border-radius: 2rem;
-            font-size: 0.85rem;
-            font-weight: 600;
-            border: 1px solid var(--accent);
+            color: var(--accent) !important;
+            border-color: var(--accent) !important;
         }
 
-        .loader, .error-message { text-align: center; color: var(--text-secondary); font-size: 1.1rem; padding: 2rem; }
-        .loader i { font-size: 2rem; margin-bottom: 1rem; color: var(--accent); }
+        .loader, .error-message {
+            text-align: center;
+            color: var(--text-secondary);
+            padding: 2rem;
+        }
 
-        .view-all-btn { text-align: center; margin-top: 2.5rem; }
+        .loader i {
+            font-size: 1.8rem;
+            color: var(--accent);
+            margin-bottom: .7rem;
+        }
 
-        .contact-grid { display: grid; grid-template-columns: 1fr 1.5fr; gap: 3rem; align-items: center; }
-        .linkedin-badge-container { min-height: 300px; } .dark-linkedin-badge, .light-linkedin-badge { transition: opacity 0.3s ease; }
-        body:not(.light-theme) .light-linkedin-badge, .light-theme .dark-linkedin-badge { display: none; }
-        .social-links { display: grid; grid-template-columns: repeat(auto-fit, minmax(130px, 1fr)); gap: 1rem; }
-        .social-link { display: flex; align-items: center; justify-content: center; gap: 0.75rem; padding: 1rem; background: var(--surface-light); border: 1px solid var(--border); border-radius: 0.75rem; color: var(--text-secondary); text-decoration: none; transition: all 0.3s ease; font-size: 0.9rem; font-weight: 500; }
-        .social-link:hover { background: var(--accent); color: white; transform: translateY(-5px); box-shadow: var(--shadow); border-color: var(--accent); }
-        .social-link i { font-size: 1.2rem; }
-        .footer { background: var(--primary); border-top: 1px solid var(--border); padding: 3rem 0; text-align: center; }
-        .footer p { color: var(--text-secondary); margin-bottom: 0.5rem; }
+        .view-all-btn {
+            text-align: center;
+            margin-top: 2rem;
+        }
 
-        @keyframes fadeInUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
+        /* conferences */
+        .events-section { margin-top: 5rem; }
 
-        /* Mobile Optimizations */
+        .events-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.2rem;
+        }
+
+        .event-card {
+            display: grid;
+            grid-template-columns: 70px 1fr;
+            gap: 1rem;
+            padding: 1.3rem;
+            background: var(--surface-light);
+            border: 1px solid var(--border);
+            border-radius: .9rem;
+        }
+
+        .event-year {
+            width: 70px;
+            height: 70px;
+            border-radius: .7rem;
+            display: grid;
+            place-items: center;
+            text-align: center;
+            background: var(--gradient-2);
+            color: white;
+            font-weight: 700;
+            font-size: .85rem;
+        }
+
+        .event-card h3 {
+            font-size: 1rem;
+            margin-bottom: .25rem;
+        }
+
+        .event-card p {
+            color: var(--text-secondary);
+            font-size: .88rem;
+            line-height: 1.55;
+        }
+
+        .event-card .event-location {
+            color: var(--accent);
+            font-size: .8rem;
+            margin-top: .3rem;
+        }
+
+        footer {
+            margin-top: 4rem;
+            padding: 2.5rem 0;
+            border-top: 1px solid var(--border);
+            background: var(--primary);
+            text-align: center;
+        }
+
+        footer p {
+            color: var(--text-secondary);
+            font-size: .9rem;
+        }
+
         @media (max-width: 992px) {
-            .about-grid, .contact-grid { grid-template-columns: 1fr; text-align: center; }
-            .about-image-wrapper { margin: 0 auto 2rem auto; }
-            .bubble-chart-container { grid-template-columns: 1fr; gap: 2rem; }
-            .bubble-chart-wrapper { max-width: 350px; }
-            .research-grid { grid-template-columns: 1fr; }
-            .projects-grid { grid-template-columns: 1fr; }
-            .skills-grid { grid-template-columns: 1fr; }
+            .projects-grid,
+            .research-grid,
+            .skills-grid { grid-template-columns: repeat(2, 1fr); }
+
+            .about-layout { grid-template-columns: 210px 1fr; }
+
+            .contact-links { grid-template-columns: repeat(2, 1fr); }
         }
 
         @media (max-width: 768px) {
             .nav-links { display: none; }
             .burger-menu { display: flex; }
-            nav { padding: 1rem 0; }
             .nav-container { padding: 0 1rem; }
+            .nav-menu { gap: 1rem; }
+
             .page { padding-top: 70px; }
-            .hero { min-height: calc(100vh - 70px); padding: 1.5rem; }
-            .hero h1 { font-size: 2rem; }
-            .hero-cta { flex-direction: column; width: 100%; }
+            .hero { min-height: calc(100vh - 70px); padding: 2rem 1.3rem; }
+
+            .hero-cta {
+                flex-direction: column;
+                width: 100%;
+            }
+
             .btn { width: 100%; justify-content: center; }
+
             .section { padding: 3rem 0; }
-            .container { padding: 0 1.5rem; }
-            .card { padding: 1.5rem; }
-            .section-title { margin-bottom: 2.5rem; }
+            .container { padding: 0 1.3rem; }
+
+            .projects-grid,
+            .research-grid,
+            .skills-grid,
+            .events-grid,
+            .interest-list { grid-template-columns: 1fr; }
+
+            .about-layout {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            .about-image {
+                width: 190px;
+                margin: 0 auto 1.5rem;
+                display: block;
+            }
+
+            .phd-project { text-align: left; }
+            .contact-panel { text-align: left; }
+            .contact-links { grid-template-columns: repeat(2, 1fr); }
+
             .publication-header { flex-direction: column; }
-            .publication-meta { flex-direction: column; align-items: flex-start; gap: 0.5rem; }
-            .word-cloud-item.size-1 { font-size: 1.5rem; }
-            .word-cloud-item.size-2 { font-size: 1.2rem; }
-            .word-cloud-item.size-3 { font-size: 1rem; }
-            .word-cloud-item.size-4 { font-size: 0.9rem; }
-            .word-cloud-item.size-5 { font-size: 0.85rem; }
-            .word-cloud-container { padding: 2rem 1rem; min-height: 300px; gap: 1rem; }
-            .bubble-chart-container { padding: 2rem 1.5rem; }
-            .bubble-legend-item { padding: 1rem; }
-            .bubble-legend-color { width: 40px; height: 40px; }
-            .bubble-legend-percentage { font-size: 1.5rem; }
-            .social-links { grid-template-columns: repeat(2, 1fr); }
         }
 
         @media (max-width: 480px) {
-            .hero h1 { font-size: 1.75rem; }
-            .logo { font-size: 1.3rem; }
-            .section-title h2 { font-size: 1.75rem; }
-            .about-image-wrapper { max-width: 200px; }
-            .bubble-chart-wrapper { max-width: 280px; }
-            .research-card i { font-size: 2rem; }
-            .research-card h3 { font-size: 1.2rem; }
+            .hero h1 { font-size: 2.1rem; }
+            .contact-links { grid-template-columns: 1fr; }
+            .project-image { height: 170px; }
         }
+    
+/* Layout refinements */
+.home-intro-section { padding-top: 2.5rem; padding-bottom: 2.5rem; }
+.home-intro { display: grid; grid-template-columns: 150px minmax(0, 1fr); gap: 2.25rem; align-items: start; max-width: 1050px; margin: 0 auto; }
+.home-profile-image-wrap { display: flex; justify-content: center; }
+.home-profile-image { width: 150px; height: 150px; object-fit: cover; border-radius: 50%; box-shadow: 0 10px 30px rgba(15,23,42,.12); }
+.home-intro-content h2 { margin: 0 0 .7rem; }
+.home-intro-content > p { margin: 0; max-width: 900px; line-height: 1.7; }
+.home-phd { margin-top: 1.25rem; }
+.contact-section { padding-top: 1.5rem; padding-bottom: 3rem; }
+.contact-panel h2 { margin-top: 0; }
+.research-overview-grid { display: grid; grid-template-columns: repeat(3, minmax(0,1fr)); gap: 1.25rem; margin-bottom: 2.5rem; }
+.research-overview-card { padding: 1.35rem 1.4rem; border: 1px solid var(--border-color, #e5e7eb); border-radius: 14px; background: var(--card-bg, rgba(255,255,255,.7)); }
+.research-overview-card h3 { margin: 0 0 1rem; font-size: 1.05rem; }
+.research-overview-card h3 i { margin-right: .45rem; }
+.research-list { margin: 0; padding-left: 1.15rem; line-height: 1.55; }
+.research-list li + li { margin-top: .5rem; }
+.compact-list { display: grid; grid-template-columns: 1fr 1fr; gap: .45rem 1rem; padding-left: 1.15rem; }
+.compact-list li + li { margin-top: 0; }
+@media (max-width: 850px) { .research-overview-grid { grid-template-columns: 1fr; } }
+@media (max-width: 700px) { .home-intro { grid-template-columns: 1fr; gap: 1.25rem; } .home-profile-image-wrap { justify-content: flex-start; } .home-profile-image { width: 120px; height: 120px; } }
+</style>
 
-        ::-webkit-scrollbar { width: 10px; } ::-webkit-scrollbar-track { background: var(--surface); } ::-webkit-scrollbar-thumb { background: var(--accent); border-radius: 5px; } ::-webkit-scrollbar-thumb:hover { background: var(--accent-hover); }
-    </style>
+    <meta name="robots" content="index, follow">
+    <meta name="theme-color" content="#0f172a">
+    <link rel="canonical" href="https://mohamedshamroukh.github.io/">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Mohamed Shamroukh | GeoAI, Urban Analytics &amp; Spatial Data Science">
+    <meta property="og:description" content="Doctoral researcher at Loughborough University working on GeoAI, urban analytics, pedestrian modelling, spatial data science, and data-driven urban planning.">
+    <meta property="og:url" content="https://mohamedshamroukh.github.io/">
+    <meta property="og:site_name" content="Mohamed Shamroukh">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Mohamed Shamroukh | GeoAI &amp; Urban Analytics">
+    <meta name="twitter:description" content="Research portfolio covering GeoAI, pedestrian modelling, urban analytics, GIS and spatial data science.">
+
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Person","name":"Mohamed Shamroukh","url":"https://mohamedshamroukh.github.io/","jobTitle":"Doctoral Researcher","affiliation":{"@type":"CollegeOrUniversity","name":"Loughborough University","url":"https://www.lboro.ac.uk/"},"sameAs":["https://orcid.org/0000-0002-1005-2600","https://github.com/MohamedShamroukh","https://www.linkedin.com/in/mohamed-shamroukh-348083126/","https://scholar.google.co.uk/citations?user=BUM-R3QAAAAJ&hl=en","https://www.researchgate.net/profile/Mohamed-Shamroukh"],"knowsAbout":["GeoAI","GIS","Urban Analytics","Spatial Data Science","Pedestrian Modelling","Machine Learning","Computer Vision","Urban Planning","Remote Sensing"]}</script>
+
+<style>
+.project-card{overflow:hidden;border:1px solid var(--border);transition:transform .25s ease,box-shadow .25s ease,border-color .25s ease}.project-card:hover{transform:translateY(-5px);box-shadow:var(--shadow-lg);border-color:rgba(59,130,246,.55)}.project-image{width:100%;height:230px;object-fit:cover;display:block;background:var(--surface-light);transition:transform .45s ease}.project-card:hover .project-image{transform:scale(1.025)}.project-body{padding:1.4rem}.project-links{display:flex;flex-wrap:wrap;gap:.65rem}.project-link{display:inline-flex;align-items:center;gap:.45rem}.research-list{margin:.8rem 0 0;padding-left:1.25rem}.research-list li{margin:.55rem 0;color:var(--text-secondary);line-height:1.6}.phd-project h3 i{margin-right:.55rem;color:var(--accent)}.about-research-panels{display:grid;gap:1.25rem;margin-top:1.5rem}.contact-link,.social-link,.project-link{transition:color .2s ease,transform .2s ease}.contact-link:hover,.social-link:hover,.project-link:hover{transform:translateY(-1px)}a:focus-visible{outline:3px solid rgba(59,130,246,.45);outline-offset:3px;border-radius:4px}@media(max-width:700px){.project-image{height:200px}}
+</style>
+
+<style id="portfolio-layout-update">
+/* Home: stronger visual balance and less empty space */
+.hero { min-height: 60vh; padding: 3.5rem 2rem 2.5rem; }
+.home-intro-section { padding-top: 2rem; padding-bottom: 3rem; }
+.home-intro { grid-template-columns: 220px minmax(0, 1fr); gap: 3rem; align-items: center; max-width: 1050px; margin: 0 auto; }
+.home-profile-image { width: 220px; height: 220px; object-fit: cover; border-radius: 50%; box-shadow: var(--shadow-lg); }
+.skills-section { margin-top: 3rem; }
+.research-subsection { margin-top: 3rem; }
+.research-subsection-title { margin-bottom: 1.5rem; }
+.research-subsection-title h2 { font-size: clamp(1.55rem, 3vw, 2.1rem); margin-bottom: .35rem; }
+.research-subsection-title p { color: var(--text-secondary); }
+.current-research-card { background: var(--surface-light); border: 1px solid var(--border); border-radius: 1rem; padding: 1.7rem; box-shadow: var(--shadow); }
+.current-research-card h3 { margin-bottom: .8rem; }
+.academic-grid { display: grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap: 1.25rem; }
+.academic-card { background: var(--surface-light); border: 1px solid var(--border); border-radius: 1rem; padding: 1.5rem; box-shadow: var(--shadow); }
+.academic-card h3 { margin-bottom: .8rem; }
+.academic-card h3 i, .current-research-card h3 i { color: var(--accent); margin-right: .45rem; }
+@media (max-width: 768px) {
+  .hero { min-height: auto; padding: 4rem 1.3rem 3rem; }
+  .home-intro { grid-template-columns: 1fr; gap: 1.5rem; text-align: center; }
+  .home-profile-image-wrap { justify-content: center; }
+  .home-profile-image { width: 180px; height: 180px; }
+  .academic-grid { grid-template-columns: 1fr; }
+}
+</style>
+
 </head>
+
 <body>
     <nav id="navbar">
         <div class="nav-container">
             <a class="logo" data-page="home">MS</a>
+
             <div class="nav-menu">
                 <ul class="nav-links">
                     <li><a data-page="home" class="active">Home</a></li>
-                    <li><a data-page="about">About</a></li>
-                    <li><a data-page="research">Research</a></li>
-                    <li><a data-page="projects">Projects</a></li>
-                    <li><a data-page="skills">Skills</a></li>
+                    <li><a data-page="research">Research & Skills</a></li>
                     <li><a data-page="publications">Publications</a></li>
-                    <li><a data-page="contact">Contact</a></li>
                 </ul>
-                <button id="theme-toggle" title="Toggle theme">
-                    <i class="fas fa-sun"></i><i class="fas fa-moon"></i>
+
+                <button id="theme-toggle" title="Toggle theme" aria-label="Toggle colour theme">
+                    <i class="fas fa-sun"></i>
+                    <i class="fas fa-moon"></i>
                 </button>
             </div>
-            <div class="burger-menu" id="burgerMenu">
+
+            <div class="burger-menu" id="burgerMenu" aria-label="Open menu">
                 <span></span>
                 <span></span>
                 <span></span>
@@ -623,590 +890,513 @@
         </div>
     </nav>
 
-    <!-- Mobile Menu -->
     <div class="mobile-menu" id="mobileMenu">
         <ul>
             <li><a data-page="home" class="active mobile-nav-link">Home</a></li>
-            <li><a data-page="about" class="mobile-nav-link">About</a></li>
-            <li><a data-page="research" class="mobile-nav-link">Research</a></li>
-            <li><a data-page="projects" class="mobile-nav-link">Projects</a></li>
-            <li><a data-page="skills" class="mobile-nav-link">Skills</a></li>
+            <li><a data-page="research" class="mobile-nav-link">Research & Skills</a></li>
             <li><a data-page="publications" class="mobile-nav-link">Publications</a></li>
-            <li><a data-page="contact" class="mobile-nav-link">Contact</a></li>
         </ul>
     </div>
 
-    <!-- HOME PAGE -->
-    <div id="home" class="page active">
+    <!-- home -->
+    <main id="home" class="page active">
         <section class="hero">
             <div class="hero-content">
                 <h1>Mohamed Shamroukh</h1>
+
                 <p class="hero-subtitle">
                     <span class="typewriter-line" id="typewriter-line1"></span>
                     <span class="typewriter-line" id="typewriter-line2"></span>
                 </p>
+
                 <div class="hero-cta">
-                    <a data-page="contact" class="btn btn-primary"><i class="fas fa-envelope"></i>Get In Touch</a>
-                    <a data-page="research" class="btn btn-secondary"><i class="fas fa-microscope"></i>View Research</a>
+                    <a data-page="research" class="btn btn-primary">
+                        <i class="fas fa-microscope"></i>Research & skills
+                    </a>
+                    <a data-page="publications" class="btn btn-secondary">
+                        <i class="fas fa-book-open"></i>Publications
+                    </a>
                 </div>
             </div>
         </section>
-    </div>
 
-    <!-- ABOUT PAGE -->
-    <div id="about" class="page">
-        <section class="section">
+        <section class="section home-intro-section">
             <div class="container">
-                <div class="about-grid">
-                    <div class="about-image-wrapper">
-                        <img src="https://pbs.twimg.com/profile_images/1959981871770550272/bi8kuSYk_400x400.jpg" alt="Profile picture of Mohamed Shamroukh" class="about-image">
+                <div class="home-intro">
+                    <div class="home-profile-image-wrap">
+                        <img src="https://pbs.twimg.com/profile_images/1959981871770550272/bi8kuSYk_400x400.jpg" alt="Profile picture of Mohamed Shamroukh" class="home-profile-image" loading="eager">
                     </div>
-                    <div class="card">
-                        <div class="about-content">
-                            <h2>About Me</h2>
-                            <p>I am a doctoral researcher at The Impact Hub, School of Architecture, Building and Civil Engineering at Loughborough University, and a member of the Perceptive City Lab. My work is at the intersection of Geospatial Intelligence, GIS, Remote Sensing, Urban Planning, and GeoAI (Geospatial Artificial Intelligence).</p>
-                            <p>My PhD research focuses on data-driven modelling, geospatial analysis, and machine learning for pedestrian-friendly urban planning and sustainable city development. I possess extensive expertise in geospatial data science, urban analytics, spatial modelling, Python programming, and geospatial databases.</p>
-                            <p>Previously, I worked as a research and teaching assistant at South Valley University, Egypt, where I conducted research and teaching in GIS, remote sensing, and urban studies. My projects include WiFi-based pedestrian monitoring, point of interest (POI) analysis, street network analysis, and geospatial data integration.</p>
-
-                            <div class="phd-project">
-                                <h3><i class="fas fa-graduation-cap"></i> PhD Project</h3>
-                                <p><strong>Towards Pedestrian-Friendly Cities</strong></p>
-                                <p>This research develops innovative data-driven methodologies to create more walkable, accessible, and human-centered urban environments through advanced geospatial analysis and machine learning.</p>
-                                <a href="https://www.lboro.ac.uk/research/perceptive-city/projects/pedestrian-friendly-cities/" target="_blank" rel="noopener noreferrer">Learn more at Perceptive City Lab <i class="fas fa-external-link-alt"></i></a>
-                            </div>
+                    <div class="home-intro-content">
+                        <h2>About me</h2>
+                        <p>I am a doctoral researcher at Loughborough University working at the intersection of GeoAI, urban analytics, and spatial data science. My research develops data-driven approaches to understand pedestrian activity and support more walkable, inclusive, and sustainable cities. I combine geospatial data, machine learning, computer vision, and sensor-derived datasets to generate actionable evidence for urban planning and decision-making.</p>
+                        <div class="phd-project home-phd">
+                            <h3><i class="fas fa-graduation-cap"></i>PhD project</h3>
+                            <p><strong>Towards pedestrian-friendly cities</strong></p>
+                            <p>Developing data-driven methods to understand pedestrian activity and support pedestrian-oriented urban planning.</p>
+                            <a href="https://www.lboro.ac.uk/research/perceptive-city/projects/pedestrian-friendly-cities/" target="_blank" rel="noopener noreferrer">Learn more at Perceptive City Lab <i class="fas fa-external-link-alt"></i></a>
                         </div>
                     </div>
                 </div>
-
-                <!-- Research Interests Word Cloud -->
-                <div class="section-title" style="margin-top: 6rem;">
-                    <h2>Research Interests</h2>
-                    <p>Key areas shaping my work in geospatial intelligence and urban planning.</p>
-                </div>
-                <div class="word-cloud-container">
-                    <span class="word-cloud-item size-1">GeoAI</span>
-                    <span class="word-cloud-item size-3">Machine Learning</span>
-                    <span class="word-cloud-item size-2">Urban Planning</span>
-                    <span class="word-cloud-item size-4">Remote Sensing</span>
-                    <span class="word-cloud-item size-2">Computer Vision</span>
-                    <span class="word-cloud-item size-5">Spatial Analysis</span>
-                    <span class="word-cloud-item size-1">Python</span>
-                    <span class="word-cloud-item size-3">Deep Learning</span>
-                    <span class="word-cloud-item size-4">Pedestrian Analytics</span>
-                    <span class="word-cloud-item size-2">Smart Cities</span>
-                    <span class="word-cloud-item size-5">Data Science</span>
-                    <span class="word-cloud-item size-1">QGIS</span>
-                    <span class="word-cloud-item size-4">Sustainable Development</span>
-                    <span class="word-cloud-item size-5">Geospatial Databases</span>
-                    <span class="word-cloud-item size-2">YOLO</span>
-                    <span class="word-cloud-item size-4">Urban Mobility</span>
-                    <span class="word-cloud-item size-3">PostGIS</span>
-                    <span class="word-cloud-item size-5">ArcGIS</span>
-                    <span class="word-cloud-item size-3">TensorFlow</span>
-                    <span class="word-cloud-item size-4">PyTorch</span>
-                    <span class="word-cloud-item size-5">Keras</span>
-                    <span class="word-cloud-item size-2">Object Detection</span>
-                    <span class="word-cloud-item size-4">OpenCV</span>
-                    <span class="word-cloud-item size-5">Neural Networks</span>
-                    <span class="word-cloud-item size-3">Google Earth Engine</span>
-                    <span class="word-cloud-item size-3">Spatial Modeling</span>
-                    <span class="word-cloud-item size-4">Urban Analytics</span>
-                    <span class="word-cloud-item size-5">CNN</span>
-                    <span class="word-cloud-item size-2">Geospatial Intelligence</span>
-                </div>
             </div>
         </section>
-    </div>
 
-    <!-- RESEARCH PAGE -->
-    <div id="research" class="page">
         <section class="section">
             <div class="container">
                 <div class="section-title">
-                    <h2>Research Impact</h2>
-                    <p>Distribution of my research contributions across key domains.</p>
-                </div>
-                <div class="bubble-chart-container">
-                    <div class="bubble-chart-wrapper">
-                        <div class="bubble-chart" id="bubbleChart"></div>
-                    </div>
-                    <div class="bubble-legend">
-                        <div class="bubble-legend-item">
-                            <div class="bubble-legend-color ml"></div>
-                            <div class="bubble-legend-content">
-                                <div class="bubble-legend-title">Machine Learning & AI</div>
-                                <div class="bubble-legend-percentage ml">35%</div>
-                            </div>
-                        </div>
-                        <div class="bubble-legend-item">
-                            <div class="bubble-legend-color geo"></div>
-                            <div class="bubble-legend-content">
-                                <div class="bubble-legend-title">Geospatial Analysis</div>
-                                <div class="bubble-legend-percentage geo">30%</div>
-                            </div>
-                        </div>
-                        <div class="bubble-legend-item">
-                            <div class="bubble-legend-color urban"></div>
-                            <div class="bubble-legend-content">
-                                <div class="bubble-legend-title">Urban Planning</div>
-                                <div class="bubble-legend-percentage urban">25%</div>
-                            </div>
-                        </div>
-                        <div class="bubble-legend-item">
-                            <div class="bubble-legend-color remote"></div>
-                            <div class="bubble-legend-content">
-                                <div class="bubble-legend-title">Remote Sensing</div>
-                                <div class="bubble-legend-percentage remote">10%</div>
-                            </div>
-                        </div>
-                    </div>
+                    <h2>Selected projects</h2>
+                    <p>Open-source tools and research projects connecting geospatial analysis, machine learning and urban applications.</p>
                 </div>
 
-                <div class="section-title" style="margin-top: 6rem;">
-                    <h2>Research Focus</h2>
-                    <p>My research employs data-driven methods to build more sustainable, equitable, and pedestrian-friendly cities.</p>
-                </div>
-                <div class="research-grid">
-                    <div class="card research-card"><i class="fas fa-brain"></i><h3>Data-Driven Urban Modelling</h3><p>Leveraging advanced analytics and spatial modeling to understand urban patterns, predict trends, and optimize city planning decisions.</p></div>
-                    <div class="card research-card"><i class="fas fa-robot"></i><h3>Geospatial AI (GeoAI)</h3><p>Developing intelligent systems that analyze spatial patterns and predict urban dynamics using advanced machine learning and AI.</p></div>
-                    <div class="card research-card"><i class="fas fa-walking"></i><h3>Pedestrian-Friendly Planning</h3><p>Creating models to design cities that prioritize walkability, accessibility, and human-centered environments for sustainable mobility.</p></div>
-                    <div class="card research-card"><i class="fas fa-leaf"></i><h3>Sustainable City Development</h3><p>Using geospatial analytics to support sustainable urban growth, environmental monitoring, and smart city initiatives for resilient communities.</p></div>
-                    <div class="card research-card"><i class="fas fa-chart-line"></i><h3>Urban Analytics & Data Science</h3><p>Applying advanced statistical methods and data science to analyze complex urban datasets and extract insights for policy making.</p></div>
-                    <div class="card research-card"><i class="fas fa-satellite"></i><h3>GIS & Remote Sensing</h3><p>Utilizing satellite imagery, remote sensing, and GIS to monitor urban change and environmental conditions.</p></div>
-                </div>
-            </div>
-        </section>
-    </div>
-
-    <!-- PROJECTS PAGE -->
-    <div id="projects" class="page">
-        <section class="section">
-            <div class="container">
-                <div class="section-title">
-                    <h2>Open Source Projects</h2>
-                    <p>Software tools and applications developed to advance geospatial analysis and urban research.</p>
-                </div>
                 <div class="projects-grid">
-                    <div class="card project-card">
-                        <h3><i class="fas fa-plug"></i> QGIS Pip Manager</h3>
-                        <p>A modern, full-featured graphical interface for managing Python packages directly within QGIS. Enables easy installation, uninstallation, upgrading, and downgrading of specific package versions without touching the command line, featuring asynchronous operations and robust error handling.</p>
-                        <div class="project-links">
-                            <a href="https://plugins.qgis.org/plugins/pip_manager/" target="_blank" rel="noopener noreferrer" class="project-link">
-                                <i class="fas fa-puzzle-piece"></i> Plugin Page
-                            </a>
-                            <a href="https://github.com/MohamedShamroukh" target="_blank" rel="noopener noreferrer" class="project-link">
-                                <i class="fab fa-github"></i> GitHub
-                            </a>
+                    <article class="project-card">
+                        <img class="project-image" src="images/pedestrian-flow.jpg" loading="lazy" decoding="async">
+                        <div class="project-body">
+                            <h3>Loughborough pedestrian flow</h3>
+                            <p>Developed a city-wide GeoAI engine that combines WiFi sensing, urban form indicators, and machine learning to predict pedestrian activity and support evidence-based urban planning.</p>
+                            <div class="project-links">
+                                <a class="project-link" href="https://github.com/MohamedShamroukh/Loughborough-pedestrian-flow" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i>GitHub</a>
+                                <a class="project-link" href="https://mohamedshamroukh.github.io/Loughborough-pedestrian-flow/" target="_blank" rel="noopener noreferrer"><i class="fas fa-map-marked-alt"></i>Live Map</a>
+                            </div>
                         </div>
-                    </div>
+                    </article>
 
-                    <div class="card project-card">
-                        <h3><i class="fas fa-bluetooth-b"></i> Bluetooth Beacon Scanner</h3>
-                        <p>A Python-based tool for scanning and analyzing Bluetooth beacons for pedestrian tracking and urban mobility research. Enables real-time monitoring of pedestrian movement patterns in urban environments.</p>
-                        <div class="project-links">
-                            <a href="https://github.com/MohamedShamroukh/bluetooth-beacon" target="_blank" rel="noopener noreferrer" class="project-link">
-                                <i class="fab fa-github"></i> View on GitHub
-                            </a>
+                    <article class="project-card">
+                        <img class="project-image" src="images/pip-manager.jpg" loading="lazy" decoding="async">
+                        <div class="project-body">
+                            <h3>QGIS Pip Manager</h3>
+                            <p>A graphical interface for managing Python packages directly within QGIS without using the command line.</p>
+                            <div class="project-links">
+                                <a class="project-link" href="https://github.com/MohamedShamroukh/QGIS-pip-manager" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i>GitHub</a>
+                                <a class="project-link" href="https://plugins.qgis.org/plugins/pip_manager/" target="_blank" rel="noopener noreferrer"><i class="fas fa-puzzle-piece"></i>Plugin</a>
+                            </div>
                         </div>
-                    </div>
+                    </article>
 
-                    <div class="card project-card">
-                        <h3><i class="fas fa-users"></i> Pedestrian Counter</h3>
-                        <p>An automated pedestrian counting system using computer vision and machine learning for urban analytics. Provides accurate footfall data for pedestrian-friendly urban planning and public space management.</p>
-                        <div class="project-links">
-                            <a href="https://github.com/MohamedShamroukh/Pedestrian-Counter" target="_blank" rel="noopener noreferrer" class="project-link">
-                                <i class="fab fa-github"></i> View on GitHub
-                            </a>
+                    <article class="project-card">
+                        <img class="project-image" src="images/solar-panel.jpg" loading="lazy" decoding="async">
+                        <div class="project-body">
+                            <h3>Solar panel detection</h3>
+                            <p>An automated deep learning pipeline using YOLO and XYZ satellite tiles to detect and classify rooftop solar panels at scale.</p>
+                            <div class="project-links">
+                                <a class="project-link" href="https://github.com/MohamedShamroukh/Solar-Panel-Detection-Using-XYZ-Satellite-Tiles" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i>GitHub</a>
+                            </div>
                         </div>
+                    </article>
+
+                    <article class="project-card">
+                        <img class="project-image" src="images/smart-spatial-analysis.jpg" loading="lazy" decoding="async">
+                        <div class="project-body">
+                            <h3>Smart spatial analysis</h3>
+                            <p>Created geospatial analytical tools and workflows for evaluating accessibility, planning standards, spatial equity, and urban service provision.</p>
+                            <div class="project-links">
+                                <a class="project-link" href="https://github.com/MohamedShamroukh/SmartSpatialAnalysis" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i>GitHub</a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="project-card">
+                        <img class="project-image" src="images/qena-smart-services.jpg" loading="lazy" decoding="async">
+                        <div class="project-body">
+                            <h3>Qena smart services</h3>
+                            <p>Designed and implemented a Web-GIS platform for analysing public service accessibility and supporting evidence-based planning decisions.</p>
+                            <div class="project-links">
+                                <a class="project-link" href="https://github.com/MohamedShamroukh/QinaSmartServices" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i>GitHub</a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="project-card">
+                        <img class="project-image" src="images/bluetooth-beacon.jpg" loading="lazy" decoding="async">
+                        <div class="project-body">
+                            <h3>Bluetooth beacon scanner</h3>
+                            <p>Built a Python-based data collection and analysis tool for detecting Bluetooth beacons and supporting pedestrian mobility research.</p>
+                            <div class="project-links">
+                                <a class="project-link" href="https://github.com/MohamedShamroukh/bluetooth-beacon" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i>GitHub</a>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+
+        <section class="section contact-section">
+            <div class="container">
+                <div class="contact-panel">
+                    <h2>Contact and profiles</h2>
+                    <div class="contact-links">
+                        <a class="contact-link" href="https://www.linkedin.com/in/mohamed-shamroukh-348083126/" target="_blank" rel="noopener noreferrer"><i class="fab fa-linkedin"></i>LinkedIn</a>
+                        <a class="contact-link" href="https://www.lboro.ac.uk/departments/abce/staff/mohamed-mahmoud/" target="_blank" rel="noopener noreferrer"><i class="fas fa-university"></i>University profile</a>
+                        <a class="contact-link" href="https://scholar.google.co.uk/citations?user=BUM-R3QAAAAJ&hl=en" target="_blank" rel="noopener noreferrer"><i class="fas fa-graduation-cap"></i>Google Scholar</a>
+                        <a class="contact-link" href="https://github.com/MohamedShamroukh" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i>GitHub</a>
+                        <a class="contact-link" href="https://orcid.org/0000-0002-1005-2600" target="_blank" rel="noopener noreferrer"><i class="fab fa-orcid"></i>ORCID</a>
+                        <a class="contact-link" href="https://www.researchgate.net/profile/Mohamed-Shamroukh" target="_blank" rel="noopener noreferrer"><i class="fab fa-researchgate"></i>ResearchGate</a>
+                        <a class="contact-link" href="https://x.com/mohamed_shm3" target="_blank" rel="noopener noreferrer"><i class="fab fa-x-twitter"></i>X</a>
+                    </div>
+                </div>
+            </div>
+        </section>    </main>
+
+    <!-- research and skills -->
+    <main id="research" class="page">
+        <section class="section">
+            <div class="container">
+                <div class="section-title">
+                    <h2>Research & skills</h2>
+                    <p>Research interests and technical capabilities across geospatial intelligence, urban analytics and data-driven planning.</p>
+                </div>
+
+                <div class="research-subsection">
+                    <div class="research-subsection-title">
+                        <h2>Research focus</h2>
+                        <p>Core themes connecting GeoAI, human mobility and evidence-based urban planning.</p>
+                    </div>
+                    <div class="interest-list">
+                        <div class="interest-item"><h3>GeoAI and spatial modelling</h3><p>Developing predictive geospatial models that connect urban form, activity patterns and spatial relationships.</p></div>
+                        <div class="interest-item"><h3>Pedestrian mobility and urban analytics</h3><p>Understanding where, when and how people move through urban environments using sensor, spatial and contextual data.</p></div>
+                        <div class="interest-item"><h3>Digital trace data</h3><p>Investigating the reliability, calibration and spatial representativeness of WiFi and other digital mobility data.</p></div>
+                        <div class="interest-item"><h3>Pedestrian-friendly planning</h3><p>Using evidence from movement and urban form to support more accessible and pedestrian-oriented places.</p></div>
+                        <div class="interest-item"><h3>Remote sensing and computer vision</h3><p>Applying satellite imagery and object detection to urban and environmental monitoring.</p></div>
+                        <div class="interest-item"><h3>Open-source geospatial tools</h3><p>Building practical Python and QGIS tools that make geospatial analysis more accessible and reproducible.</p></div>
+                    </div>
+                </div>
+
+                <div class="research-subsection">
+                    <div class="research-subsection-title">
+                        <h2>Current research</h2>
+                        <p>Current research directions and methodological development.</p>
+                    </div>
+                    <div class="current-research-card">
+                        <h3><i class="fas fa-flask"></i>Current projects</h3>
+                        <ul class="research-list compact-list">
+                            <li>Geospatial Foundation Models for Urban Analytics</li>
+                            <li>City-Wide Pedestrian Flow Prediction Engine</li>
+                            <li>Urban Vitality Assessment Framework</li>
+                            <li>Digital Trace Data Reliability and Calibration</li>
+                            <li>Explainable GeoAI for Urban Planning</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="skills-section">
+                    <div class="section-title">
+                        <h2>Technical expertise</h2>
+                        <p>Tools and methods used across research, teaching and applied geospatial projects.</p>
+                    </div>
+                    <div class="skills-grid">
+                        <div class="skill-category"><h3><i class="fas fa-robot"></i> GeoAI & machine learning</h3><div class="skill-tags"><span class="skill-tag">Machine Learning</span><span class="skill-tag">Deep Learning</span><span class="skill-tag">Computer Vision</span><span class="skill-tag">Neural Networks</span><span class="skill-tag">CNNs</span><span class="skill-tag">YOLO</span><span class="skill-tag">Object Detection</span></div></div>
+                        <div class="skill-category"><h3><i class="fas fa-globe"></i> GIS & geospatial</h3><div class="skill-tags"><span class="skill-tag">QGIS</span><span class="skill-tag">ArcGIS Pro</span><span class="skill-tag">PostGIS</span><span class="skill-tag">Google Earth Engine</span><span class="skill-tag">Remote Sensing</span><span class="skill-tag">Spatial Analysis</span><span class="skill-tag">Rasterio</span><span class="skill-tag">GDAL</span></div></div>
+                        <div class="skill-category"><h3><i class="fab fa-python"></i> Python & data science</h3><div class="skill-tags"><span class="skill-tag">Python</span><span class="skill-tag">PyTorch</span><span class="skill-tag">TensorFlow</span><span class="skill-tag">Keras</span><span class="skill-tag">Pandas</span><span class="skill-tag">NumPy</span><span class="skill-tag">GeoPandas</span><span class="skill-tag">Scikit-learn</span><span class="skill-tag">OpenCV</span></div></div>
+                        <div class="skill-category"><h3><i class="fas fa-chart-bar"></i> Visualisation & mapping</h3><div class="skill-tags"><span class="skill-tag">Matplotlib</span><span class="skill-tag">Seaborn</span><span class="skill-tag">Plotly</span><span class="skill-tag">Folium</span><span class="skill-tag">Leaflet</span></div></div>
+                        <div class="skill-category"><h3><i class="fas fa-database"></i> Databases & storage</h3><div class="skill-tags"><span class="skill-tag">PostgreSQL</span><span class="skill-tag">SQL</span><span class="skill-tag">Cloud Storage</span></div></div>
+                        <div class="skill-category"><h3><i class="fas fa-code"></i> Development & tools</h3><div class="skill-tags"><span class="skill-tag">Git & GitHub</span><span class="skill-tag">Jupyter</span><span class="skill-tag">VS Code</span><span class="skill-tag">PyCharm</span><span class="skill-tag">Linux</span></div></div>
+                    </div>
+                </div>
+
+                <div class="research-subsection">
+                    <div class="research-subsection-title"><h2>Academic contribution</h2></div>
+                    <div class="academic-grid">
+                        <div class="academic-card"><h3><i class="fas fa-chalkboard-teacher"></i>Teaching & mentoring</h3><ul class="research-list compact-list"><li>GIS</li><li>Remote Sensing</li><li>Urban Planning</li><li>Python for Spatial Analysis</li></ul></div>
+                        <div class="academic-card"><h3><i class="fas fa-award"></i>Research impact</h3><ul class="research-list"><li>Open-source QGIS plugin published through the official QGIS Plugin Repository.</li><li>Research presented at international conferences including AESOP, CUPUM, RGS-IBG, and GeoAI.</li><li>Development of open-source GeoAI and geospatial tools supporting urban analytics and planning research.</li><li>Contributions to evidence-based pedestrian-oriented urban planning and urban vitality research.</li></ul></div>
                     </div>
                 </div>
             </div>
         </section>
-    </div>
+    </main>
 
-    <!-- SKILLS PAGE -->
-    <div id="skills" class="page">
+    <!-- publications -->
+    <main id="publications" class="page">
         <section class="section">
             <div class="container">
                 <div class="section-title">
-                    <h2>Technical Expertise</h2>
-                    <p>A comprehensive toolkit for geospatial analysis, AI, and urban research.</p>
+                    <h2>Publications & presentations</h2>
+                    <p>Journal publications are retrieved from ORCID. Selected conferences, presentations and invited engagements are listed below.</p>
                 </div>
-                <div class="skills-grid">
-                    <div class="card skill-category">
-                        <h3><i class="fas fa-robot"></i> Machine Learning & AI</h3>
-                        <div class="skill-tags">
-                            <span class="skill-tag">Machine Learning</span>
-                            <span class="skill-tag">Deep Learning</span>
-                            <span class="skill-tag">Computer Vision</span>
-                            <span class="skill-tag">Neural Networks</span>
-                            <span class="skill-tag">CNNs</span>
-                            <span class="skill-tag">YOLO</span>
-                            <span class="skill-tag">Object Detection</span>
-                        </div>
-                    </div>
 
-                    <div class="card skill-category">
-                        <h3><i class="fab fa-python"></i> Python & Data Science</h3>
-                        <div class="skill-tags">
-                            <span class="skill-tag">Python</span>
-                            <span class="skill-tag">PyTorch</span>
-                            <span class="skill-tag">TensorFlow</span>
-                            <span class="skill-tag">Keras</span>
-                            <span class="skill-tag">Pandas</span>
-                            <span class="skill-tag">NumPy</span>
-                            <span class="skill-tag">GeoPandas</span>
-                            <span class="skill-tag">Scikit-learn</span>
-                            <span class="skill-tag">OpenCV</span>
-                        </div>
-                    </div>
-
-                    <div class="card skill-category">
-                        <h3><i class="fas fa-globe"></i> GIS & Geospatial</h3>
-                        <div class="skill-tags">
-                            <span class="skill-tag">QGIS</span>
-                            <span class="skill-tag">ArcGIS Pro</span>
-                            <span class="skill-tag">PostGIS</span>
-                            <span class="skill-tag">Google Earth Engine</span>
-                            <span class="skill-tag">Remote Sensing</span>
-                            <span class="skill-tag">Spatial Analysis</span>
-                            <span class="skill-tag">Rasterio</span>
-                            <span class="skill-tag">GDAL</span>
-                        </div>
-                    </div>
-
-                    <div class="card skill-category">
-                        <h3><i class="fas fa-chart-bar"></i> Visualization & Mapping</h3>
-                        <div class="skill-tags">
-                            <span class="skill-tag">Matplotlib</span>
-                            <span class="skill-tag">Seaborn</span>
-                            <span class="skill-tag">Plotly</span>
-                            <span class="skill-tag">Folium</span>
-                            <span class="skill-tag">Leaflet</span>
-                        </div>
-                    </div>
-
-                    <div class="card skill-category">
-                        <h3><i class="fas fa-database"></i> Databases & Storage</h3>
-                        <div class="skill-tags">
-                            <span class="skill-tag">PostgreSQL</span>
-                            <span class="skill-tag">SQL</span>
-                            <span class="skill-tag">Cloud Storage</span>
-                        </div>
-                    </div>
-
-                    <div class="card skill-category">
-                        <h3><i class="fas fa-code"></i> Development & Tools</h3>
-                        <div class="skill-tags">
-                            <span class="skill-tag">Git & GitHub</span>
-                            <span class="skill-tag">Jupyter</span>
-                            <span class="skill-tag">VS Code</span>
-                            <span class="skill-tag">PyCharm</span>
-                            <span class="skill-tag">Linux</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-    </div>
-
-    <!-- PUBLICATIONS PAGE -->
-    <div id="publications" class="page">
-        <section class="section">
-            <div class="container">
-                <div class="section-title">
-                    <h2>Journal Publications</h2>
-                    <p>Peer-reviewed research contributions in geospatial intelligence and urban planning.</p>
-                </div>
                 <div id="publications-list">
                     <div class="loader">
                         <i class="fas fa-spinner fa-spin"></i>
                         <p>Loading journal publications...</p>
                     </div>
                 </div>
+
                 <div class="view-all-btn">
                     <a href="https://orcid.org/0000-0002-1005-2600" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">
-                        <i class="fab fa-orcid"></i> View All Publications on ORCID
+                        <i class="fab fa-orcid"></i>View all publications on ORCID
                     </a>
                 </div>
+
+                <div class="events-section">
+                    <div class="section-title">
+                        <h2>Conferences & presentations</h2>
+                        <p>Selected conference presentations from my academic work.</p>
+                    </div>
+
+                    <div class="events-grid">
+                        <article class="event-card">
+                            <div class="event-year">2026</div>
+                            <div>
+                                <h3>Loughborough Doctoral College Showcase</h3>
+                                <p>Mapping Where People Walk: A City-Wide GeoAI Engine for Pedestrian Flow Prediction.</p>
+                                <div class="event-location">Loughborough University</div>
+                            </div>
+                        </article>
+
+                        <article class="event-card">
+                            <div class="event-year">2026</div>
+                            <div>
+                                <h3>GeoAI 2026</h3>
+                                <p>GeoAI for city-wide pedestrian flow mapping and urban regeneration.</p>
+                                <div class="event-location">Ghent, Belgium</div>
+                            </div>
+                        </article>
+
+                        <article class="event-card">
+                            <div class="event-year">2025</div>
+                            <div>
+                                <h3>CUPUM 2025</h3>
+                                <p>Spatio-temporal analysis of pedestrian activity in Loughborough using Wi-Fi data.</p>
+                                <div class="event-location">London, UK</div>
+                            </div>
+                        </article>
+
+                        <article class="event-card">
+                            <div class="event-year">2025</div>
+                            <div>
+                                <h3>AESOP 2025</h3>
+                                <p>Data-driven prioritising of pedestrian-oriented infrastructure: A framework for resource allocation.</p>
+                                <div class="event-location">Istanbul, Türkiye</div>
+                            </div>
+                        </article>
+
+                        <article class="event-card">
+                            <div class="event-year">2025</div>
+                            <div>
+                                <h3>EMDOC 2025 PGR Conference</h3>
+                                <p>Mapping Loughborough's Pedestrian Activity Using WiFi Data.</p>
+                                <div class="event-location">Loughborough University</div>
+                            </div>
+                        </article>
+
+                        <article class="event-card">
+                            <div class="event-year">2025</div>
+                            <div>
+                                <h3>RGS-IBG 2025</h3>
+                                <p>From Data to Decisions: Understanding Pedestrian Flow with WiFi Scanner Data.</p>
+                                <div class="event-location">Birmingham, UK</div>
+                            </div>
+                        </article>
+
+                        <article class="event-card">
+                            <div class="event-year">2025</div>
+                            <div>
+                                <h3>Loughborough Doctoral College Showcase</h3>
+                                <p>Mapping Loughborough's Pedestrian Activity Using WiFi Data.</p>
+                                <div class="event-location">Loughborough University</div>
+                            </div>
+                        </article>
+                    </div>
+                </div>
+
+                <div class="events-section">
+                    <div class="section-title">
+                        <h2>Invited talks & workshops</h2>
+                        <p>Selected research, knowledge exchange and public engagement activities.</p>
+                    </div>
+
+                    <div class="events-grid">
+                        <article class="event-card">
+                            <div class="event-year">2026</div>
+                            <div>
+                                <h3>DEBIAS Workshop and Symposium</h3>
+                                <p>Research engagement focused on digital trace data and data quality.</p>
+                                <div class="event-location">Liverpool, UK</div>
+                            </div>
+                        </article>
+
+                        <article class="event-card">
+                            <div class="event-year">2025</div>
+                            <div>
+                                <h3>Loughborough Heritage Open Weekend</h3>
+                                <p>Public engagement with local residents through the TOWN Observatory.</p>
+                                <div class="event-location">Loughborough, UK</div>
+                            </div>
+                        </article>
+
+                        <article class="event-card">
+                            <div class="event-year">2025</div>
+                            <div>
+                                <h3>GCRO & The Impact Hub knowledge exchange</h3>
+                                <p>Knowledge exchange workshop with the Gauteng City-Region Observatory and The Impact Hub.</p>
+                                <div class="event-location">Loughborough University</div>
+                            </div>
+                        </article>
+
+                        <article class="event-card">
+                            <div class="event-year">2021</div>
+                            <div>
+                                <h3>International university invited talks</h3>
+                                <p>Invited academic talks at Ibn Tofail University, Umm Al-Qura University and University of Diyala.</p>
+                                <div class="event-location">Morocco, Saudi Arabia and Iraq</div>
+                            </div>
+                        </article>
+                    </div>
+                </div>
             </div>
         </section>
-    </div>
+    </main>
 
-    <!-- CONTACT PAGE -->
-    <div id="contact" class="page">
-        <section class="section">
-            <div class="container">
-                <div class="section-title">
-                    <h2>Let's Connect</h2>
-                    <p>I am always open to discussing research collaborations, sharing ideas, or exploring new opportunities.</p>
-                </div>
-                <div class="contact-grid">
-                    <div class="linkedin-badge-container">
-                        <div class="light-linkedin-badge">
-                            <div class="badge-base LI-profile-badge"
-                                 data-locale="en_US"
-                                 data-size="medium"
-                                 data-theme="light"
-                                 data-type="VERTICAL"
-                                 data-vanity="mohamed-shamroukh-348083126"
-                                 data-version="v1">
-                                <a class="badge-base__link LI-simple-link"
-                                   href="https://www.linkedin.com/in/mohamed-shamroukh-348083126?trk=profile-badge">
-                                    Mohamed Shamroukh
-                                </a>
-                            </div>
-                        </div>
-                        <div class="dark-linkedin-badge">
-                            <div class="badge-base LI-profile-badge"
-                                 data-locale="en_US"
-                                 data-size="medium"
-                                 data-theme="dark"
-                                 data-type="VERTICAL"
-                                 data-vanity="mohamed-shamroukh-348083126"
-                                 data-version="v1">
-                                <a class="badge-base__link LI-simple-link"
-                                   href="https://www.linkedin.com/in/mohamed-shamroukh-348083126?trk=profile-badge">
-                                    Mohamed Shamroukh
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="social-links">
-                        <a href="https://www.linkedin.com/in/mohamed-shamroukh-348083126/" target="_blank" rel="noopener noreferrer" class="social-link"><i class="fab fa-linkedin"></i><span>LinkedIn</span></a>
-                        <a href="https://www.lboro.ac.uk/departments/abce/staff/mohamed-mahmoud/" target="_blank" rel="noopener noreferrer" class="social-link"><i class="fas fa-university"></i><span>Uni Profile</span></a>
-                        <a href="https://scholar.google.co.uk/citations?user=BUM-R3QAAAAJ&hl=en" target="_blank" rel="noopener noreferrer" class="social-link"><i class="fas fa-graduation-cap"></i><span>Scholar</span></a>
-                        <a href="https://x.com/mohamed_shm3" target="_blank" rel="noopener noreferrer" class="social-link"><i class="fab fa-x-twitter"></i><span>X (Twitter)</span></a>
-                        <a href="https://github.com/MohamedShamroukh" target="_blank" rel="noopener noreferrer" class="social-link"><i class="fab fa-github"></i><span>GitHub</span></a>
-                        <a href="https://orcid.org/0000-0002-1005-2600" target="_blank" rel="noopener noreferrer" class="social-link"><i class="fab fa-orcid"></i><span>ORCID</span></a>
-                        <a href="https://www.researchgate.net/profile/Mohamed-Shamroukh" target="_blank" rel="noopener noreferrer" class="social-link"><i class="fab fa-researchgate"></i><span>ResearchGate</span></a>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <footer class="footer">
-            <div class="container footer-content"><p>&copy; 2026 Mohamed Shamroukh. All rights reserved.</p><p>Built with passion and a touch of geospatial magic.</p></div>
-        </footer>
-    </div>
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 Mohamed Shamroukh. All rights reserved.</p>
+        </div>
+    </footer>
 
     <script>
-        document.addEventListener('DOMContentLoaded', function() {
+        document.addEventListener('DOMContentLoaded', function () {
             const themeToggleBtn = document.getElementById('theme-toggle');
             const body = document.body;
-            const THEME_KEY = 'user-theme';
             const burgerMenu = document.getElementById('burgerMenu');
             const mobileMenu = document.getElementById('mobileMenu');
+            const THEME_KEY = 'user-theme';
 
-            // Theme Management
-            const applyTheme = (theme) => {
-                if (theme === 'light') {
-                    body.classList.add('light-theme');
-                } else {
-                    body.classList.remove('light-theme');
-                }
-            };
+            function applyTheme(theme) {
+                body.classList.toggle('light-theme', theme === 'light');
+            }
 
-            const toggleTheme = () => {
+            themeToggleBtn.addEventListener('click', function () {
                 const currentTheme = body.classList.contains('light-theme') ? 'light' : 'dark';
                 const newTheme = currentTheme === 'light' ? 'dark' : 'light';
                 applyTheme(newTheme);
                 localStorage.setItem(THEME_KEY, newTheme);
-            };
+            });
 
             const savedTheme = localStorage.getItem(THEME_KEY);
-            const prefersLight = window.matchMedia('(prefers-color-scheme: light)').matches;
             if (savedTheme) {
                 applyTheme(savedTheme);
-            } else if (prefersLight) {
+            } else if (window.matchMedia('(prefers-color-scheme: light)').matches) {
                 applyTheme('light');
             }
 
-            themeToggleBtn.addEventListener('click', toggleTheme);
-
-            // Burger Menu Toggle
-            burgerMenu.addEventListener('click', () => {
+            burgerMenu.addEventListener('click', function () {
                 burgerMenu.classList.toggle('active');
                 mobileMenu.classList.toggle('active');
             });
 
-            // Page Navigation System
             const pages = document.querySelectorAll('.page');
             const navLinks = document.querySelectorAll('[data-page]');
             const mobileNavLinks = document.querySelectorAll('.mobile-nav-link');
-            let currentPage = 'home';
 
             function navigateTo(pageId) {
-                // Hide all pages
-                pages.forEach(page => {
-                    page.classList.remove('active');
+                const targetPage = document.getElementById(pageId);
+                if (!targetPage) return;
+
+                pages.forEach(page => page.classList.remove('active'));
+                targetPage.classList.add('active');
+
+                navLinks.forEach(link => {
+                    link.classList.toggle('active', link.getAttribute('data-page') === pageId);
                 });
 
-                // Show selected page
-                const targetPage = document.getElementById(pageId);
-                if (targetPage) {
-                    targetPage.classList.add('active');
-                    currentPage = pageId;
+                mobileNavLinks.forEach(link => {
+                    link.classList.toggle('active', link.getAttribute('data-page') === pageId);
+                });
 
-                    // Update active nav link (desktop)
-                    navLinks.forEach(link => {
-                        link.classList.remove('active');
-                        if (link.getAttribute('data-page') === pageId) {
-                            link.classList.add('active');
-                        }
-                    });
+                burgerMenu.classList.remove('active');
+                mobileMenu.classList.remove('active');
+                window.scrollTo(0, 0);
 
-                    // Update active nav link (mobile)
-                    mobileNavLinks.forEach(link => {
-                        link.classList.remove('active');
-                        if (link.getAttribute('data-page') === pageId) {
-                            link.classList.add('active');
-                        }
-                    });
-
-                    // Close mobile menu
-                    burgerMenu.classList.remove('active');
-                    mobileMenu.classList.remove('active');
-
-                    // Scroll to top
-                    window.scrollTo(0, 0);
-
-                    // Trigger page-specific initializations
-                    if (pageId === 'research' && !document.querySelector('.bubble')) {
-                        setTimeout(() => generateBubbles(), 100);
-                    }
-                    if (pageId === 'publications' && !publicationsLoaded) {
-                        fetchOrcidPublications();
-                    }
+                if (pageId === 'publications' && !publicationsLoaded) {
+                    fetchOrcidPublications();
                 }
             }
 
-            // Add click listeners to all navigation links
             navLinks.forEach(link => {
-                link.addEventListener('click', (e) => {
-                    e.preventDefault();
-                    const pageId = link.getAttribute('data-page');
-                    navigateTo(pageId);
+                link.addEventListener('click', function (event) {
+                    event.preventDefault();
+                    navigateTo(link.getAttribute('data-page'));
                 });
             });
 
-            // Add click listeners to mobile navigation links
             mobileNavLinks.forEach(link => {
-                link.addEventListener('click', (e) => {
-                    e.preventDefault();
-                    const pageId = link.getAttribute('data-page');
-                    navigateTo(pageId);
+                link.addEventListener('click', function (event) {
+                    event.preventDefault();
+                    navigateTo(link.getAttribute('data-page'));
                 });
             });
 
-            // Two-Line Centered Typewriter Effect
+            /* typewriter */
             const line1 = document.getElementById('typewriter-line1');
             const line2 = document.getElementById('typewriter-line2');
-            const text1 = "Doctoral researcher at Loughborough University specialising in";
-            const text2 = "Geospatial Intelligence, GeoAI, and data-driven urban planning.";
+            const text1 = 'Doctoral researcher at Loughborough University specialising in';
+            const text2 = 'Geospatial Intelligence, GeoAI, and data-driven urban planning.';
             let index1 = 0;
             let index2 = 0;
 
             function typeLine1() {
                 if (index1 < text1.length) {
-                    line1.textContent += text1.charAt(index1);
-                    index1++;
+                    line1.textContent += text1.charAt(index1++);
                     setTimeout(typeLine1, 30);
                 } else {
                     line1.classList.remove('active');
                     line2.classList.add('active');
-                    setTimeout(typeLine2, 300);
+                    setTimeout(typeLine2, 250);
                 }
             }
 
             function typeLine2() {
                 if (index2 < text2.length) {
-                    line2.textContent += text2.charAt(index2);
-                    index2++;
+                    line2.textContent += text2.charAt(index2++);
                     setTimeout(typeLine2, 30);
                 } else {
                     line2.classList.remove('active');
                 }
             }
 
-            setTimeout(() => {
+            setTimeout(function () {
                 line1.classList.add('active');
                 typeLine1();
             }, 500);
 
-            // Circular Bubble Chart
-            function generateBubbles() {
-                const container = document.getElementById('bubbleChart');
-                if (!container || container.children.length > 0) return;
-
-                const data = [
-                    { type: 'ml', count: 14, color: '#3b82f6' },
-                    { type: 'geo', count: 12, color: '#10b981' },
-                    { type: 'urban', count: 10, color: '#8b5cf6' },
-                    { type: 'remote', count: 4, color: '#f59e0b' }
-                ];
-
-                const totalBubbles = 40;
-                const containerSize = container.offsetWidth;
-                const bubbleSize = containerSize * 0.12;
-                const radius = containerSize * 0.38;
-                const centerX = containerSize / 2;
-                const centerY = containerSize / 2;
-
-                let bubbleIndex = 0;
-
-                data.forEach((category, catIndex) => {
-                    for (let i = 0; i < category.count; i++) {
-                        const bubble = document.createElement('div');
-                        bubble.className = `bubble ${category.type}`;
-
-                        const angle = bubbleIndex * 137.5 * (Math.PI / 180);
-                        const spiralRadius = radius * Math.sqrt(bubbleIndex / totalBubbles);
-
-                        const x = centerX + spiralRadius * Math.cos(angle) - bubbleSize / 2;
-                        const y = centerY + spiralRadius * Math.sin(angle) - bubbleSize / 2;
-
-                        bubble.style.width = bubbleSize + 'px';
-                        bubble.style.height = bubbleSize + 'px';
-                        bubble.style.left = x + 'px';
-                        bubble.style.top = y + 'px';
-
-                        const floatDelay = Math.random() * 4;
-                        bubble.style.animationDelay = `${bubbleIndex * 0.03}s, ${floatDelay}s`;
-
-                        container.appendChild(bubble);
-                        bubbleIndex++;
-                    }
-                });
-            }
-
-            // Publications fetch
+            /* ORCID publications */
             let publicationsLoaded = false;
+
             async function fetchOrcidPublications() {
                 if (publicationsLoaded) return;
                 publicationsLoaded = true;
 
                 const publicationsList = document.getElementById('publications-list');
-                const orcidId = "0000-0002-1005-2600";
+                const orcidId = '0000-0002-1005-2600';
                 const apiUrl = `https://pub.orcid.org/v3.0/${orcidId}/works`;
 
                 try {
-                    const initialResponse = await fetch(apiUrl, { headers: { 'Accept': 'application/json' } });
-                    if (!initialResponse.ok) throw new Error(`ORCID API Error: ${initialResponse.status}`);
-                    const summaryData = await initialResponse.json();
+                    const initialResponse = await fetch(apiUrl, {
+                        headers: { 'Accept': 'application/json' }
+                    });
 
-                    const putCodes = summaryData.group.map(work => work['work-summary'][0]['put-code']).join(',');
+                    if (!initialResponse.ok) {
+                        throw new Error(`ORCID API Error: ${initialResponse.status}`);
+                    }
+
+                    const summaryData = await initialResponse.json();
+                    const putCodes = summaryData.group
+                        .map(work => work['work-summary'][0]['put-code'])
+                        .join(',');
 
                     if (!putCodes) {
                         publicationsList.innerHTML = '<div class="error-message">No publications found on this ORCID profile.</div>';
                         return;
                     }
 
-                    const detailResponse = await fetch(`${apiUrl}/${putCodes}`, { headers: { 'Accept': 'application/json' } });
-                    if (!detailResponse.ok) throw new Error(`ORCID API Error: ${detailResponse.status}`);
-                    const detailData = await detailResponse.json();
+                    const detailResponse = await fetch(`${apiUrl}/${putCodes}`, {
+                        headers: { 'Accept': 'application/json' }
+                    });
 
-                    publicationsList.innerHTML = '';
+                    if (!detailResponse.ok) {
+                        throw new Error(`ORCID API Error: ${detailResponse.status}`);
+                    }
+
+                    const detailData = await detailResponse.json();
 
                     const journalWorks = detailData.bulk.filter(item => {
                         const work = item.work;
@@ -1221,34 +1411,35 @@
                         return yearB - yearA;
                     });
 
-                    if (works.length === 0) {
+                    if (!works.length) {
                         publicationsList.innerHTML = '<div class="error-message">No journal publications found.</div>';
                         return;
                     }
 
-                    const displayWorks = works.slice(0, 3);
+                    publicationsList.innerHTML = '';
 
-                    displayWorks.forEach(item => {
+                    works.slice(0, 3).forEach(item => {
                         const work = item.work;
                         const title = work.title?.title?.value || 'No title provided';
                         const journal = work['journal-title']?.value || '';
-
                         const year = work['publication-date']?.year?.value || '';
                         const month = work['publication-date']?.month?.value || '';
                         const day = work['publication-date']?.day?.value || '';
                         const date = [year, month, day].filter(Boolean).join('-');
-
                         const link = work.url?.value;
 
                         let authors = 'N/A';
                         if (work.contributors?.contributor) {
-                            authors = work.contributors.contributor.map(c => c['credit-name']?.value).filter(Boolean).join(', ');
+                            authors = work.contributors.contributor
+                                .map(c => c['credit-name']?.value)
+                                .filter(Boolean)
+                                .join(', ');
                         }
 
-                        const publicationDiv = document.createElement('div');
+                        const publicationDiv = document.createElement('article');
                         publicationDiv.className = 'publication-item';
 
-                        let titleHTML = link
+                        const titleHTML = link
                             ? `<h3 class="publication-title"><a href="${link}" target="_blank" rel="noopener noreferrer">${title} <i class="fas fa-external-link-alt"></i></a></h3>`
                             : `<h3 class="publication-title">${title}</h3>`;
 
@@ -1261,19 +1452,19 @@
                                     ${titleHTML}
                                     <p class="publication-authors">${authors}</p>
                                     <div class="publication-meta">
-                                        ${journal ? `<span class="publication-journal"><i class="fas fa-book"></i>${journal}</span>` : ''}
-                                        ${date ? `<span class="publication-date"><i class="fas fa-calendar"></i>${date}</span>` : ''}
-                                        <span class="publication-type">Journal Article</span>
+                                        ${journal ? `<span><i class="fas fa-book"></i>${journal}</span>` : ''}
+                                        ${date ? `<span><i class="fas fa-calendar"></i>${date}</span>` : ''}
+                                        <span class="publication-type">Journal article</span>
                                     </div>
                                 </div>
                             </div>
                         `;
+
                         publicationsList.appendChild(publicationDiv);
                     });
-
                 } catch (error) {
-                    console.error("Failed to fetch ORCID publications:", error);
-                    publicationsList.innerHTML = `<div class="error-message">Could not load publications from ORCID. Please try again later.</div>`;
+                    console.error('Failed to fetch ORCID publications:', error);
+                    publicationsList.innerHTML = '<div class="error-message">Could not load publications from ORCID. Please try again later.</div>';
                 }
             }
         });
